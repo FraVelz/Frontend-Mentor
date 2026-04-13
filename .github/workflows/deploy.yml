@@ -1,4 +1,4 @@
-name: Deploy Astro
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -9,29 +9,42 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      - name: Prepare static site
+        run: |
+          set -e
+          mkdir -p _site
+          if [ -f index.html ]; then
+            cp index.html _site/
+          fi
+          # Cada carpeta con su propio index.html = un reto con URL propia en Pages
+          for dir in */; do
+            [ -d "$dir" ] || continue
+            name="${dir%/}"
+            case "$name" in
+              _site) continue ;;
+            esac
+            if [ -f "${name}/index.html" ]; then
+              echo "Incluyendo reto: $name"
+              cp -r "$name" _site/
+            fi
+          done
+          ls -la _site
 
-      - name: Install deps
-        run: npm install
-
-      - name: Build Astro
-        run: npm run build
-
-      - name: Upload Pages
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: _site
 
   deploy:
     needs: build
@@ -44,4 +57,3 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-

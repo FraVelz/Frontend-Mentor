@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor — Retos</title>
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        color: #1e293b;
+        background: #f1f5f9;
+      }
+      body {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0 0 0.5rem;
+      }
+      p {
+        margin: 0 0 1.5rem;
+        color: #64748b;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 0.75rem;
+      }
+      a {
+        display: block;
+        padding: 0.85rem 1rem;
+        background: #fff;
+        color: #0f172a;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+      }
+      a:hover {
+        border-color: #cbd5e1;
+        background: #fafafa;
+      }
+      a span {
+        display: block;
+        font-size: 0.8rem;
+        color: #64748b;
+        margin-top: 0.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Retos Frontend Mentor</h1>
+    <p>
+      Cada carpeta del repositorio es un reto distinto. En GitHub Pages la URL
+      base es <code id="base"></code>; cada reto vive en su propia ruta.
+    </p>
+    <ul>
+      <li>
+        <a href="./qr-code-component/">
+          QR code component
+          <span>/qr-code-component/</span>
+        </a>
+      </li>
+    </ul>
+    <script>
+      document.getElementById("base").textContent =
+        window.location.origin + window.location.pathname.replace(/\/$/, "");
+    </script>
+  </body>
+</html>

@@ -1,53 +1,49 @@
-# Frontend Mentor - QR code component solution
+# Frontend Mentor — varios retos (monorepo)
 
-This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+Este repositorio agrupa **varios retos de Frontend Mentor**, cada uno en **su propia carpeta**. Así mantienes el código separado y, al publicar con **GitHub Pages**, cada reto tiene **su propia URL** dentro del sitio.
 
-## Table of contents
+## Cómo quedan las URLs (GitHub Pages en un proyecto)
 
-- [Overview](#overview)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
+Si el repo se llama `frontend-mentor` y tu usuario es `fravelz`, la base suele ser:
 
-## Overview
+`https://fravelz.github.io/frontend-mentor/`
 
-### Screenshot
+| Contenido | URL de ejemplo |
+|-----------|----------------|
+| Índice (lista de retos) | `https://fravelz.github.io/frontend-mentor/` |
+| Reto QR | `https://fravelz.github.io/frontend-mentor/qr-code-component/` |
 
-![Screenshot](./screenshot.png)
+Las rutas dentro de cada reto (`./styles/`, `./images/`) son **relativas** al `index.html` de esa carpeta, así que no hace falta configurar un “base path” por reto.
 
-### Links
+## Estructura del repo
 
-- Solution URL: [GitHub Repository](https://github.com/your-username/qr-code-component)
-- Live Site URL: [GitHub Pages](https://your-username.github.io/qr-code-component/)
+```
+/
+  index.html              ← página principal con enlaces a cada reto
+  qr-code-component/      ← un reto (HTML, CSS, JS, imágenes…)
+  otro-reto/              ← cuando añadas más, misma idea
+  .github/workflows/      ← despliegue a GitHub Pages
+```
 
-## My process
+## Añadir un reto nuevo
 
-### Built with
+1. Crea una carpeta nueva en la raíz, por ejemplo `nombre-del-reto/`.
+2. Dentro, pon al menos `index.html` (y `styles/`, `js/`, `images/`, etc. como quieras).
+3. Añade un enlace en el `index.html` de la **raíz** del repo (la lista de retos).
+4. Haz push a `main`: el workflow copia automáticamente **cualquier carpeta** que tenga su propio `index.html` al sitio publicado.
 
-- Semantic HTML5 markup
-- [Astro](https://astro.build/) - Static site generator
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- Mobile-first workflow
+No hace falta tocar el workflow salvo casos raros: el script ya incluye esas carpetas en `_site/`.
 
-### What I learned
+## Retos incluidos
 
-Building a simple component with Astro and Tailwind CSS, focusing on semantic structure and responsive layout.
+- [QR code component](./qr-code-component/) — código en `qr-code-component/`.
 
-### Continued development
+## Desarrollo local
 
-Continue practicing with Astro and Tailwind CSS on more complex Frontend Mentor challenges.
+Desde la raíz del repo:
 
-### Useful resources
+```bash
+python3 -m http.server 8080
+```
 
-- [Astro Documentation](https://docs.astro.build/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Outfit Font - Google Fonts](https://fonts.google.com/specimen/Outfit)
-
-## Author
-
-- Frontend Mentor - [@FraVelz](https://www.frontendmentor.io/profile/FraVelz)
+Abre `http://localhost:8080/` para el índice y `http://localhost:8080/qr-code-component/` para el reto.

@@ -2,10 +2,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "./node_modules/.bin/astro dev",
-      "name": "Development server",
+      "command": "python3 -m http.server 8080",
+      "name": "Servidor estático (Python)",
       "request": "launch",
-      "type": "node-terminal"
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}"
     }
   ]
 }
