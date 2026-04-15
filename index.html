@@ -1,77 +1,295 @@
 <!doctype html>
+
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frontend Mentor — Retos</title>
-    <style>
-      :root {
-        font-family: system-ui, sans-serif;
-        line-height: 1.5;
-        color: #1e293b;
-        background: #f1f5f9;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Frontend Mentor — Retos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-deep: #070a0f;
+      --bg-mid: #0f1419;
+      --surface: rgba(22, 27, 34, 0.65);
+      --surface-border: rgba(88, 166, 255, 0.12);
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-soft: rgba(88, 166, 255, 0.14);
+      --accent-glow: rgba(88, 166, 255, 0.35);
+      --card-hover: rgba(22, 27, 34, 0.92);
+      --radius-lg: 1rem;
+      --radius-md: 0.625rem;
+      --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35);
+      --font-sans: "Outfit", system-ui, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font: 400 1rem/1.6 var(--font-sans);
+      color: var(--text);
+      background-color: var(--bg-deep);
+      background-image:
+        radial-gradient(ellipse 120% 80% at 50% -30%, rgba(88, 166, 255, 0.18), transparent 55%),
+        radial-gradient(ellipse 80% 50% at 100% 0%, rgba(163, 113, 247, 0.08), transparent 45%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 55%, #0a0e14 100%);
+      background-attachment: fixed;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--bg-deep);
+    }
+
+    .wrap {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 2rem) 4rem;
+    }
+
+    .hero {
+      margin-bottom: 2rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.75rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 1.5rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      border-radius: 1px;
+    }
+
+    .title {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 0 0 0.75rem;
+      background: linear-gradient(135deg, #fff 0%, #c9d1d9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 36ch;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .info {
+      margin: 1.75rem 0 2.25rem;
+      padding: 1.1rem 1.25rem;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow:
+        var(--shadow-card),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .info p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .info code {
+      font-family: var(--font-mono);
+      font-size: 0.82em;
+      font-weight: 500;
+      color: var(--accent);
+      word-break: break-all;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 0.875rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .challenge-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.15rem;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid rgba(139, 148, 158, 0.15);
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .challenge-link:hover {
+      border-color: rgba(88, 166, 255, 0.35);
+      background: var(--card-hover);
+      box-shadow: 0 0 0 1px var(--accent-soft), 0 12px 40px rgba(0, 0, 0, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .challenge-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .challenge-link:active {
+      transform: translateY(0);
+    }
+
+    .challenge-text {
+      min-width: 0;
+    }
+
+    .challenge-name {
+      display: block;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .challenge-path {
+      display: block;
+      margin-top: 0.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      opacity: 0.95;
+    }
+
+    .challenge-arrow {
+      flex-shrink: 0;
+      width: 2.25rem;
+      height: 2.25rem;
+      display: grid;
+      place-items: center;
+      border-radius: 0.5rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .challenge-link:hover .challenge-arrow {
+      background: rgba(88, 166, 255, 0.22);
+      transform: translateX(3px);
+    }
+
+    .challenge-arrow svg {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .challenge-link,
+      .challenge-arrow {
+        transition: none;
       }
-      body {
-        max-width: 40rem;
-        margin: 0 auto;
-        padding: 2rem 1.25rem 3rem;
+
+      .challenge-link:hover {
+        transform: none;
       }
-      h1 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin: 0 0 0.5rem;
+
+      .challenge-link:hover .challenge-arrow {
+        transform: none;
       }
-      p {
-        margin: 0 0 1.5rem;
-        color: #64748b;
-      }
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      li {
-        margin-bottom: 0.75rem;
-      }
-      a {
-        display: block;
-        padding: 0.85rem 1rem;
-        background: #fff;
-        color: #0f172a;
-        text-decoration: none;
-        border-radius: 0.5rem;
-        border: 1px solid #e2e8f0;
-        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
-      }
-      a:hover {
-        border-color: #cbd5e1;
-        background: #fafafa;
-      }
-      a span {
-        display: block;
-        font-size: 0.8rem;
-        color: #64748b;
-        margin-top: 0.2rem;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Retos Frontend Mentor</h1>
-    <p>
-      Cada carpeta del repositorio es un reto distinto. En GitHub Pages la URL
-      base es <code id="base"></code>; cada reto vive en su propia ruta.
-    </p>
-    <ul>
-      <li>
-        <a href="./qr-code-component/">
-          QR code component
-          <span>/qr-code-component/</span>
-        </a>
-      </li>
-    </ul>
-    <script>
-      document.getElementById("base").textContent =
-        window.location.origin + window.location.pathname.replace(/\/$/, "");
-    </script>
-  </body>
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <p class="eyebrow">Frontend Mentor</p>
+      <h1 class="title">Retos del repositorio</h1>
+      <p class="lead">
+        Colección de soluciones por carpeta. Abre cada enlace para ver el reto en su ruta.
+      </p>
+    </header>
+
+    <div class="info" role="note">
+      <p>
+        En GitHub Pages la URL base es <code id="base"></code>. Cada reto vive en su propia ruta bajo
+        ese origen.
+      </p>
+    </div>
+
+    <section aria-labelledby="challenges-heading">
+      <h2 id="challenges-heading" class="section-label">Retos</h2>
+      <ul>
+        <li>
+          <a class="challenge-link" href="./qr-code-component/">
+            <span class="challenge-text">
+              <span class="challenge-name">QR code component</span>
+              <span class="challenge-path">/qr-code-component/</span>
+            </span>
+            <span class="challenge-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("base").textContent =
+      window.location.origin + window.location.pathname.replace(/\/$/, "");
+  </script>
+</body>
+
 </html>
