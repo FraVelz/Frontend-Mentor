@@ -1,49 +1,26 @@
-# Frontend Mentor — varios retos (monorepo)
+# Retos de Frontend Mentor
 
-Este repositorio agrupa **varios retos de Frontend Mentor**, cada uno en **su propia carpeta**. Así mantienes el código separado y, al publicar con **GitHub Pages**, cada reto tiene **su propia URL** dentro del sitio.
+Este repositorio es una **colección de soluciones** a retos de [Frontend Mentor](https://www.frontendmentor.io): ejercicios de HTML, CSS y JavaScript con diseños reales para practicar maquetación y front-end, de un diseño a un sitio web.
 
-## Cómo quedan las URLs (GitHub Pages en un proyecto)
+> [!NOTE]
+> Aquí cada reto vive en **su propia carpeta** y, cuando el sitio está publicado, puedes abrirlos uno a uno desde un índice en la raíz.
 
-Si el repo se llama `frontend-mentor` y tu usuario es `fravelz`, la base suele ser:
+## Ver los retos en el navegador
 
-`https://fravelz.github.io/frontend-mentor/`
-
-| Contenido | URL de ejemplo |
-|-----------|----------------|
-| Índice (lista de retos) | `https://fravelz.github.io/frontend-mentor/` |
-| Reto QR | `https://fravelz.github.io/frontend-mentor/qr-code-component/` |
-
-Las rutas dentro de cada reto (`./styles/`, `./images/`) son **relativas** al `index.html` de esa carpeta, así que no hace falta configurar un “base path” por reto.
-
-## Estructura del repo
-
-```
-/
-  index.html              ← página principal con enlaces a cada reto
-  qr-code-component/      ← un reto (HTML, CSS, JS, imágenes…)
-  otro-reto/              ← cuando añadas más, misma idea
-  .github/workflows/      ← despliegue a GitHub Pages
-```
-
-## Añadir un reto nuevo
-
-1. Crea una carpeta nueva en la raíz, por ejemplo `nombre-del-reto/`.
-2. Dentro, pon al menos `index.html` (y `styles/`, `js/`, `images/`, etc. como quieras).
-3. Añade un enlace en el `index.html` de la **raíz** del repo (la lista de retos).
-4. Haz push a `main`: el workflow copia automáticamente **cualquier carpeta** que tenga su propio `index.html` al sitio publicado.
-
-No hace falta tocar el workflow salvo casos raros: el script ya incluye esas carpetas en `_site/`.
+Si el proyecto está desplegado en **GitHub Pages**, la página principal suele ser la URL del repositorio en Github Pages, en la url `/` se encuentra el indice de cada reto.
 
 ## Retos incluidos
 
-- [QR code component](./qr-code-component/) — código en `qr-code-component/`.
+- [Componente de código QR](./qr-code-component/) — implementación en la carpeta `qr-code-component/`.
 
-## Desarrollo local
+*(La lista se irá ampliando conforme añadas más retos.)*
 
-Desde la raíz del repo:
+---
 
-```bash
-python3 -m http.server 8080
-```
+En [Notas técnicas](./NOTAS-TECNICAS.md) está el detalle orientado a quien mantiene o audita el proyecto.
 
-Abre `http://localhost:8080/` para el índice y `http://localhost:8080/qr-code-component/` para el reto.
+## Information
+
+**Author:** Fravelz
+
+**License:** MIT

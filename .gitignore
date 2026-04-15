@@ -1,9 +1,0 @@
-# Dependencias y caché de herramientas anteriores
-node_modules/
-.astro/
-
-# macOS-specific files
-.DS_Store
-
-# jetbrains setting folder
-.idea/
