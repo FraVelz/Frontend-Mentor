@@ -4,15 +4,17 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
+- [Frontend Mentor - QR code component solution](#frontend-mentor---qr-code-component-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
 
 ## Overview
 
@@ -22,8 +24,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### Links
 
-- Solution URL: [GitHub Repository](https://github.com/your-username/frontend-mentor)
-- Live Site URL: [GitHub Pages](https://your-username.github.io/frontend-mentor/qr-code-component/) (ajusta usuario y nombre del repo)
+- Solution URL: [GitHub Repository](https://github.com/FraVelz/Frontend-Mentor/tree/main/qr-code-component)
+- Live Site URL: [GitHub Pages](https://fravelz.github.io/Frontend-Mentor/qr-code-component/)
 
 ## My process
 
@@ -36,11 +38,11 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### What I learned
 
-Construir el componente con HTML, CSS y JS sin framework, alineado con el flujo típico de Frontend Mentor.
+Build the component using HTML, CSS, and JS without a framework, following the typical Frontend Mentor workflow.
 
 ### Continued development
 
-Seguir practicando con más retos de Frontend Mentor y refinar accesibilidad y diseño responsive.
+Keep practicing with more Frontend Mentor challenges and refine accessibility and responsive design.
 
 ### Useful resources
 
