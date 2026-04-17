@@ -33,7 +33,6 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Plain JavaScript (estructura lista para añadir interactividad)
 - Mobile-first workflow
 
 ### What I learned
@@ -51,4 +50,4 @@ Keep practicing with more Frontend Mentor challenges and refine accessibility an
 
 ## Author
 
-- Frontend Mentor - [@FraVelz](https://www.frontendmentor.io/profile/FraVelz)
+- Frontend Mentor - [@Fravelz](https://www.frontendmentor.io/profile/FraVelz)
