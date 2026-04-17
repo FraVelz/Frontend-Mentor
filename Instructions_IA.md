@@ -92,6 +92,24 @@ Hasta que eso exista en el README, no inventar columnas nuevas.
 
 ---
 
+## Git y GitHub (Conventional Commits)
+
+Cada vez que se **termine** esta rutina (README e `index.html` actualizados y comprobados), **subir los cambios a GitHub**: hacer *commit* y *push* al remoto habitual (`origin`), usando **[Conventional Commits](https://www.conventionalcommits.org/)**.
+
+Formato general: `<tipo>[ámbito opcional]: <descripción breve en imperativo>`
+
+- Para este flujo encajan bien tipos como **`docs`** (documentación / índice del repo) o **`chore`** (tareas de mantenimiento sin cambiar la lógica de un reto).
+- La descripción debe ser clara (p. ej. qué reto se añade a la lista).
+
+Ejemplos orientativos:
+
+- `docs: add social-links-profile to root index and README`
+- `docs(challenges): list blog-preview-card in README and index`
+
+Si el *commit* agrupa solo estos archivos de la raíz, el mensaje puede mencionar «challenges», «index» o el nombre de la carpeta del reto para que el historial sea fácil de leer.
+
+---
+
 ## Checklist al añadir un reto
 
 1. Confirmar **nombre de carpeta** y **títulos** (README en español, nombre FM en el índice si mantienes la convención actual).
@@ -99,12 +117,13 @@ Hasta que eso exista en el README, no inventar columnas nuevas.
 3. Editar **index.html**: un nuevo `<li>` con la plantilla de arriba.
 4. Revisar en local que el enlace relativo `./nombre-carpeta/` abre el `index` del reto.
 5. No cambiar estilos globales de `index.html` ni secciones que no sean la lista.
+6. **Subir a GitHub**: `git add`, *commit* con mensaje **Conventional Commits**, y `git push` (rama en la que trabajes, p. ej. `main`).
 
 ---
 
 ## Salida esperada del asistente
 
-Tras los cambios, el resultado debe ser **aplicable de inmediato**: difs claros en `README.md` y `index.html` (o archivos completos si el flujo de trabajo lo pide), sin rodeos innecesarios.
+Tras los cambios, el resultado debe ser **aplicable de inmediato**: difs claros en `README.md` y `index.html` (o archivos completos si el flujo de trabajo lo pide), sin rodeos innecesarios. Si el entorno permite ejecutar Git de forma segura, incluir también el **commit y push** con Conventional Commits según la sección anterior.
 
 ---
 
@@ -115,3 +134,4 @@ Tras los cambios, el resultado debe ser **aplicable de inmediato**: difs claros 
 | ¿Mismo formato que los retos ya listados? | Sí, siempre.                |
 | ¿Tocar CSS o el hero de `index.html`?     | No, al solo añadir un reto. |
 | ¿Falta el nombre de la carpeta?           | Preguntar; no adivinar.     |
+| ¿Commit y push tras actualizar índice?    | Sí; Conventional Commits.   |
