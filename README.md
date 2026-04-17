@@ -13,6 +13,7 @@ Si el proyecto está desplegado en **GitHub Pages**, la página principal suele 
 
 - [Componente de código QR](./qr-code-component/) — implementación en la carpeta `qr-code-component/`.
 - [Tarjeta de vista previa de blog](./blog-preview-card/) — implementación en la carpeta `blog-preview-card/`.
+- [Perfil de enlaces sociales](./social-links-profile/) — implementación en la carpeta `social-links-profile/`.
 
 *(La lista se irá ampliando conforme añadas más retos.)*
 
