@@ -1,0 +1,20 @@
+ul.list {
+  counter-reset: step;
+}
+
+.step-counter {
+  counter-increment: step;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 1.5rem;
+  min-width: 1.5rem;
+
+  font-weight: bold;
+  color: #854632;
+}
+
+.step-counter::before {
+  content: counter(step) ".";
+}

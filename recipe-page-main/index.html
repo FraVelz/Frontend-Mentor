@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Recipe page</title>
+
+  <link rel="stylesheet" href="./styles/font.css" />
+  <link rel="stylesheet" href="./styles/list-ol.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="md:py-32 min-h-screen w-screen flex justify-center bg-[#F3E5D7]">
+  <main class="md:rounded-[2rem] lg:max-w-[736px] md:max-w-[616px] max-w-[736px] bg-white">
+    <div class="md:px-10 md:pt-10">
+      <img class="w-full md:rounded-[1rem]" src="./assets/images/image-omelette.jpeg" alt="Omelette">
+    </div>
+
+    <div class="flex flex-col gap-8 px-8 py-10 md:p-10">
+      <div class="flex flex-col gap-6">
+        <h1 class="title md:text-[40px]">Simple Omelette Recipe</h1>
+
+        <p class="text-[#5F564D]">
+          An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked
+          to perfection, optionally filled with your choice of cheese, vegetables, or meats.
+        </p>
+      </div>
+
+      <div class="p-6 bg-[#FFF7FB] rounded-md">
+
+        <h2 class="preparation-time text-[#7A284E] mb-4">Preparation time</h2>
+
+        <ul class="space-y-2 text-[#5F564D]">
+          <li class="flex items-start gap-4 ml-2">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#5F564D] shrink-0"></span>
+            <span><strong>Total:</strong> Approximately 10 minutes</span>
+          </li>
+
+          <li class="flex items-start gap-4 ml-2">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#5F564D] shrink-0"></span>
+            <span><strong>Preparation:</strong> 5 minutes</span>
+          </li>
+
+          <li class="flex items-start gap-4 ml-2">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#5F564D] shrink-0"></span>
+            <span><strong>Cooking:</strong> 5 minutes</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h2 class="title-h2 text-[#854632]">Ingredients</h2>
+
+        <ul class="space-y-2 text-[#5F564D]">
+          <li class="flex items-start gap-4 ml-2">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#854632] shrink-0"></span>
+            <span>2-3 large eggs</span>
+          </li>
+
+          <li class="flex items-start gap-4 ml-2">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#854632] shrink-0"></span>
+            <span>Salt, to taste</span>
+          </li>
+
+          <li class="flex items-start gap-4 ml-2">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#854632] shrink-0"></span>
+            <span>Pepper, to taste</span>
+          </li>
+
+          <li class="flex items-start gap-4 ml-2">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#854632] shrink-0"></span>
+            <span>1 tablespoon of butter or oil</span>
+          </li>
+
+          <li class="flex items-start gap-4 ml-2">
+            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#854632] shrink-0"></span>
+            <span>Optional fillings: cheese, diced vegetables, cooked meats, herbs</span>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="text-[#E3DDD7]" />
+
+      <div class="flex flex-col gap-6">
+        <h2 class="title-h2 text-[#854632]">Instructions</h2>
+
+        <ul class="space-y-2 text-[#5F564D] counter-reset list">
+
+          <li class="flex items-start gap-1 ml-1">
+            <span class="step-counter"></span>
+            <span>
+              <strong>Beat the eggs:</strong>
+              In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a
+              tablespoon of water or milk for a fluffier texture.
+            </span>
+          </li>
+
+          <li class="flex items-start gap-1 ml-1">
+            <span class="step-counter"></span>
+            <span>
+              <strong>Heat the pan:</strong>
+              Place a non-stick frying pan over medium heat and add butter or oil.
+            </span>
+          </li>
+
+          <li class="flex items-start gap-1 ml-1">
+            <span class="step-counter"></span>
+            <span>
+              <strong>Cook the omelette:</strong>
+              Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the
+              surface.
+            </span>
+          </li>
+
+          <li class="flex items-start gap-1 ml-1">
+            <span class="step-counter"></span>
+            <span>
+              <strong>Add fillings (optional):</strong>
+              When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen
+              fillings over one half of the omelette.
+            </span>
+          </li>
+
+          <li class="flex items-start gap-1 ml-1">
+            <span class="step-counter"></span>
+            <span>
+              <strong>Fold and serve:</strong>
+              As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for
+              another minute, then slide it onto a plate.
+            </span>
+          </li>
+
+          <li class="flex items-start gap-1 ml-1">
+            <span class="step-counter"></span>
+            <span>
+              <strong>Enjoy:</strong>
+              Serve hot, with additional salt and pepper if needed.
+            </span>
+          </li>
+
+        </ul>
+      </div>
+
+      <hr class="text-[#E3DDD7]" />
+
+      <div class="flex flex-col gap-6">
+        <h2 class="title-h2 text-[#854632]">Nutrition</h2>
+
+        <p class="text-[#5F564D]">The table below shows nutritional values per serving without the
+          additional fillings.
+        </p>
+
+
+        <table class="text-left">
+          <tr class="border-b border-[#E3DDD7]">
+            <th class="font-normal py-3 px-6">Calories</th>
+            <th class="font-bold text-[#854632]">277kcal</th>
+          </tr>
+          <tr class="border-b border-[#E3DDD7]">
+            <td class="py-3 px-6">Carbs</td>
+            <td class="font-bold text-[#854632]">0g</td>
+          </tr>
+          <tr class="border-b border-[#E3DDD7]">
+            <td class="py-3 px-6">Protein</td>
+            <td class="font-bold text-[#854632]">20g</td>
+          </tr>
+          <tr class="border-b border-[#E3DDD7]">
+            <td class="py-3 px-6">Fat</td>
+            <td class="font-bold text-[#854632]">22g</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
