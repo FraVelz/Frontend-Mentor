@@ -12,6 +12,7 @@ Si el proyecto está desplegado en **GitHub Pages**, la página principal suele 
 ## Retos incluidos
 
 - [Componente de código QR](./qr-code-component/) — implementación en la carpeta `qr-code-component/`.
+- [Tarjeta de vista previa de blog](./blog-preview-card/) — implementación en la carpeta `blog-preview-card/`.
 
 *(La lista se irá ampliando conforme añadas más retos.)*
 
