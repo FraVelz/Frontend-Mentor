@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Blog preview card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @font-face {
+      font-family: 'Figtree';
+      /* Nombre personalizado */
+      src: url('./assets/fonts/static/Figtree-ExtraBold.ttf') format('truetype');
+      /* Rutas locales */
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Figtree';
+      src: url('./assets/fonts/static/Figtree-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+
+    :root {
+      --color-brand-primary: hsl(47, 88%, 63%);
+
+      --color-bg-card: hsl(0, 0%, 100%);
+      --color-text-main: hsl(0, 0%, 7%);
+      --color-text-muted: hsl(0, 0%, 42%);
+
+      --color-border-soft: hsl(0, 0%, 7%);
+
+      --spacing-md: 24px;
+      --spacing-sm: 12px;
+      --spacing-xs: 8px;
+      --spacing-xxs: 4px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: var(--color-brand-primary);
+    }
+
+    .container {
+      max-width: 384px;
+
+      background-color: var(--color-bg-card);
+      margin: var(--spacing-md);
+      padding: var(--spacing-md);
+
+      border: 1px solid var(--color-border-soft);
+      border-radius: var(--spacing-md);
+      box-shadow: 10px 10px 0px var(--color-border-soft);
+    }
+
+    .img {
+      width: 100%;
+      margin-bottom: var(--spacing-md);
+      border-radius: var(--spacing-sm);
+    }
+
+    .tag {
+      width: fit-content;
+
+      font-family: 'Figtree';
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0px;
+      line-height: 1.5;
+
+      padding: var(--spacing-xxs) var(--spacing-sm);
+      margin-bottom: var(--spacing-sm);
+      border-radius: var(--spacing-xs);
+      background-color: var(--color-brand-primary);
+    }
+
+    .date {
+      font-family: 'Figtree';
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0px;
+      line-height: 1.5;
+
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .title {
+      font-family: 'Figtree';
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: 0px;
+      line-height: 1.5;
+
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .description {
+      font-family: 'Figtree';
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0px;
+      line-height: 1.5;
+
+      margin-bottom: var(--spacing-md);
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+
+      font-weight: bold;
+    }
+
+    .user img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    .user {
+      font-family: 'Figtree';
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <img class="img" src="./assets/images/illustration-article.svg" alt="">
+    <p class="tag">
+      Learning</p>
+
+    <p class="date">
+      Published 21 Dec 2023
+    </p>
+
+    <h1 class="title">HTML & CSS foundations</h1>
+
+    <p class="description">These languages are the backbone of every website, defining structure, content, and
+      presentation.</p>
+
+    <div class="user">
+      <img src="./assets/images/image-avatar.webp" alt="Image Greg Hooper">
+      Greg Hooper
+    </div>
+  </main>
+</body>
+
+</html>
