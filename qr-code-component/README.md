@@ -37,7 +37,7 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ### What I learned
 
-Build the component using HTML, CSS, and JS without a framework, following the typical Frontend Mentor workflow.
+Build the component using HTML, CSS, following the typical Frontend Mentor workflow.
 
 ### Continued development
 

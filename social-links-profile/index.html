@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Social links profile</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('./assets/fonts/static/Inter-Bold.ttf') format('truetype');
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      src: url('./assets/fonts/static/Inter-SemiBold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      src: url('./assets/fonts/static/Inter-Regular.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      letter-spacing: 0px;
+    }
+
+    .location {
+      font-weight: 800;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      letter-spacing: 0px;
+    }
+
+    .description {
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      letter-spacing: 0px;
+    }
+
+    .social-links {
+      font-weight: 800;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      letter-spacing: 0px;
+    }
+  </style>
+</head>
+
+<body class="
+  md:p-10 bg-[#141414]
+  h-screen flex items-center justify-center
+">
+
+  <main class="
+    md:max-w-96 md:m-0 md:p-10 
+    w-full m-6 p-6 min-w-[313px] h-fit bg-[#1F1F1F] 
+    flex flex-col gap-6 text-center rounded-lg
+  ">
+
+    <img draggable="false" class="select-none size-[5.5rem] rounded-full m-auto"
+      src="./assets/images/avatar-jessica.jpeg" alt="Jessica Randall">
+
+    <div class="flex flex-col gap-1">
+      <h1 class="title text-white">Jessica Randall</h1>
+      <h2 class="location text-[#c4f82a]">London, United Kingdom</h2>
+    </div>
+
+    <p class="description text-white">"Front-end developer and avid reader."</p>
+
+    <ol class="flex flex-col gap-4">
+      <li
+        class="social-links p-3 hover:bg-[#c4f82a] hover:text-[#333] transition-all duration-500 bg-[#333333] rounded-xl text-white w-full">
+        <a class="min-w-full min-h-full block" href="#">GitHub</a>
+      </li>
+      <li
+        class="social-links p-3 hover:bg-[#c4f82a] hover:text-[#333] transition-all duration-500 bg-[#333333] rounded-xl text-white w-full">
+        <a class="min-w-full min-h-full block" href="#">Frontend Mentor</a>
+      </li>
+      <li
+        class="social-links p-3 hover:bg-[#c4f82a] hover:text-[#333] transition-all duration-500 bg-[#333333] rounded-xl text-white w-full">
+        <a class="min-w-full min-h-full block" href="#">LinkedIn</a>
+      </li>
+      <li
+        class="social-links p-3 hover:bg-[#c4f82a] hover:text-[#333] transition-all duration-500 bg-[#333333] rounded-xl text-white w-full">
+        <a class="min-w-full min-h-full block" href="#">Twitter</a>
+      </li>
+      <li
+        class="social-links p-3 hover:bg-[#c4f82a] hover:text-[#333] transition-all duration-500 bg-[#333333] rounded-xl text-white w-full">
+        <a class="min-w-full min-h-full block" href="#">Instagram</a>
+      </li>
+    </ol>
+  </main>
+</body>
+
+</html>
