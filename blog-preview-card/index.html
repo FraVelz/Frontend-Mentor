@@ -43,6 +43,15 @@
       --spacing-sm: 12px;
       --spacing-xs: 8px;
       --spacing-xxs: 4px;
+
+      --font-sm: 0.75rem;
+      /* 12px; */
+      --font-md: 0.875rem;
+      /* 14px; */
+      --font-lg: 1rem;
+      /* 16px; */
+      --font-xl: 1.5rem;
+      /* 20px; */
     }
 
     * {
@@ -54,6 +63,9 @@
     body {
       height: 100vh;
 
+      font-family: 'Figtree', -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -62,7 +74,7 @@
     }
 
     .container {
-      max-width: 384px;
+      max-width: 24rem;
 
       background-color: var(--color-bg-card);
       margin: var(--spacing-md);
@@ -71,58 +83,63 @@
       border: 1px solid var(--color-border-soft);
       border-radius: var(--spacing-md);
       box-shadow: 10px 10px 0px var(--color-border-soft);
+
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
     }
 
     .img {
       height: 200px;
       width: 100%;
-      margin-bottom: var(--spacing-md);
       border-radius: var(--spacing-sm);
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
     }
 
     .tag {
       width: fit-content;
 
-      font-family: 'Figtree';
       font-weight: 800;
-      font-size: 12px;
+      font-size: var(--font-md);
       letter-spacing: 0px;
       line-height: 1.5;
 
       padding: var(--spacing-xxs) var(--spacing-sm);
-      margin-bottom: var(--spacing-sm);
-      border-radius: var(--spacing-xs);
+      border-radius: var(--spacing-xxs);
       background-color: var(--color-brand-primary);
     }
 
     .date {
-      font-family: 'Figtree';
       font-weight: 500;
-      font-size: 12px;
+      font-size: var(--font-md);
       letter-spacing: 0px;
       line-height: 1.5;
-
-      margin-bottom: var(--spacing-sm);
     }
 
     .title {
-      font-family: 'Figtree';
+      cursor: pointer;
+
       font-weight: 800;
-      font-size: 20px;
+      font-size: var(--font-xl);
       letter-spacing: 0px;
       line-height: 1.5;
+    }
 
-      margin-bottom: var(--spacing-sm);
+    .title:hover {
+      color: var(--color-brand-primary);
     }
 
     .description {
-      font-family: 'Figtree';
       font-weight: 500;
-      font-size: 14px;
+      font-size: var(--font-lg);
       letter-spacing: 0px;
       line-height: 1.5;
 
-      margin-bottom: var(--spacing-md);
       color: var(--color-text-muted);
     }
 
@@ -131,7 +148,10 @@
       align-items: center;
       gap: var(--spacing-sm);
 
-      font-weight: bold;
+      font-weight: 800;
+      font-size: var(--font-md);
+      letter-spacing: 0px;
+      line-height: 1.5;
     }
 
     .user img {
@@ -139,34 +159,29 @@
       height: 32px;
       border-radius: 50%;
     }
-
-    .user {
-      font-family: 'Figtree';
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: 0px;
-      line-height: 1.5;
-    }
   </style>
 </head>
 
 <body>
   <main class="container">
-    <img class="img" src="./assets/images/illustration-article.svg" alt="">
-    <p class="tag">
-      Learning</p>
+    <img draggable="false" class="img" src="./assets/images/illustration-article.svg" alt="">
 
-    <p class="date">
-      Published 21 Dec 2023
-    </p>
+    <div class="content">
+      <p class="tag">
+        Learning</p>
 
-    <h1 class="title">HTML & CSS foundations</h1>
+      <p class="date">
+        Published 21 Dec 2023
+      </p>
 
-    <p class="description">These languages are the backbone of every website, defining structure, content, and
-      presentation.</p>
+      <h1 class="title">HTML & CSS foundations</h1>
+
+      <p class="description">These languages are the backbone of every website, defining structure, content, and
+        presentation.</p>
+    </div>
 
     <div class="user">
-      <img src="./assets/images/image-avatar.webp" alt="Greg Hooper">
+      <img draggable="false" src="./assets/images/image-avatar.webp" alt="Greg Hooper">
       Greg Hooper
     </div>
   </main>
