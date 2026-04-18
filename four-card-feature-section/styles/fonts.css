@@ -19,13 +19,6 @@ body {
   letter-spacing: 0.25px;
 }
 
-@media (min-width: 768px) {
-  .title-h1-span1,
-  .title-h1-span2 {
-    font-size: 2.25rem;
-  }
-}
-
 .general-description {
   font-size: 0.9375rem;
   line-height: 1.4;
