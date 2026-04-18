@@ -20,7 +20,7 @@ This is a solution to the [Four card feature section challenge on Frontend Mento
 
 ### Screenshot
 
-![Design preview](./design/desktop-preview.jpg)
+![Design preview](./screenshot.png)
 
 ### Links
 
