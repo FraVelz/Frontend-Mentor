@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <link rel="stylesheet" href="./styles/font.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="bg-[#F2EAE2] flex justify-center items-center h-screen">
+  <main class="
+    bg-white rounded-[0.5rem]
+    flex flex-col max-w-[350px] max-md:overflow-hidden
+    md:flex-row md:max-w-[600px]
+  ">
+    <picture>
+      <source srcset="./images/image-product-desktop.jpg" media="(min-width: 768px)">
+      <img class="md:min-w-[300px] md:min-h-[456px]" src="./images/image-product-mobile.jpg" alt="Perfume">
+    </picture>
+
+    <div class="p-8 flex flex-col gap-6">
+      <p class="tag text-[#6C7289]">Perfume</p>
+      <h1 class="title text-[#1C232B]">Gabrielle Essence Eau De Parfum</h1>
+
+      <p class="description text-[#6C7289]">
+        A floral, solar and voluptuous interpretation composed by Olivier Polge,
+        Perfumer-Creator for the House of CHANEL.
+      </p>
+
+      <p class="
+      price text-[#3D8168]
+      flex items-center gap-2
+      ">
+        $149.99
+        <span class="text-[#6C7289]">$169.99</span>
+      </p>
+
+      <button class="
+        button bg-[#3D8168] hover:bg-[#1A4032]
+        flex px-8 py-4 cursor-pointer
+        justify-center gap-2
+        rounded-[0.5rem] text-white
+      ">
+        <img src="./images/icon-cart.svg" alt="Cart">
+        Add to Cart
+      </button>
+    </div>
+  </main>
+</body>
+
+</html>
