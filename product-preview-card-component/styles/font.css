@@ -1,0 +1,64 @@
+/* 
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+body {
+  /* font-family: "Outfit", sans-serif; */
+  /* font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  color: #5f564d; */
+}
+
+.tag {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 5px;
+}
+
+.title {
+  font-family: "Fraunces", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0px;
+}
+
+.price {
+  font-family: "Fraunces", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.price span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0px;
+}
+
+.button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0px;
+}
