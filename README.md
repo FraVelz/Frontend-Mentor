@@ -16,6 +16,7 @@ Si el proyecto está desplegado en **GitHub Pages**, la página principal suele 
 - [Perfil de enlaces sociales](./social-links-profile/) — implementación en la carpeta `social-links-profile/`.
 - [Página de receta](./recipe-page/) — implementación en la carpeta `recipe-page/`.
 - [Tarjeta de vista previa de producto](./product-preview-card-component/) — implementación en la carpeta `product-preview-card-component/`.
+- [Sección de cuatro tarjetas](./four-card-feature-section/) — implementación en la carpeta `four-card-feature-section/`.
 
 *(La lista se irá ampliando conforme añadas más retos.)*
 
