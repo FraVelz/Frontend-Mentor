@@ -9,7 +9,7 @@ Documento de referencia para **ti** y para el **asistente de IA** cuando se inco
 | Archivo / ubicación                         | Rol                                                                 |
 | ------------------------------------------- | ------------------------------------------------------------------- |
 | `README.md` (raíz)                          | Lista de retos en Markdown, enlaces relativos a cada carpeta. |
-| `index.html` (raíz)                         | Página índice servida en la raíz del sitio (p. ej. GitHub Pages). |
+| `index.html` (raíz)                         | Página índice (GitHub Pages): **Tailwind CSS** (CDN), cuadrícula de **tarjetas** con captura por reto. |
 | `readme-template.md` (raíz)                 | Plantilla para el README de cada reto; base para generar `nombre-reto/README.md` (personalizar en la carpeta, no dejar la plantilla dentro del reto). |
 | `nombre-reto/README.md`                     | Documentación de la solución (estructura alineada con retos ya hechos en este repo). |
 
@@ -23,7 +23,7 @@ En Cursor, la regla `.cursor/rules/actualizar-retos-frontend-mentor.mdc` recuerd
 
 ## Principios
 
-1. **Copiar el patrón existente** del último reto añadido (formato de línea en README, bloque de tarjeta en `index.html`).
+1. **Copiar el patrón existente** del último reto añadido (formato de línea en README, bloque `<li>` de tarjeta en `index.html` con las mismas clases Tailwind que el resto).
 2. **No rediseñar** la página ni reestructurar secciones salvo petición explícita.
 3. **No reescribir** entradas de retos anteriores salvo correcciones acordadas.
 4. **Un reto = una carpeta**; el nombre de carpeta suele coincidir con el del proyecto en Frontend Mentor (kebab-case).
@@ -54,27 +54,53 @@ La nota *(La lista se irá ampliando…)* debe mantenerse debajo de la lista si 
 
 ## Patrón actual: `index.html`
 
-- La lista está en `<section aria-labelledby="challenges-heading">`, dentro de `<ul>`.
-- Cada reto es un `<li>` con un único `<a class="challenge-link" href="./nombre-carpeta/">`.
-- **Nombre visible** (`challenge-name`): convención del reto en Frontend Mentor (a menudo en inglés, como en el diseño).
-- **Ruta** (`challenge-path`): `/<nombre-carpeta>/` con barra inicial en el texto.
-- Conservar la **misma estructura HTML** (spans, SVG de flecha, clases) que el último ítem; solo sustituir textos y `href`.
+### Tecnología y layout
 
-Plantilla para un nuevo ítem (sustituir `NOMBRE-CARPETA` y `Título del reto FM`):
+- **Tailwind CSS v4** cargado con `<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>` en el `<head>` (sin hoja CSS propia grande en la raíz).
+- Fuentes: **Outfit** y **JetBrains Mono** vía Google Fonts (enlaces ya presentes en el `<head>`).
+- La lista de retos está en `<section aria-labelledby="challenges-heading">`. El encabezado visible de la sección usa `id="challenges-heading"` (texto actual: **«Proyectos»**).
+- Dentro de la sección, un `<ul>` con clases de **cuadrícula responsive** (`grid`, `grid-cols-1`, `sm:grid-cols-2`, `xl:grid-cols-3`, etc.) y cada reto es un `<li>`.
+
+### Cada tarjeta (reto)
+
+- Un único `<a>` envuelve **toda** la tarjeta: imagen de captura + pie con título, ruta y flecha SVG.
+- **Copiar un `<li>…</li>` completo** de un reto ya listado y sustituir solo lo variable (no inventar nuevas clases Tailwind en el enlace si el resto de tarjetas comparte la misma cadena de utilidades).
+- **`href`**: `./nombre-carpeta/` (misma convención que antes).
+- **Nombre visible** del reto: convención **Frontend Mentor** (a menudo en **inglés**, como en el diseño del challenge).
+- **Ruta mostrada** en monoespaciada: `/<nombre-carpeta>/` con barra inicial.
+- **Imagen**: `src` relativo a la carpeta del reto. Preferir **`./nombre-carpeta/screenshot.png`** cuando exista en el repo (alineado con el README del reto). Si aún no hay `screenshot.png`, usar **`./nombre-carpeta/preview.jpg`** u otro archivo de vista previa que sí exista en esa carpeta (evitar rutas rotas).
+- **`alt` del `<img>`**: descriptivo, p. ej. `Captura del reto …` con el título del reto.
+- Atributos recomendados en la imagen: `width`, `height`, `loading="lazy"`, `decoding="async"`. Contenedor de la imagen: proporción tipo `aspect-[16/10]`, `object-cover object-top` en la imagen.
+- El bloque del pie mantiene la misma estructura: título en un `<span>`, ruta en otro `<span>`, icono de flecha en un `<span aria-hidden="true">` con el mismo SVG que el resto de tarjetas.
+
+### Plantilla mínima (sustituir `NOMBRE-CARPETA`, `Título del reto FM` y la ruta del `src`)
+
+El atributo `class` del `<a>` y las clases del contenedor de la tarjeta deben ser **idénticos** a los de cualquier tarjeta ya existente en el archivo (copiar/pegar el bloque entero desde un `<li>` previo y editar solo textos, `href` e `img`).
 
 ```html
 <li>
-  <a class="challenge-link" href="./NOMBRE-CARPETA/">
-    <span class="challenge-text">
-      <span class="challenge-name">Título del reto FM</span>
-      <span class="challenge-path">/NOMBRE-CARPETA/</span>
-    </span>
-    <span class="challenge-arrow" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-        stroke-linejoin="round">
-        <path d="M5 12h14M13 6l6 6-6 6" />
-      </svg>
-    </span>
+  <a class="… mismas clases Tailwind que el resto de tarjetas …" href="./NOMBRE-CARPETA/">
+    <div class="relative aspect-[16/10] overflow-hidden bg-slate-900/80">
+      <img
+        src="./NOMBRE-CARPETA/screenshot.png"
+        alt="Captura del reto Título del reto FM"
+        width="640"
+        height="400"
+        loading="lazy"
+        decoding="async"
+        class="h-full w-full object-cover object-top transition duration-300 motion-safe:group-hover:scale-[1.03] motion-reduce:group-hover:scale-100" />
+    </div>
+    <div class="flex flex-1 items-start justify-between gap-3 p-4 sm:p-5">
+      <div class="min-w-0">
+        <span class="block text-base font-semibold tracking-tight text-slate-100">Título del reto FM</span>
+        <span class="mt-1 block truncate font-['JetBrains_Mono',ui-monospace,monospace] text-xs font-medium text-sky-400/95">/NOMBRE-CARPETA/</span>
+      </div>
+      <span class="… mismas clases que el ícono de flecha …" aria-hidden="true">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </span>
+    </div>
   </a>
 </li>
 ```
@@ -163,9 +189,9 @@ Tras el o los commits: `git push origin <rama>`. Sin push, la rutina queda incom
 1. Confirmar **nombre de carpeta** y **títulos** (README de la raíz en español, nombre FM en el índice si mantienes la convención actual).
 2. En la carpeta del reto: **eliminar** el README de Frontend Mentor; **eliminar** `AGENTS.md` y `CLAUDE.md` si existen; **generar** `README.md` desde `readme-template.md` y **configurarlo** como los README de retos ya hechos (enlaces, secciones, screenshot).
 3. Editar **README.md** (raíz): un nuevo ítem en «Retos incluidos» con el formato de arriba.
-4. Editar **index.html**: un nuevo `<li>` con la plantilla de arriba.
-5. Revisar en local que el enlace relativo `./nombre-carpeta/` abre el `index` del reto.
-6. No cambiar estilos globales de `index.html` ni secciones que no sean la lista.
+4. Editar **index.html**: duplicar un `<li>` de tarjeta existente (mismas clases Tailwind en el enlace y en el contenedor del icono), ajustar `href`, imagen (`src` / `alt`), título visible y ruta; colocar el nuevo ítem **al final** del `<ul>` salvo criterio distinto acordado.
+5. Revisar en local que el enlace relativo `./nombre-carpeta/` abre el `index` del reto y que la **captura** se ve (ruta del `src` correcta).
+6. Al solo añadir un reto: **no** cambiar el `<head>` (CDN de Tailwind, fuentes), el hero, la caja informativa con `#base`, el script final ni la configuración del **grid**; limitarse a un `<li>` más en la lista.
 7. **Cierre en Git**: incluir en el *stage* **todos** los archivos de ese trabajo (raíz + carpeta del reto, etc.). *Commit* con **Conventional Commits** alineado con `git log` del repo (inglés, tipo `docs` / `docs(challenges)` / `chore` / `feat` / `fix` según el caso). **`git push`** a `origin` en la rama activa. No omitir el push al terminar.
 
 ---
@@ -182,6 +208,6 @@ Tras los cambios, el resultado debe ser **aplicable de inmediato**: difs claros 
 | ----------------------------------------- | --------------------------- |
 | ¿Mismo formato que los retos ya listados? | Sí, siempre.                |
 | ¿README dentro de `nombre-reto/`?         | Sustituir el de FM; usar plantilla raíz y alinear con retos hechos; quitar `AGENTS.md`/`CLAUDE.md` en la carpeta. |
-| ¿Tocar CSS o el hero de `index.html`?     | No, al solo añadir un reto. |
+| ¿Tocar Tailwind global, hero o grid de `index.html`? | No, al solo añadir un reto; solo un `<li>` nuevo con la misma plantilla de tarjeta. |
 | ¿Falta el nombre de la carpeta?           | Preguntar; no adivinar.     |
 | ¿Commit y push al terminar (índice, reto, subir proyecto)? | Sí: *stage* completo, Conventional Commits al estilo del `git log`, y `git push` a `origin`. |
