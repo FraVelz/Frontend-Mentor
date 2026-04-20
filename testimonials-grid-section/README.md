@@ -20,7 +20,7 @@ This is a solution to the [Testimonials grid section challenge on Frontend Mento
 
 ### Screenshot
 
-![Screenshot](./preview.jpg)
+![Screenshot](./screenshot.png)
 
 ### Links
 
