@@ -232,9 +232,56 @@
     </section>
   </main>
 
+  <footer
+    class="border-t border-white/10 bg-slate-950/80 backdrop-blur-sm"
+    aria-label="Pie de página">
+    <div
+      class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
+      <div class="max-w-md">
+        <p class="text-sm font-semibold text-slate-200">(FV) Fravelz</p>
+        <p class="mt-2 text-sm leading-relaxed text-slate-400">
+          Colección de soluciones a retos de Frontend Mentor. Código bajo licencia
+          <a class="text-sky-400 underline decoration-sky-400/40 underline-offset-2 transition hover:text-sky-300 hover:decoration-sky-300"
+            href="https://github.com/FraVelz/Frontend-Mentor/blob/main/LICENSE">MIT</a>.
+        </p>
+      </div>
+      <nav aria-label="Enlaces del autor y del proyecto">
+        <p class="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-500">Enlaces</p>
+        <ul class="mt-3 flex list-none flex-col gap-2 text-sm [&>li]:m-0 [&>li]:p-0">
+          <li>
+            <a class="text-slate-300 transition hover:text-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400"
+              href="https://www.frontendmentor.io/profile/FraVelz" rel="noopener noreferrer" target="_blank">Perfil en
+              Frontend Mentor</a>
+          </li>
+          <li>
+            <a class="text-slate-300 transition hover:text-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400"
+              href="https://github.com/FraVelz" rel="noopener noreferrer" target="_blank">GitHub — FraVelz</a>
+          </li>
+          <li>
+            <a class="text-slate-300 transition hover:text-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400"
+              href="https://github.com/FraVelz/Frontend-Mentor" rel="noopener noreferrer" target="_blank">Repositorio
+              Frontend-Mentor</a>
+          </li>
+          <li>
+            <a class="text-slate-300 transition hover:text-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400"
+              href="https://www.frontendmentor.io/" rel="noopener noreferrer" target="_blank">Frontend Mentor</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-white/5 py-4 text-center">
+      <p class="text-xs text-slate-500">
+        © <span id="footer-year">2026</span> Fravelz · Hecho para practicar con
+        <a class="text-sky-500/90 underline decoration-sky-500/30 underline-offset-2 hover:text-sky-400"
+          href="https://www.frontendmentor.io/" rel="noopener noreferrer" target="_blank">Frontend Mentor</a>
+      </p>
+    </div>
+  </footer>
+
   <script>
     document.getElementById("base").textContent =
       window.location.origin + window.location.pathname.replace(/\/$/, "");
+    document.getElementById("footer-year").textContent = String(new Date().getFullYear());
   </script>
 </body>
 
