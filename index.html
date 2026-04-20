@@ -14,356 +14,217 @@
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
 
-  <style>
-    :root {
-      --bg-deep: #070a0f;
-      --bg-mid: #0f1419;
-      --surface: rgba(22, 27, 34, 0.65);
-      --surface-border: rgba(88, 166, 255, 0.12);
-      --text: #e6edf3;
-      --text-muted: #8b949e;
-      --accent: #58a6ff;
-      --accent-soft: rgba(88, 166, 255, 0.14);
-      --accent-glow: rgba(88, 166, 255, 0.35);
-      --card-hover: rgba(22, 27, 34, 0.92);
-      --radius-lg: 1rem;
-      --radius-md: 0.625rem;
-      --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35);
-      --font-sans: "Outfit", system-ui, sans-serif;
-      --font-mono: "JetBrains Mono", ui-monospace, monospace;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font: 400 1rem/1.6 var(--font-sans);
-      color: var(--text);
-      background-color: var(--bg-deep);
-      background-image:
-        radial-gradient(ellipse 120% 80% at 50% -30%, rgba(88, 166, 255, 0.18), transparent 55%),
-        radial-gradient(ellipse 80% 50% at 100% 0%, rgba(163, 113, 247, 0.08), transparent 45%),
-        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 55%, #0a0e14 100%);
-      background-attachment: fixed;
-    }
-
-    ::selection {
-      background: var(--accent);
-      color: var(--bg-deep);
-    }
-
-    .wrap {
-      max-width: 44rem;
-      margin: 0 auto;
-      padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 2rem) 4rem;
-    }
-
-    .hero {
-      margin-bottom: 2rem;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin: 0 0 0.75rem;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 1.5rem;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-      border-radius: 1px;
-    }
-
-    .title {
-      font-size: clamp(1.75rem, 4vw, 2.25rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin: 0 0 0.75rem;
-      background: linear-gradient(135deg, #fff 0%, #c9d1d9 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .lead {
-      margin: 0;
-      max-width: 36ch;
-      color: var(--text-muted);
-      font-size: 1.05rem;
-    }
-
-    .info {
-      margin: 1.75rem 0 2.25rem;
-      padding: 1.1rem 1.25rem;
-      border-radius: var(--radius-md);
-      background: var(--surface);
-      border: 1px solid var(--surface-border);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow:
-        var(--shadow-card),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    .info p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    .info code {
-      font-family: var(--font-mono);
-      font-size: 0.82em;
-      font-weight: 500;
-      color: var(--accent);
-      word-break: break-all;
-    }
-
-    .section-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin: 0 0 0.875rem;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .challenge-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 1.15rem;
-      text-decoration: none;
-      color: var(--text);
-      background: var(--surface);
-      border: 1px solid rgba(139, 148, 158, 0.15);
-      border-radius: var(--radius-md);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      transition:
-        border-color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .challenge-link:hover {
-      border-color: rgba(88, 166, 255, 0.35);
-      background: var(--card-hover);
-      box-shadow: 0 0 0 1px var(--accent-soft), 0 12px 40px rgba(0, 0, 0, 0.25);
-      transform: translateY(-2px);
-    }
-
-    .challenge-link:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    .challenge-link:active {
-      transform: translateY(0);
-    }
-
-    .challenge-text {
-      min-width: 0;
-    }
-
-    .challenge-name {
-      display: block;
-      font-weight: 600;
-      font-size: 1.05rem;
-      letter-spacing: -0.02em;
-    }
-
-    .challenge-path {
-      display: block;
-      margin-top: 0.25rem;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--accent);
-      opacity: 0.95;
-    }
-
-    .challenge-arrow {
-      flex-shrink: 0;
-      width: 2.25rem;
-      height: 2.25rem;
-      display: grid;
-      place-items: center;
-      border-radius: 0.5rem;
-      background: var(--accent-soft);
-      color: var(--accent);
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    .challenge-link:hover .challenge-arrow {
-      background: rgba(88, 166, 255, 0.22);
-      transform: translateX(3px);
-    }
-
-    .challenge-arrow svg {
-      width: 1.1rem;
-      height: 1.1rem;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      .challenge-link,
-      .challenge-arrow {
-        transition: none;
-      }
-
-      .challenge-link:hover {
-        transform: none;
-      }
-
-      .challenge-link:hover .challenge-arrow {
-        transform: none;
-      }
-    }
-  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
-  <main class="wrap">
-    <header class="hero">
-      <p class="eyebrow">Frontend Mentor</p>
-      <h1 class="title">Retos del repositorio</h1>
-      <p class="lead">
-        Colección de soluciones por carpeta. Abre cada enlace para ver el reto en su ruta.
+<body
+  class="min-h-screen bg-slate-950 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(56,189,248,0.18),transparent_55%),radial-gradient(ellipse_80%_50%_at_100%_0%,rgba(167,139,250,0.1),transparent_45%),linear-gradient(180deg,#020617_0%,#0f172a_55%,#020617_100%)] bg-fixed font-['Outfit',system-ui,sans-serif] text-slate-100 antialiased selection:bg-sky-400 selection:text-slate-950">
+
+  <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+    <header class="mb-10 max-w-2xl lg:mb-14">
+      <p
+        class="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-sky-400 before:h-0.5 before:w-6 before:rounded-full before:bg-gradient-to-r before:from-sky-400 before:to-transparent">
+        Frontend Mentor
+      </p>
+      <h1
+        class="mb-3 bg-gradient-to-br from-white via-slate-100 to-slate-400 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
+        Retos del repositorio
+      </h1>
+      <p class="max-w-prose text-base leading-relaxed text-slate-400">
+        Colección de soluciones por carpeta. Cada tarjeta enlaza al reto y muestra una captura de la implementación.
       </p>
     </header>
 
-    <div class="info" role="note">
-      <p>
-        En GitHub Pages la URL base es <code id="base"></code>. Cada reto vive en su propia ruta bajo
-        ese origen.
+    <div
+      class="mb-10 rounded-xl border border-sky-500/15 bg-slate-900/50 p-4 shadow-[0_4px_24px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md sm:p-5 lg:mb-12"
+      role="note">
+      <p class="text-sm leading-relaxed text-slate-400">
+        En GitHub Pages la URL base es
+        <code id="base"
+          class="rounded-md bg-sky-500/10 px-1.5 py-0.5 font-['JetBrains_Mono',ui-monospace,monospace] text-xs font-medium text-sky-300"></code>.
+        Cada reto vive en su propia ruta bajo ese origen.
       </p>
     </div>
 
     <section aria-labelledby="challenges-heading">
-      <h2 id="challenges-heading" class="section-label">Retos</h2>
-      <ul>
+      <h2 id="challenges-heading" class="mb-5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-500">
+        Proyectos
+      </h2>
+      <ul
+        class="grid list-none grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 [&>li]:m-0 [&>li]:p-0">
         <li>
-          <a class="challenge-link" href="./qr-code-component/">
-            <span class="challenge-text">
-              <span class="challenge-name">QR code component</span>
-              <span class="challenge-path">/qr-code-component/</span>
-            </span>
-            <span class="challenge-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
+          <a class="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-200 hover:border-sky-400/35 hover:bg-white/[0.09] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.12),0_16px_48px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400 motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            href="./qr-code-component/">
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-900/80">
+              <img src="./qr-code-component/screenshot.png" alt="Captura del reto QR code component" width="640"
+                height="400" loading="lazy" decoding="async"
+                class="h-full w-full object-cover object-top transition duration-300 motion-safe:group-hover:scale-[1.03] motion-reduce:group-hover:scale-100" />
+            </div>
+            <div class="flex flex-1 items-start justify-between gap-3 p-4 sm:p-5">
+              <div class="min-w-0">
+                <span class="block text-base font-semibold tracking-tight text-slate-100">QR code component</span>
+                <span
+                  class="mt-1 block truncate font-['JetBrains_Mono',ui-monospace,monospace] text-xs font-medium text-sky-400/95">/qr-code-component/</span>
+              </div>
+              <span
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-500/15 text-sky-400 transition motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:bg-sky-500/25 motion-reduce:group-hover:translate-x-0"
+                aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+            </div>
           </a>
         </li>
         <li>
-          <a class="challenge-link" href="./blog-preview-card/">
-            <span class="challenge-text">
-              <span class="challenge-name">Blog preview card</span>
-              <span class="challenge-path">/blog-preview-card/</span>
-            </span>
-            <span class="challenge-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
+          <a class="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-200 hover:border-sky-400/35 hover:bg-white/[0.09] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.12),0_16px_48px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400 motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            href="./blog-preview-card/">
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-900/80">
+              <img src="./blog-preview-card/screenshot.png" alt="Captura del reto Blog preview card" width="640"
+                height="400" loading="lazy" decoding="async"
+                class="h-full w-full object-cover object-top transition duration-300 motion-safe:group-hover:scale-[1.03] motion-reduce:group-hover:scale-100" />
+            </div>
+            <div class="flex flex-1 items-start justify-between gap-3 p-4 sm:p-5">
+              <div class="min-w-0">
+                <span class="block text-base font-semibold tracking-tight text-slate-100">Blog preview card</span>
+                <span
+                  class="mt-1 block truncate font-['JetBrains_Mono',ui-monospace,monospace] text-xs font-medium text-sky-400/95">/blog-preview-card/</span>
+              </div>
+              <span
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-500/15 text-sky-400 transition motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:bg-sky-500/25 motion-reduce:group-hover:translate-x-0"
+                aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+            </div>
           </a>
         </li>
         <li>
-          <a class="challenge-link" href="./social-links-profile/">
-            <span class="challenge-text">
-              <span class="challenge-name">Social links profile</span>
-              <span class="challenge-path">/social-links-profile/</span>
-            </span>
-            <span class="challenge-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
+          <a class="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-200 hover:border-sky-400/35 hover:bg-white/[0.09] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.12),0_16px_48px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400 motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            href="./social-links-profile/">
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-900/80">
+              <img src="./social-links-profile/preview.jpg" alt="Captura del reto Social links profile" width="640"
+                height="400" loading="lazy" decoding="async"
+                class="h-full w-full object-cover object-top transition duration-300 motion-safe:group-hover:scale-[1.03] motion-reduce:group-hover:scale-100" />
+            </div>
+            <div class="flex flex-1 items-start justify-between gap-3 p-4 sm:p-5">
+              <div class="min-w-0">
+                <span class="block text-base font-semibold tracking-tight text-slate-100">Social links profile</span>
+                <span
+                  class="mt-1 block truncate font-['JetBrains_Mono',ui-monospace,monospace] text-xs font-medium text-sky-400/95">/social-links-profile/</span>
+              </div>
+              <span
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-500/15 text-sky-400 transition motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:bg-sky-500/25 motion-reduce:group-hover:translate-x-0"
+                aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+            </div>
           </a>
         </li>
         <li>
-          <a class="challenge-link" href="./recipe-page/">
-            <span class="challenge-text">
-              <span class="challenge-name">Recipe page</span>
-              <span class="challenge-path">/recipe-page/</span>
-            </span>
-            <span class="challenge-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
+          <a class="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-200 hover:border-sky-400/35 hover:bg-white/[0.09] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.12),0_16px_48px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400 motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            href="./recipe-page/">
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-900/80">
+              <img src="./recipe-page/screenshot.png" alt="Captura del reto Recipe page" width="640" height="400"
+                loading="lazy" decoding="async"
+                class="h-full w-full object-cover object-top transition duration-300 motion-safe:group-hover:scale-[1.03] motion-reduce:group-hover:scale-100" />
+            </div>
+            <div class="flex flex-1 items-start justify-between gap-3 p-4 sm:p-5">
+              <div class="min-w-0">
+                <span class="block text-base font-semibold tracking-tight text-slate-100">Recipe page</span>
+                <span
+                  class="mt-1 block truncate font-['JetBrains_Mono',ui-monospace,monospace] text-xs font-medium text-sky-400/95">/recipe-page/</span>
+              </div>
+              <span
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-500/15 text-sky-400 transition motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:bg-sky-500/25 motion-reduce:group-hover:translate-x-0"
+                aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+            </div>
           </a>
         </li>
         <li>
-          <a class="challenge-link" href="./product-preview-card-component/">
-            <span class="challenge-text">
-              <span class="challenge-name">Product preview card</span>
-              <span class="challenge-path">/product-preview-card-component/</span>
-            </span>
-            <span class="challenge-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
+          <a class="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-200 hover:border-sky-400/35 hover:bg-white/[0.09] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.12),0_16px_48px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400 motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            href="./product-preview-card-component/">
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-900/80">
+              <img src="./product-preview-card-component/screenshot.png" alt="Captura del reto Product preview card"
+                width="640" height="400" loading="lazy" decoding="async"
+                class="h-full w-full object-cover object-top transition duration-300 motion-safe:group-hover:scale-[1.03] motion-reduce:group-hover:scale-100" />
+            </div>
+            <div class="flex flex-1 items-start justify-between gap-3 p-4 sm:p-5">
+              <div class="min-w-0">
+                <span class="block text-base font-semibold tracking-tight text-slate-100">Product preview card</span>
+                <span
+                  class="mt-1 block truncate font-['JetBrains_Mono',ui-monospace,monospace] text-xs font-medium text-sky-400/95">/product-preview-card-component/</span>
+              </div>
+              <span
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-500/15 text-sky-400 transition motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:bg-sky-500/25 motion-reduce:group-hover:translate-x-0"
+                aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+            </div>
           </a>
         </li>
         <li>
-          <a class="challenge-link" href="./four-card-feature-section/">
-            <span class="challenge-text">
-              <span class="challenge-name">Four card feature section</span>
-              <span class="challenge-path">/four-card-feature-section/</span>
-            </span>
-            <span class="challenge-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
+          <a class="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-200 hover:border-sky-400/35 hover:bg-white/[0.09] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.12),0_16px_48px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400 motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            href="./four-card-feature-section/">
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-900/80">
+              <img src="./four-card-feature-section/screenshot.png" alt="Captura del reto Four card feature section"
+                width="640" height="400" loading="lazy" decoding="async"
+                class="h-full w-full object-cover object-top transition duration-300 motion-safe:group-hover:scale-[1.03] motion-reduce:group-hover:scale-100" />
+            </div>
+            <div class="flex flex-1 items-start justify-between gap-3 p-4 sm:p-5">
+              <div class="min-w-0">
+                <span class="block text-base font-semibold tracking-tight text-slate-100">Four card feature section</span>
+                <span
+                  class="mt-1 block truncate font-['JetBrains_Mono',ui-monospace,monospace] text-xs font-medium text-sky-400/95">/four-card-feature-section/</span>
+              </div>
+              <span
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-500/15 text-sky-400 transition motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:bg-sky-500/25 motion-reduce:group-hover:translate-x-0"
+                aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+            </div>
           </a>
         </li>
         <li>
-          <a class="challenge-link" href="./testimonials-grid-section/">
-            <span class="challenge-text">
-              <span class="challenge-name">Testimonials grid section</span>
-              <span class="challenge-path">/testimonials-grid-section/</span>
-            </span>
-            <span class="challenge-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </span>
+          <a class="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_4px_24px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-200 hover:border-sky-400/35 hover:bg-white/[0.09] hover:shadow-[0_0_0_1px_rgba(56,189,248,0.12),0_16px_48px_rgba(0,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400 motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            href="./testimonials-grid-section/">
+            <div class="relative aspect-[16/10] overflow-hidden bg-slate-900/80">
+              <img src="./testimonials-grid-section/preview.jpg" alt="Captura del reto Testimonials grid section"
+                width="640" height="400" loading="lazy" decoding="async"
+                class="h-full w-full object-cover object-top transition duration-300 motion-safe:group-hover:scale-[1.03] motion-reduce:group-hover:scale-100" />
+            </div>
+            <div class="flex flex-1 items-start justify-between gap-3 p-4 sm:p-5">
+              <div class="min-w-0">
+                <span class="block text-base font-semibold tracking-tight text-slate-100">Testimonials grid section</span>
+                <span
+                  class="mt-1 block truncate font-['JetBrains_Mono',ui-monospace,monospace] text-xs font-medium text-sky-400/95">/testimonials-grid-section/</span>
+              </div>
+              <span
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-sky-500/15 text-sky-400 transition motion-safe:group-hover:translate-x-0.5 motion-safe:group-hover:bg-sky-500/25 motion-reduce:group-hover:translate-x-0"
+                aria-hidden="true">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </span>
+            </div>
           </a>
         </li>
       </ul>
