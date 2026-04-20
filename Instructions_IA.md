@@ -66,6 +66,7 @@ La nota *(La lista se irá ampliando…)* debe mantenerse debajo de la lista si 
 - Un único `<a>` envuelve **toda** la tarjeta: imagen de captura + pie con título, ruta y flecha SVG.
 - **Copiar un `<li>…</li>` completo** de un reto ya listado y sustituir solo lo variable (no inventar nuevas clases Tailwind en el enlace si el resto de tarjetas comparte la misma cadena de utilidades).
 - **`href`**: `./nombre-carpeta/` (misma convención que antes).
+- **`target="_blank"`** y **`rel="noopener noreferrer"`** en el `<a>` de la tarjeta: al hacer clic, el reto se abre en una pestaña nueva (y se mantiene la recomendación de seguridad para enlaces con `target="_blank"`). El mismo criterio aplica a **todos** los demás enlaces del `index.html` (texto de licencia MIT, nave del pie, enlace final a Frontend Mentor): pestaña nueva y `rel="noopener noreferrer"`.
 - **Nombre visible** del reto: convención **Frontend Mentor** (a menudo en **inglés**, como en el diseño del challenge).
 - **Ruta mostrada** en monoespaciada: `/<nombre-carpeta>/` con barra inicial.
 - **Imagen**: `src` relativo a la carpeta del reto. Preferir **`./nombre-carpeta/screenshot.png`** cuando exista en el repo (alineado con el README del reto). Si aún no hay `screenshot.png`, usar **`./nombre-carpeta/preview.jpg`** u otro archivo de vista previa que sí exista en esa carpeta (evitar rutas rotas).
@@ -79,7 +80,7 @@ El atributo `class` del `<a>` y las clases del contenedor de la tarjeta deben se
 
 ```html
 <li>
-  <a class="… mismas clases Tailwind que el resto de tarjetas …" href="./NOMBRE-CARPETA/">
+  <a class="… mismas clases Tailwind que el resto de tarjetas …" href="./NOMBRE-CARPETA/" target="_blank" rel="noopener noreferrer">
     <div class="relative aspect-[16/10] overflow-hidden bg-slate-900/80">
       <img
         src="./NOMBRE-CARPETA/screenshot.png"
@@ -189,7 +190,7 @@ Tras el o los commits: `git push origin <rama>`. Sin push, la rutina queda incom
 1. Confirmar **nombre de carpeta** y **títulos** (README de la raíz en español, nombre FM en el índice si mantienes la convención actual).
 2. En la carpeta del reto: **eliminar** el README de Frontend Mentor; **eliminar** `AGENTS.md` y `CLAUDE.md` si existen; **generar** `README.md` desde `readme-template.md` y **configurarlo** como los README de retos ya hechos (enlaces, secciones, screenshot).
 3. Editar **README.md** (raíz): un nuevo ítem en «Retos incluidos» con el formato de arriba.
-4. Editar **index.html**: duplicar un `<li>` de tarjeta existente (mismas clases Tailwind en el enlace y en el contenedor del icono), ajustar `href`, imagen (`src` / `alt`), título visible y ruta; colocar el nuevo ítem **al final** del `<ul>` salvo criterio distinto acordado.
+4. Editar **index.html**: duplicar un `<li>` de tarjeta existente (mismas clases Tailwind en el enlace y en el contenedor del icono), ajustar `href`, **`target="_blank"`** y **`rel="noopener noreferrer"`**, imagen (`src` / `alt`), título visible y ruta; colocar el nuevo ítem **al final** del `<ul>` salvo criterio distinto acordado.
 5. Revisar en local que el enlace relativo `./nombre-carpeta/` abre el `index` del reto y que la **captura** se ve (ruta del `src` correcta).
 6. Al solo añadir un reto: **no** cambiar el `<head>` (CDN de Tailwind, fuentes), el hero, la caja informativa con `#base`, el script final ni la configuración del **grid**; limitarse a un `<li>` más en la lista.
 7. **Cierre en Git**: incluir en el *stage* **todos** los archivos de ese trabajo (raíz + carpeta del reto, etc.). *Commit* con **Conventional Commits** alineado con `git log` del repo (inglés, tipo `docs` / `docs(challenges)` / `chore` / `feat` / `fix` según el caso). **`git push`** a `origin` en la rama activa. No omitir el push al terminar.

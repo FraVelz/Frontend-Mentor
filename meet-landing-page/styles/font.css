@@ -1,0 +1,56 @@
+body {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0px;
+}
+
+@media (min-width: 768px) {
+  .title-h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title-h1 {
+    font-size: 4rem;
+  }
+}
+
+.anti-title-h2 {
+  font-size: 0.75rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 4px;
+}
+
+.title-h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0px;
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+@media (min-width: 1024px) {
+  .description {
+    font-size: 1.125rem;
+  }
+}
+
+.button {
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0px;
+}

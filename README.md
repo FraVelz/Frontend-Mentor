@@ -18,6 +18,7 @@ Si el proyecto está desplegado en **GitHub Pages**, la página principal suele 
 - [Tarjeta de vista previa de producto](./product-preview-card-component/) — implementación en la carpeta `product-preview-card-component/`.
 - [Sección de cuatro tarjetas](./four-card-feature-section/) — implementación en la carpeta `four-card-feature-section/`.
 - [Cuadrícula de testimonios](./testimonials-grid-section/) — implementación en la carpeta `testimonials-grid-section/`.
+- [Landing page Meet](./meet-landing-page/) — implementación en la carpeta `meet-landing-page/`.
 
 *(La lista se irá ampliando conforme añadas más retos.)*
 
