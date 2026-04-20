@@ -17,6 +17,7 @@ Si el proyecto está desplegado en **GitHub Pages**, la página principal suele 
 - [Página de receta](./recipe-page/) — implementación en la carpeta `recipe-page/`.
 - [Tarjeta de vista previa de producto](./product-preview-card-component/) — implementación en la carpeta `product-preview-card-component/`.
 - [Sección de cuatro tarjetas](./four-card-feature-section/) — implementación en la carpeta `four-card-feature-section/`.
+- [Cuadrícula de testimonios](./testimonials-grid-section/) — implementación en la carpeta `testimonials-grid-section/`.
 
 *(La lista se irá ampliando conforme añadas más retos.)*
 
