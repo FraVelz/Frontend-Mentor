@@ -27,6 +27,6 @@ En [Notas técnicas](./NOTAS-TECNICAS.md) está el detalle orientado a quien man
 
 ## Information
 
-**Author:** Fravelz
+**Author:** Fravelz — perfil en [Frontend Mentor](https://www.frontendmentor.io/profile/FraVelz).
 
 **License:** MIT
