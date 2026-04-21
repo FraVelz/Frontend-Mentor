@@ -1,5 +1,7 @@
 # Retos de Frontend Mentor
 
+*[English version](./README.en.md)*
+
 Este repositorio es una **colección de soluciones** a retos de [Frontend Mentor](https://www.frontendmentor.io): ejercicios con diseños reales para practicar maquetación y front-end, de un diseño a un sitio web.
 
 ## Parte 1 y parte 2
