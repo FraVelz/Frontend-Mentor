@@ -12,7 +12,7 @@ Este repositorio es una **colección de soluciones** a retos de [Frontend Mentor
 
 ## Ver los retos en el navegador
 
-Si el proyecto está desplegado en **GitHub Pages**, la página principal suele ser la URL del repositorio en Github Pages, en la url `/` se encuentra el indice de cada reto.
+El proyecto está desplegado en **GitHub Pages**, la página principal (/) contiene los enlaces y una captura de pantalla a cada uno, de los apartados.
 
 ## Retos incluidos
 
