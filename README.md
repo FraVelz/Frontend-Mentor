@@ -1,6 +1,11 @@
 # Retos de Frontend Mentor
 
-Este repositorio es una **colección de soluciones** a retos de [Frontend Mentor](https://www.frontendmentor.io): ejercicios de HTML, CSS y JavaScript con diseños reales para practicar maquetación y front-end, de un diseño a un sitio web.
+Este repositorio es una **colección de soluciones** a retos de [Frontend Mentor](https://www.frontendmentor.io): ejercicios con diseños reales para practicar maquetación y front-end, de un diseño a un sitio web.
+
+## Parte 1 y parte 2
+
+- **Parte 1 — este repositorio (vanilla):** sirve para **fortalecer y practicar HTML, CSS, JavaScript y Tailwind CSS** en el navegador, carpeta por reto y **sin paso de build obligatorio**; encaja cuando quieres dominar layout, cascada, accesibilidad y JS básico.
+- **Parte 2 — Next.js (más avanzada):** la misma línea de desafíos con un flujo más cercano al profesional (rutas, componentes React, datos, despliegue). La colección en vivo está en **[frontend-mentor-nextjs-one en Vercel](https://frontend-mentor-nextjs-one.vercel.app/)**.
 
 > [!NOTE]
 > Aquí cada reto vive en **su propia carpeta** y, cuando el sitio está publicado, puedes abrirlos uno a uno desde un índice en la raíz.
@@ -21,7 +26,7 @@ Si el proyecto está desplegado en **GitHub Pages**, la página principal suele 
 - [Landing page Meet](./meet-landing-page/) — implementación en la carpeta `meet-landing-page/`.
 - [Componente de vista previa de artículo](./article-preview-component/) — implementación en la carpeta `article-preview-component/`.
 
-*(La lista se irá ampliando conforme añadas más retos.)*
+*(La lista se irá ampliando conforme se añaden/completen más retos.)*
 
 ---
 
