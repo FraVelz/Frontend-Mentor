@@ -5,7 +5,7 @@ Este repositorio es una **colección de soluciones** a retos de [Frontend Mentor
 ## Parte 1 y parte 2
 
 - **Parte 1 — este repositorio (vanilla):** sirve para **fortalecer y practicar HTML, CSS, JavaScript y Tailwind CSS** en el navegador, carpeta por reto y **sin paso de build obligatorio**; encaja cuando quieres dominar layout, cascada, accesibilidad y JS básico.
-- **Parte 2 — Next.js (más avanzada):** la misma línea de desafíos con un flujo más cercano al profesional (rutas, componentes React, datos, despliegue). La colección en vivo está en **[frontend-mentor-nextjs-one en Vercel](https://frontend-mentor-nextjs-one.vercel.app/)**.
+- **Parte 2 — Next.js (más avanzada):** la misma línea de desafíos con un flujo más cercano al profesional (rutas, componentes React, datos, despliegue). El repositorio esta: **https://github.com/FraVelz/Frontend-Mentor-Nextjs**.
 
 > [!NOTE]
 > Aquí cada reto vive en **su propia carpeta** y, cuando el sitio está publicado, puedes abrirlos uno a uno desde un índice en la raíz.
