@@ -37,6 +37,16 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="./styles/font.css">
   <link rel="stylesheet" href="./styles/styles.css">
+
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+  </style>
 </head>
 
 <body class="flex flex-col">
@@ -68,7 +78,8 @@
           focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4D96A9]
           focus-visible:outline-offset-2
           select-none bg-[#4D96A9] cursor-pointer hover:opacity-85 rounded-[2rem] px-10 py-4 w-fit
-        ">Download <span class="text-[#8FE3F9]">v1.3</span></button>
+        ">Download <span class="text-[#8FE3F9]">v1.3</span> <span class="sr-only">for all platforms, from header
+              section</span></button>
 
           <button class="
           button
@@ -76,6 +87,7 @@
           focus-visible:outline-offset-2
           select-none bg-[#855FB1] cursor-pointer hover:opacity-85 rounded-[2rem] px-10 py-4 w-fit">
             What is it?
+            <span class="sr-only"> about this app</span>
           </button>
         </div>
       </div>
@@ -147,6 +159,7 @@
           focus-visible:outline-offset-2
             bg-[#855FB1] px-10 py-4 w-fit h-fit rounded-[2rem] max-lg:mx-auto lg:self-left
           "> Download <span class="text-[#D9B8FF]">v1.3</span>
+            <span class="sr-only"> for all platforms, from footer section</span>
           </button>
         </div>
       </div>
