@@ -1,6 +1,6 @@
 # Instrucciones: actualizar retos (README + índice)
 
-Documento de referencia para **ti** y para el **asistente de IA** cuando se incorpore un nuevo reto de [Frontend Mentor](https://www.frontendmentor.io) a este repositorio. Objetivo: cambios **mínimos**, **consistentes** y **revisables** en el futuro. Al cerrar cada tarea, aplicar **Conventional Commits** y **subir al remoto** (`git push`), en la línea del historial del repo (véase la sección Git más abajo).
+Documento de referencia para **ti** y para el **asistente de IA** cuando se incorpore un nuevo reto de [Frontend Mentor](https://www.frontendmentor.io) a este repositorio. **Este archivo vive en** `docs/Instructions_IA.md`. Objetivo: cambios **mínimos**, **consistentes** y **revisables** en el futuro. Al cerrar cada tarea, aplicar **Conventional Commits** y **subir al remoto** (`git push`), en la línea del historial del repo (véase la sección Git más abajo).
 
 ---
 
@@ -10,10 +10,11 @@ Documento de referencia para **ti** y para el **asistente de IA** cuando se inco
 | ------------------------------------------- | ------------------------------------------------------------------- |
 | `README.md` (raíz)                          | Lista de retos en Markdown, enlaces relativos a cada carpeta. |
 | `index.html` (raíz)                         | Página índice (GitHub Pages): **Tailwind CSS** (CDN), cuadrícula de **tarjetas** con captura por reto. |
-| `readme-template.md` (raíz)                 | Plantilla para el README de cada reto; base para generar `nombre-reto/README.md` (personalizar en la carpeta, no dejar la plantilla dentro del reto). |
+| `docs/readme-template.md`                   | Plantilla para el README de cada reto; base para generar `nombre-reto/README.md` (personalizar en la carpeta, no dejar la plantilla dentro del reto). |
+| `docs/CONVENCIONES-METADATOS.md`             | Convenciones de metadatos (`<head>`) para el índice y cada reto. |
 | `nombre-reto/README.md`                     | Documentación de la solución (estructura alineada con retos ya hechos en este repo). |
 
-No forman parte de esta rutina obligatoria: código de implementación detallado dentro de `nombre-reto/` más allá de lo necesario para el README, y `NOTAS-TECNICAS.md` (salvo que enlaces un reto nuevo allí por separado).
+No forman parte de esta rutina obligatoria: código de implementación detallado dentro de `nombre-reto/` más allá de lo necesario para el README, y `docs/NOTAS-TECNICAS.md` (salvo que enlaces un reto nuevo allí por separado).
 
 **Archivos a eliminar dentro de cada carpeta de reto al incorporarla:** el `README.md` que trae el paquete de Frontend Mentor (instrucciones genéricas del reto), y si existen **`AGENTS.md`** y **`CLAUDE.md`** en esa carpeta (no deben quedar duplicados respecto a la documentación del monorepo en la raíz).
 
@@ -116,10 +117,10 @@ Al preparar una carpeta nueva (o alinear una que aún tenga solo el README de Fr
 
 1. **Eliminar** el `README.md` original del paquete de Frontend Mentor (el que describe el reto para descargarlo, no tu solución documentada).
 2. **Eliminar**, si aparecen en esa carpeta, **`AGENTS.md`** y **`CLAUDE.md`** (son redundantes o ajenos al contenido que debe vivir en el monorepo; la guía para agentes, si aplica, está en la raíz del repo).
-3. **Crear el nuevo `README.md`** a partir de **`readme-template.md`** en la **raíz del repositorio**: copiar la plantilla a `nombre-reto/README.md` (o equivalente: el contenido final debe ser un único `README.md` en la carpeta del reto, no dejar `readme-template.md` dentro del reto).
+3. **Crear el nuevo `README.md`** a partir de **`docs/readme-template.md`**: copiar la plantilla a `nombre-reto/README.md` (o equivalente: el contenido final debe ser un único `README.md` en la carpeta del reto, no dejar `readme-template.md` dentro del reto).
 4. **Configurar** ese `README.md` siguiendo el **mismo criterio** que los README de los retos ya completados en este repo (por ejemplo `qr-code-component/README.md`, `blog-preview-card/README.md`, `social-links-profile/README.md`): título con el patrón *Frontend Mentor - \<nombre del reto\> solution*, enlace al challenge en Frontend Mentor, tabla de contenidos coherente, secciones **Overview** (Screenshot, Links), **My process** (Built with, What I learned, Continued development, Useful resources) y **Author**, enlaces a repositorio y GitHub Pages con la ruta correcta (`https://github.com/FraVelz/Frontend-Mentor/tree/main/<carpeta-del-reto>`, `https://fravelz.github.io/Frontend-Mentor/<carpeta-del-reto>/`), imagen `./screenshot.png` cuando exista captura, y listas de tecnologías alineadas con lo realmente usado en el proyecto.
 
-Si `readme-template.md` aún no existe en la raíz, créalo primero duplicando la estructura de uno de esos README de referencia y sustituyendo los fragmentos variables por marcadores claros (nombre del reto, URLs, carpeta).
+Si `docs/readme-template.md` aún no existe, créalo primero en `docs/` duplicando la estructura de uno de esos README de referencia y sustituyendo los fragmentos variables por marcadores claros (nombre del reto, URLs, carpeta).
 
 ---
 
@@ -142,7 +143,7 @@ Hasta que eso exista en el README, no inventar columnas nuevas.
 
 **No dar por terminada** la incorporación o actualización de un reto hasta que **todo** lo tocado en esa sesión esté **versionado y subido**: `git add` de los archivos relevantes, **al menos un *commit*** con mensaje **Conventional Commits**, y **`git push`** al remoto habitual (`origin`, rama en la que trabajes, p. ej. `main`). Eso incluye:
 
-- Cambios solo en la raíz (`README.md`, `index.html`, `readme-template.md`, `Instructions_IA.md`, etc.).
+- Cambios en la raíz (`README.md`, `index.html`, etc.) y en `docs/` cuando toque plantillas o instrucciones (`docs/readme-template.md`, `docs/Instructions_IA.md`, etc.).
 - Carpeta completa del reto (HTML, CSS, assets, `nombre-reto/README.md`, etc.) cuando forme parte del mismo trabajo.
 - Cualquier otra modificación relacionada (renombrar carpetas, corregir enlaces, plantillas).
 
@@ -188,7 +189,7 @@ Tras el o los commits: `git push origin <rama>`. Sin push, la rutina queda incom
 ## Checklist al añadir un reto
 
 1. Confirmar **nombre de carpeta** y **títulos** (README de la raíz en español, nombre FM en el índice si mantienes la convención actual).
-2. En la carpeta del reto: **eliminar** el README de Frontend Mentor; **eliminar** `AGENTS.md` y `CLAUDE.md` si existen; **generar** `README.md` desde `readme-template.md` y **configurarlo** como los README de retos ya hechos (enlaces, secciones, screenshot).
+2. En la carpeta del reto: **eliminar** el README de Frontend Mentor; **eliminar** `AGENTS.md` y `CLAUDE.md` si existen; **generar** `README.md` desde `docs/readme-template.md` y **configurarlo** como los README de retos ya hechos (enlaces, secciones, screenshot).
 3. Editar **README.md** (raíz): un nuevo ítem en «Retos incluidos» con el formato de arriba.
 4. Editar **index.html**: duplicar un `<li>` de tarjeta existente (mismas clases Tailwind en el enlace y en el contenedor del icono), ajustar `href`, **`target="_blank"`** y **`rel="noopener noreferrer"`**, imagen (`src` / `alt`), título visible y ruta; colocar el nuevo ítem **al final** del `<ul>` salvo criterio distinto acordado.
 5. Revisar en local que el enlace relativo `./nombre-carpeta/` abre el `index` del reto y que la **captura** se ve (ruta del `src` correcta).
@@ -199,7 +200,7 @@ Tras el o los commits: `git push origin <rama>`. Sin push, la rutina queda incom
 
 ## Salida esperada del asistente
 
-Tras los cambios, el resultado debe ser **aplicable de inmediato**: difs claros en `README.md` e `index.html` de la raíz, en `nombre-reto/README.md` cuando proceda, y en `readme-template.md` si se crea o actualiza la plantilla (o archivos completos si el flujo de trabajo lo pide), sin rodeos innecesarios. Si el entorno permite ejecutar Git de forma segura: **commit** (mensaje Conventional Commits **coherente con commits anteriores del repo**) y **push** de **todo** lo relativo a la tarea, hasta dejar el remoto actualizado.
+Tras los cambios, el resultado debe ser **aplicable de inmediato**: difs claros en `README.md` e `index.html` de la raíz, en `nombre-reto/README.md` cuando proceda, y en `docs/readme-template.md` si se crea o actualiza la plantilla (o archivos completos si el flujo de trabajo lo pide), sin rodeos innecesarios. Si el entorno permite ejecutar Git de forma segura: **commit** (mensaje Conventional Commits **coherente con commits anteriores del repo**) y **push** de **todo** lo relativo a la tarea, hasta dejar el remoto actualizado.
 
 ---
 
@@ -208,7 +209,7 @@ Tras los cambios, el resultado debe ser **aplicable de inmediato**: difs claros 
 | Pregunta                                  | Acción                      |
 | ----------------------------------------- | --------------------------- |
 | ¿Mismo formato que los retos ya listados? | Sí, siempre.                |
-| ¿README dentro de `nombre-reto/`?         | Sustituir el de FM; usar plantilla raíz y alinear con retos hechos; quitar `AGENTS.md`/`CLAUDE.md` en la carpeta. |
+| ¿README dentro de `nombre-reto/`?         | Sustituir el de FM; usar `docs/readme-template.md` y alinear con retos hechos; quitar `AGENTS.md`/`CLAUDE.md` en la carpeta. |
 | ¿Tocar Tailwind global, hero o grid de `index.html`? | No, al solo añadir un reto; solo un `<li>` nuevo con la misma plantilla de tarjeta. |
 | ¿Falta el nombre de la carpeta?           | Preguntar; no adivinar.     |
 | ¿Commit y push al terminar (índice, reto, subir proyecto)? | Sí: *stage* completo, Conventional Commits al estilo del `git log`, y `git push` a `origin`. |

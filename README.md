@@ -32,7 +32,7 @@ El proyecto está desplegado en **GitHub Pages**, la página principal (/) conti
 
 ---
 
-En [Notas técnicas](./NOTAS-TECNICAS.md) está el detalle orientado a quien mantiene o audita el proyecto.
+En [Notas técnicas](./docs/NOTAS-TECNICAS.md) está el detalle orientado a quien mantiene o audita el proyecto. Más guías, plantilla de README e instrucciones para la IA: carpeta [`docs/`](./docs/).
 
 ## Information
 
