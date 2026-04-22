@@ -10,15 +10,18 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
   <title>Frontend Mentor | Blog preview card</title>
+
   <meta name="description"
     content="Solution to the Frontend Mentor blog preview card challenge: card layout with tag, title, lead text and author." />
   <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/blog-preview-card/" />
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/blog-preview-card/" />
   <meta property="og:title" content="Frontend Mentor | Blog preview card" />
   <meta property="og:description" content="Blog preview card — semantic HTML and CSS for a blog post teaser." />
   <meta property="og:image"
     content="https://github.com/FraVelz/Frontend-Mentor/blob/main/blog-preview-card/screenshot.png?raw=true" />
+
   <meta property="og:image:alt" content="Blog preview card challenge preview" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -36,6 +39,7 @@
       /* Rutas locales */
       font-weight: 800;
       font-style: normal;
+      font-display: swap;
     }
 
     @font-face {
@@ -43,6 +47,7 @@
       src: url('./assets/fonts/static/Figtree-Medium.ttf') format('truetype');
       font-weight: 500;
       font-style: normal;
+      font-display: swap;
     }
 
 
@@ -106,6 +111,7 @@
     }
 
     .img {
+      user-select: none;
       height: 200px;
       width: 100%;
       border-radius: var(--spacing-sm);
@@ -137,17 +143,32 @@
       line-height: 1.5;
     }
 
-    .title {
-      cursor: pointer;
+    .a {
+      text-decoration: none;
+      color: inherit;
+    }
 
+    .a:focus {
+      outline: none;
+    }
+
+    .a:focus-visible {
+      outline: 2px solid var(--color-brand-primary);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .a:hover .title,
+    .a:focus-visible .title {
+      color: var(--color-brand-primary);
+    }
+
+    .title {
+      color: var(--color-text-main);
       font-weight: 800;
       font-size: var(--font-xl);
       letter-spacing: 0px;
       line-height: 1.5;
-    }
-
-    .title:hover {
-      color: var(--color-brand-primary);
     }
 
     .description {
@@ -171,6 +192,7 @@
     }
 
     .user img {
+      user-select: none;
       width: 32px;
       height: 32px;
       border-radius: 50%;
@@ -186,11 +208,13 @@
       <p class="tag">
         Learning</p>
 
-      <p class="date">
+      <time datetime="2023-12-21" class="date">
         Published 21 Dec 2023
-      </p>
+      </time>
 
-      <h1 class="title">HTML & CSS foundations</h1>
+      <a class="a" href="#">
+        <h1 class="title">HTML &amp; CSS foundations</h1>
+      </a>
 
       <p class="description">These languages are the backbone of every website, defining structure, content, and
         presentation.</p>

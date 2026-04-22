@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -9,15 +10,18 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Testimonials grid section</title>
+
   <meta name="description"
     content="Solution to the Frontend Mentor testimonials grid section challenge: CSS grid of testimonial cards with varied layout." />
   <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/testimonials-grid-section/" />
   <meta property="og:type" content="website" />
+
   <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/testimonials-grid-section/" />
   <meta property="og:title" content="Frontend Mentor | Testimonials grid section" />
   <meta property="og:description" content="Testimonials grid section — bento-style grid for social proof cards." />
   <meta property="og:image"
     content="https://github.com/FraVelz/Frontend-Mentor/blob/main/testimonials-grid-section/screenshot.png?raw=true" />
+
   <meta property="og:image:alt" content="Testimonials grid section challenge preview" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -34,10 +38,22 @@
 
   <link rel="stylesheet" href="./styles/fonts.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+  </style>
 </head>
 
 <body class="bg-[#F6F5F6] px-[35px] py-[73px] lg:flex lg:justify-center lg:items-center min-h-screen">
   <main class="flex flex-col gap-8 lg:flex-row max-w-[1114px]">
+    <h1 class="sr-only">Product Preview Card</h1>
+
     <div class="space-y-8 flex-3">
       <div class="flex flex-col gap-8 lg:flex-row">
         <section class="bg-[#733FC8] rounded-[1rem] flex flex-col gap-4 p-8 shadow-lg lg:min-w-[540px] relative">
