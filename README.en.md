@@ -32,7 +32,7 @@ The project is deployed on **GitHub Pages**; the home page (`/`) lists each chal
 
 ---
 
-See [Notas técnicas](./NOTAS-TECNICAS.md) *(Spanish)* for maintainer- and audit-oriented detail.
+See [Notas técnicas](./docs/NOTAS-TECNICAS.md) *(Spanish)* for maintainer- and audit-oriented detail. Additional guides, README template, and AI workflow notes: [`docs/`](./docs/) directory.
 
 ## Information
 
