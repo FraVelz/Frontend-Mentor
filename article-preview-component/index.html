@@ -9,15 +9,19 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Article preview component</title>
+
   <meta name="description"
     content="Solution to the Frontend Mentor article preview component challenge: article drawer with image swap and share interaction." />
   <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/article-preview-component/" />
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/article-preview-component/" />
   <meta property="og:title" content="Frontend Mentor | Article preview component" />
-  <meta property="og:description" content="Article preview component — JavaScript for share popover and responsive article card." />
+  <meta property="og:description"
+    content="Article preview component — JavaScript for share popover and responsive article card." />
   <meta property="og:image"
     content="https://github.com/FraVelz/Frontend-Mentor/blob/main/article-preview-component/screenshot.png?raw=true" />
+
   <meta property="og:image:alt" content="Article preview component challenge preview" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -35,33 +39,37 @@
 
   <style>
     :root {
-      --clr-gray-400: hsl(217, 19%, 35%);
-      --clr-gray-300: hsl(214, 17%, 51%);
-      --clr-gray-200: hsl(212, 23%, 69%);
-      --clr-gray-100: hsl(210, 46%, 95%);
+      --clr-gray-900: hsl(217, 19%, 35%);
+      --clr-gray-500: hsl(214, 17%, 51%);
+      --clr-gray-400: hsl(212, 23%, 69%);
+      --clr-gray-200: hsl(210, 46%, 95%);
     }
 
     body {
       font-family: 'Manrope', sans-serif;
-      background: var(--clr-gray-100);
+      background: var(--clr-gray-200);
     }
 
     .title {
-      font-size: 1.2rem;
+      color: var(--clr-gray-900);
+      font-size: 1.25rem;
       font-weight: 700;
-      line-height: 1.5;
+      line-height: 1.3;
+      letter-spacing: 0.25px;
     }
 
-    @media (min-width: 1012px) {
+    /* @media (min-width: 1012px) {
       .title {
         font-size: 1.5rem;
       }
-    }
+    } */
 
     .description {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: var(--clr-gray-400);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.12%;
+      color: var(--clr-gray-500);
     }
 
     .name {
@@ -74,12 +82,12 @@
       color: var(--clr-gray-400);
     }
 
-    .btn {
-      background: var(--clr-gray-100);
+    .btn-2 {
+      background: var(--clr-gray-500);
     }
 
     #links {
-      background: var(--clr-gray-400);
+      background: var(--clr-gray-900);
     }
 
     .triangulo {
@@ -87,31 +95,46 @@
       height: 0;
       border-left: 15px solid transparent;
       border-right: 15px solid transparent;
-      border-top: 15px solid var(--clr-gray-400);
+      border-top: 15px solid var(--clr-gray-900);
+    }
+
+    .txt-share {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 25%;
     }
   </style>
 </head>
 
 <body class="h-screen flex justify-center items-center p-4">
-  <main id="main" class="bg-white max-w-[850px] rounded-[1rem] flex flex-col md:flex-row shadow-2xl">
-    <img draggable="false" class="select-none md:w-[400px] h-full max-md:rounded-t-[1rem] md:rounded-l-[1rem]"
+  <main id="main" class="
+    bg-white
+    h-[538px] min-w-[327px] md:min-w-[608px] md:max-h-[346px] lg:min-w-[730px] lg:h-[280px]
+    rounded-[1rem] flex flex-col gap-8 lg:gap-10 md:flex-row shadow-2xl
+    ">
+    <img draggable="false"
+      class="select-none h-[200px] md:w-[229px] md:h-[346px] lg:w-[285px] lg:h-[280px] max-md:rounded-t-[1rem] md:rounded-l-[1rem]"
       src="./images/drawers.jpg" alt="">
 
-    <div class="flex flex-col gap-4 p-5 lg:px-7">
-      <h1 class="title">
-        Shift the overall look and feel by adding these wonderful
-        touches to furniture in your home
-      </h1>
+    <div
+      class="max-w-[267px] md:max-w-[311px] lg:max-w-[365px] flex flex-col gap-12 md:gap-6 mx-auto md:mx-0 self-center">
+      <div class="space-y-6">
+        <h1 class="title">
+          Shift the overall look and feel by adding these wonderful
+          touches to furniture in your home
+        </h1>
 
-      <p class="description">
-        Ever been in a room and felt like something was missing? Perhaps
-        it felt slightly bare and uninviting. I’ve got some simple tips
-        to help you make any room feel complete.
-      </p>
+        <p class="description">
+          Ever been in a room and felt like something was missing? Perhaps
+          it felt slightly bare and uninviting. I’ve got some simple tips
+          to help you make any room feel complete.
+        </p>
+      </div>
 
       <div class="flex gap-4 items-center justify-normal w-full relative">
         <div class="flex gap-4 items-center justify-normal w-full">
-          <img class="size-10 rounded-full" src="./images/avatar-michelle.jpg" alt="Michelle">
+          <img class=" size-10 rounded-full" src="./images/avatar-michelle.jpg" alt="Michelle">
 
           <div>
             <p class="name">Michelle Appleton</p>
@@ -119,32 +142,42 @@
           </div>
         </div>
 
-        <button class="btn-shared p-2 z-10 rounded-full btn cursor-pointer">
+        <button aria-expanded="false" aria-controls="links" class="btn-shared p-2 z-10 rounded-full btn cursor-pointer">
           <img src="./images/icon-share.svg" alt="">
         </button>
 
-        <div id="links"
-          class="md:max-w-fit hidden transition-all duration-100 translate-x-7 opacity-0 absolute -bottom-5 md:bottom-12 md:-right-16 -right-5 z-10 h-[60px] flex justify-between rounded-br-[1rem] rounded-bl-[1rem] px-5 py-2 md:px-3 md:py-1 md:rounded-sm md:max-h-fit text-white">
-          <div class="flex items-center md:gap-3 gap-7">
-            <p class="md:text-lg text-xl">SHARE</p>
+        <div id="links" class="
+          md:max-w-[248px] md:h-[55px] h-[76px] max-md:max-w-[calc(100%+60px)]
+          hidden absolute -bottom-5 md:bottom-[50px] md:-right-[110px] -right-[30px] z-10
+          flex justify-center  rounded-br-[1rem] rounded-bl-[1rem] md:rounded-lg 
+          text-white
+          ">
+          <div class="flex justify-between w-full items-center max-w-[267px] md:max-w-[248px]">
+            <div class="w-[171px] mx-auto">
+              <div class="flex items-center justify-between">
+                <p class="md:text-lg text-xl txt-share">SHARE</p>
 
-            <button class="cursor-pointer"><img class="md:size-4 size-6" src="./images/icon-facebook.svg"
-                alt="Facebook" /></button>
+                <button id="btn-facebook" class="cursor-pointer"><img class="md:size-4 size-5"
+                    src="./images/icon-facebook.svg" alt="Facebook" /></button>
 
-            <button class="cursor-pointer"><img class="md:size-4 size-6" src="./images/icon-twitter.svg"
-                alt="Twitter" /></button>
+                <button class="cursor-pointer"><img class="md:size-4 size-5" src="./images/icon-twitter.svg"
+                    alt="Twitter" /></button>
 
-            <button class="cursor-pointer"><img class="md:size-4 size-6" src="./images/icon-pinterest.svg"
-                alt="Pinterest" /></button>
+                <button class="cursor-pointer"><img class="md:size-4 size-5" src="./images/icon-pinterest.svg"
+                    alt="Pinterest" /></button>
+              </div>
+            </div>
+
+            <button aria-label="Shared"
+              class="bg-white md:hidden btn-shared self-center h-fit z-10 rounded-full btn-2 cursor-pointer p-2">
+              <img class="size-[15px]" src="./images/icon-share-white.svg" alt="">
+            </button>
           </div>
 
-          <button class="md:hidden btn-shared self-center h-fit p-2 z-10 rounded-full btn cursor-pointer">
-            <img src="./images/icon-share.svg" alt="">
-          </button>
-
-          <div class="triangulo max-md:hidden absolute left-[70px] -bottom-[15px]"></div>
+          <div class="triangulo max-md:hidden absolute left-[calc(50%-15px)] -bottom-[15px]"></div>
         </div>
       </div>
+    </div>
 
     </div>
   </main>
@@ -153,51 +186,47 @@
     const btnShared = document.querySelectorAll('.btn-shared');
     let isOpen = false;
 
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        isOpen = false;
+        links.classList.add('hidden');
+        btn.setAttribute('aria-expanded', false);
+        btn.focus();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (isOpen && !links.contains(e.target) && !btn.contains(e.target)) {
+        isOpen = false;
+        links.classList.add('hidden');
+        btn.setAttribute('aria-expanded', false);
+      }
+    });
+
     btnShared.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
 
         const links = document.getElementById('links');
 
-        if (window.innerWidth < 768) { // mobile/tablet
-          if (isOpen) {
-            isOpen = false
-            links.style.width = document.getElementById('main').offsetWidth + 'px';
+        if (isOpen) {
+          isOpen = false
+          links.style.width = document.getElementById('main').offsetWidth + 'px';
 
-            links.classList.add('hidden', 'translate-x-7', 'opacity-0');
-            links.classList.remove('opacity-100');
-            links.classList.remove('translate-x-7');
+          links.classList.add('hidden');
+          getElementById('btn-facebook').focus();
 
-          } else {
-            isOpen = true
-            links.style.width = document.getElementById('main').offsetWidth + 'px';
+        } else {
+          isOpen = true
+          links.style.width = document.getElementById('main').offsetWidth + 'px';
 
-            links.classList.remove('hidden', 'translate-x-7', 'opacity-0');
-            links.classList.add('opacity-100');
-            links.classList.add('translate-x-0');
-          }
-
-        } else { // desktop
-          if (isOpen) {
-            isOpen = false
-            links.classList.add('hidden');
-
-          } else {
-            isOpen = true
-            links.classList.remove('hidden');
-
-            links.style.width = document.getElementById('main').offsetWidth + 'px';
-
-            links.classList.remove('hidden', 'translate-x-7', 'opacity-0');
-            links.classList.add('opacity-100');
-            links.classList.add('translate-x-0');
-          }
-
-
+          links.classList.remove('hidden');
+          btn.focus();
         }
+
+        links.setAttribute('aria-expanded', isOpen);
       });
     });
-
   </script>
 </body>
 
