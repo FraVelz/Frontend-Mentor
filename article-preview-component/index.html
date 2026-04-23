@@ -196,44 +196,54 @@
     const links = document.getElementById('links');
 
     let isOpen = false;
+    let activeBtn = null; // referencia al botón activo
 
+    // ESC para cerrar
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && isOpen) {
         isOpen = false;
         links.classList.add('hidden');
-        btn.setAttribute('aria-expanded', false);
-        btn.focus();
+
+        if (activeBtn) {
+          activeBtn.setAttribute('aria-expanded', false);
+          activeBtn.focus();
+        }
       }
     });
 
+    // click fuera
     document.addEventListener('click', (e) => {
-      if (isOpen && !links.contains(e.target) && !btn.contains(e.target)) {
+      if (
+        isOpen &&
+        activeBtn &&
+        !links.contains(e.target) &&
+        !activeBtn.contains(e.target)
+      ) {
         isOpen = false;
         links.classList.add('hidden');
-        btn.setAttribute('aria-expanded', false);
+        activeBtn.setAttribute('aria-expanded', false);
       }
     });
 
+    // botones
     btnShared.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
 
-        if (isOpen) {
-          isOpen = false
-          links.style.width = document.getElementById('main').offsetWidth + 'px';
+        activeBtn = btn; // guardar cuál se usó
+        isOpen = !isOpen;
 
-          links.classList.add('hidden');
-          btn.focus();
+        links.style.width =
+          document.getElementById('main').offsetWidth + 'px';
 
-        } else {
-          isOpen = true
-          links.style.width = document.getElementById('main').offsetWidth + 'px';
-
-          links.classList.remove('hidden');
-          document.getElementById('btn-facebook').focus();
-        }
-
+        links.classList.toggle('hidden', !isOpen);
         btn.setAttribute('aria-expanded', isOpen);
+
+        if (isOpen) {
+          document.getElementById('btn-facebook')?.focus();
+        } else {
+          btn.focus();
+        }
       });
     });
   </script>
