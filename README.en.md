@@ -28,6 +28,7 @@ The project is deployed on **GitHub Pages**; the home page (`/`) lists each chal
 - [Meet landing page](./meet-landing-page/) — implementation in `meet-landing-page/`.
 - [Article preview component](./article-preview-component/) — implementation in `article-preview-component/`.
 - [Newsletter sign-up form with success message](./newsletter-sign-up-with-success-message/) — implementation in `newsletter-sign-up-with-success-message/`.
+- [Time tracking dashboard](./time-dashboard-main/) — implementation in `time-dashboard-main/`.
 
 _(This list will grow as more challenges are added or completed.)_
 
