@@ -31,6 +31,7 @@ The project is deployed on **GitHub Pages**; the home page (`/`) lists each chal
 - [Time tracking dashboard](./time-dashboard-main/) — implementation in `time-dashboard-main/`.
 - [Tip calculator app](./tip-calculator-app/) — implementation in `tip-calculator-app/`.
 - [Password generator app](./password-generator-app/) — implementation in `password-generator-app/`.
+- [Frontend quiz app](./frontend-quiz-app/) — implementation in `frontend-quiz-app/`.
 
 _(This list will grow as more challenges are added or completed.)_
 

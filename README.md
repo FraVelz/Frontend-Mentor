@@ -31,6 +31,7 @@ El proyecto está desplegado en **GitHub Pages**, la página principal (/) conti
 - [Dashboard de seguimiento de tiempo](./time-dashboard-main/) — implementación en la carpeta `time-dashboard-main/`.
 - [Calculadora de propinas](./tip-calculator-app/) — implementación en la carpeta `tip-calculator-app/`.
 - [Generador de contraseñas](./password-generator-app/) — implementación en la carpeta `password-generator-app/`.
+- [Cuestionario frontend](./frontend-quiz-app/) — implementación en la carpeta `frontend-quiz-app/`.
 
 _(La lista se irá ampliando conforme se añaden/completen más retos.)_
 

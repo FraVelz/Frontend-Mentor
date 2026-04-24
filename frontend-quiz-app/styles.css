@@ -1,0 +1,4 @@
+/* Colores y utilidades puntuales que complementan Tailwind; el layout y tema usan clases en el HTML/JS. */
+html.dark {
+  color-scheme: dark;
+}
