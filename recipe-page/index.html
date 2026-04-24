@@ -34,6 +34,7 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 
+    <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/font.css" />
     <link rel="stylesheet" href="./styles/list-ol.css" />
 
@@ -50,78 +51,80 @@
     </style>
   </head>
 
-  <body class="flex min-h-screen w-screen justify-center bg-[#F3E5D7] md:py-32">
-    <main class="max-w-[736px] space-y-10 bg-white p-0 md:max-w-[616px] md:rounded-[2rem] md:p-10 lg:max-w-[736px]">
+  <body class="flex min-h-screen w-screen justify-center bg-[var(--clr-stone-100)] md:py-[var(--spacing-1600)]">
+    <main
+      class="max-w-[736px] space-y-[var(--spacing-500)] bg-white p-0 md:max-w-[616px] md:rounded-[2rem] md:p-[var(--spacing-500)] lg:max-w-[736px]"
+    >
       <img class="w-full md:rounded-[1rem]" src="./assets/images/image-omelette.jpeg" alt="Omelette" />
 
-      <div class="flex flex-col gap-8 max-md:px-8">
-        <div class="flex flex-col gap-6">
-          <h1 class="title text-[36px] text-[#312E2C] md:text-[40px]">Simple Omelette Recipe</h1>
+      <div class="flex flex-col gap-[var(--spacing-400)] max-md:px-[var(--spacing-400)]">
+        <div class="flex flex-col gap-[var(--spacing-300)]">
+          <h1 class="text-preset-1 text-[var(--clr-stone-900)]">Simple Omelette Recipe</h1>
 
-          <p class="description text-[#5F564D]">
+          <p class="text-preset-4">
             An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to
             perfection, optionally filled with your choice of cheese, vegetables, or meats.
           </p>
         </div>
 
-        <div class="rounded-md bg-[#FFF7FB] p-6">
-          <h2 class="preparation-time mb-4 text-[#7A284E]">Preparation time</h2>
+        <div class="rounded-md bg-[var(--clr-rose-50)] p-[var(--spacing-300)]">
+          <h2 class="text-preset-3 mb-[var(--spacing-200)] font-bold text-[var(--clr-rose-800)]">Preparation time</h2>
 
-          <ul class="space-y-2 text-[#5F564D]">
-            <li class="ml-2 flex items-start gap-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5F564D]"></span>
+          <ul class="text-preset-4 space-y-[var(--spacing-100)]">
+            <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-stone-600)]"></span>
               <span><strong>Total:</strong> Approximately 10 minutes</span>
             </li>
 
-            <li class="ml-2 flex items-start gap-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5F564D]"></span>
+            <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-stone-600)]"></span>
               <span><strong>Preparation:</strong> 5 minutes</span>
             </li>
 
-            <li class="ml-2 flex items-start gap-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5F564D]"></span>
+            <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-stone-600)]"></span>
               <span><strong>Cooking:</strong> 5 minutes</span>
             </li>
           </ul>
         </div>
 
-        <div class="flex flex-col gap-6">
-          <h2 class="title-h2 text-[#854632]">Ingredients</h2>
+        <div class="flex flex-col gap-[var(--spacing-300)]">
+          <h2 class="text-preset-2 text-[var(--clr-brown-800)]">Ingredients</h2>
 
-          <ul class="space-y-2 text-[#5F564D]">
-            <li class="ml-2 flex items-start gap-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#854632]"></span>
+          <ul class="text-preset-4 space-y-[var(--spacing-100)]">
+            <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-brown-800)]"></span>
               <span>2-3 large eggs</span>
             </li>
 
-            <li class="ml-2 flex items-start gap-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#854632]"></span>
+            <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-brown-800)]"></span>
               <span>Salt, to taste</span>
             </li>
 
-            <li class="ml-2 flex items-start gap-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#854632]"></span>
+            <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-brown-800)]"></span>
               <span>Pepper, to taste</span>
             </li>
 
-            <li class="ml-2 flex items-start gap-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#854632]"></span>
+            <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-brown-800)]"></span>
               <span>1 tablespoon of butter or oil</span>
             </li>
 
-            <li class="ml-2 flex items-start gap-4">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#854632]"></span>
+            <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-brown-800)]"></span>
               <span>Optional fillings: cheese, diced vegetables, cooked meats, herbs</span>
             </li>
           </ul>
         </div>
 
-        <hr class="text-[#E3DDD7]" />
+        <hr class="text-[var(--clr-stone-150)]" />
 
-        <div class="flex flex-col gap-6">
-          <h2 class="title-h2 text-[#854632]">Instructions</h2>
+        <div class="flex flex-col gap-[var(--spacing-300)]">
+          <h2 class="text-preset-2 text-[var(--clr-brown-800)]">Instructions</h2>
 
-          <ol class="counter-reset list space-y-2 text-[#5F564D]">
+          <ol class="counter-reset list text-preset-4 space-y-[var(--spacing-100)]">
             <li class="ml-1 flex items-start gap-1">
               <span class="step-counter"></span>
               <span>
@@ -176,12 +179,12 @@
           </ol>
         </div>
 
-        <hr class="text-[#E3DDD7]" />
+        <hr class="text-[var(--clr-stone-150)]" />
 
-        <div class="flex flex-col gap-6">
-          <h2 class="title-h2 text-[#854632]">Nutrition</h2>
+        <div class="flex flex-col gap-[var(--spacing-300)]">
+          <h2 class="text-preset-2 text-[var(--clr-brown-800)]">Nutrition</h2>
 
-          <p class="text-[#5F564D]">
+          <p class="text-preset-4">
             The table below shows nutritional values per serving without the additional fillings.
           </p>
 
@@ -191,21 +194,21 @@
             </caption>
 
             <tbody>
-              <tr class="border-b border-[#E3DDD7]">
-                <th scope="row" class="px-6 py-[8.75px] font-normal">Calories</th>
-                <td class="w-[50%] font-bold text-[#854632]">277kcal</td>
+              <tr class="border-b border-[var(--clr-stone-150)]">
+                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[8.75px] font-normal">Calories</th>
+                <td class="text-preset-4-bold w-[50%] text-[var(--clr-brown-800)]">277kcal</td>
               </tr>
-              <tr class="border-b border-[#E3DDD7]">
-                <th scope="row" class="px-6 py-[8.5px] font-normal">Carbs</th>
-                <td class="font-bold text-[#854632]">0g</td>
+              <tr class="border-b border-[var(--clr-stone-150)]">
+                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[8.5px] font-normal">Carbs</th>
+                <td class="text-preset-4-bold text-[var(--clr-brown-800)]">0g</td>
               </tr>
-              <tr class="border-b border-[#E3DDD7]">
-                <th scope="row" class="px-6 py-[8.5px] font-normal">Protein</th>
-                <td class="font-bold text-[#854632]">20g</td>
+              <tr class="border-b border-[var(--clr-stone-150)]">
+                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[8.5px] font-normal">Protein</th>
+                <td class="text-preset-4-bold text-[var(--clr-brown-800)]">20g</td>
               </tr>
-              <tr class="border-b border-[#E3DDD7]">
-                <th scope="row" class="px-6 py-[8.5px] font-normal">Fat</th>
-                <td class="font-bold text-[#854632]">22g</td>
+              <tr class="border-b border-[var(--clr-stone-150)]">
+                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[8.5px] font-normal">Fat</th>
+                <td class="text-preset-4-bold text-[var(--clr-brown-800)]">22g</td>
               </tr>
             </tbody>
           </table>
