@@ -1,221 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Frontend Mentor | Recipe page</title>
 
-  <title>Frontend Mentor | Recipe page</title>
+    <meta
+      name="description"
+      content="Solution to the Frontend Mentor recipe page challenge: omelette recipe with ingredients, steps and nutrition table."
+    />
+    <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/recipe-page/" />
+    <meta property="og:type" content="website" />
 
-  <meta name="description"
-    content="Solution to the Frontend Mentor recipe page challenge: omelette recipe with ingredients, steps and nutrition table." />
-  <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/recipe-page/" />
-  <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/recipe-page/" />
+    <meta property="og:title" content="Frontend Mentor | Recipe page" />
+    <meta property="og:description" content="Recipe page — semantic HTML for a cooking recipe layout." />
+    <meta
+      property="og:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/recipe-page/screenshot.png?raw=true"
+    />
 
-  <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/recipe-page/" />
-  <meta property="og:title" content="Frontend Mentor | Recipe page" />
-  <meta property="og:description" content="Recipe page — semantic HTML for a cooking recipe layout." />
-  <meta property="og:image"
-    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/recipe-page/screenshot.png?raw=true" />
+    <meta property="og:image:alt" content="Recipe page challenge preview" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frontend Mentor | Recipe page" />
+    <meta name="twitter:description" content="Recipe page — Frontend Mentor solution." />
+    <meta
+      name="twitter:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/recipe-page/screenshot.png?raw=true"
+    />
 
-  <meta property="og:image:alt" content="Recipe page challenge preview" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Frontend Mentor | Recipe page" />
-  <meta name="twitter:description" content="Recipe page — Frontend Mentor solution." />
-  <meta name="twitter:image"
-    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/recipe-page/screenshot.png?raw=true" />
+    <link rel="stylesheet" href="./styles/font.css" />
+    <link rel="stylesheet" href="./styles/list-ol.css" />
 
-  <link rel="stylesheet" href="./styles/font.css" />
-  <link rel="stylesheet" href="./styles/list-ol.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+      }
+    </style>
+  </head>
 
-  <style>
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-    }
-  </style>
-</head>
+  <body class="flex min-h-screen w-screen justify-center bg-[#F3E5D7] md:py-32">
+    <main class="max-w-[736px] space-y-10 bg-white p-0 md:max-w-[616px] md:rounded-[2rem] md:p-10 lg:max-w-[736px]">
+      <img class="w-full md:rounded-[1rem]" src="./assets/images/image-omelette.jpeg" alt="Omelette" />
 
-<body class="md:py-32 min-h-screen w-screen flex justify-center bg-[#F3E5D7]">
-  <main class="
-    lg:max-w-[736px]
-    md:max-w-[616px] md:rounded-[2rem] md:p-10
-    max-w-[736px] bg-white p-0
-    space-y-10
-  ">
-    <img class="w-full md:rounded-[1rem]" src="./assets/images/image-omelette.jpeg" alt="Omelette">
+      <div class="flex flex-col gap-8 max-md:px-8">
+        <div class="flex flex-col gap-6">
+          <h1 class="title text-[36px] text-[#312E2C] md:text-[40px]">Simple Omelette Recipe</h1>
 
-    <div class="flex flex-col gap-8 max-md:px-8">
-      <div class="flex flex-col gap-6">
-        <h1 class="title text-[#312E2C] text-[36px] md:text-[40px]">Simple Omelette Recipe</h1>
+          <p class="description text-[#5F564D]">
+            An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to
+            perfection, optionally filled with your choice of cheese, vegetables, or meats.
+          </p>
+        </div>
 
-        <p class="description text-[#5F564D]">
-          An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked
-          to perfection, optionally filled with your choice of cheese, vegetables, or meats.
-        </p>
+        <div class="rounded-md bg-[#FFF7FB] p-6">
+          <h2 class="preparation-time mb-4 text-[#7A284E]">Preparation time</h2>
+
+          <ul class="space-y-2 text-[#5F564D]">
+            <li class="ml-2 flex items-start gap-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5F564D]"></span>
+              <span><strong>Total:</strong> Approximately 10 minutes</span>
+            </li>
+
+            <li class="ml-2 flex items-start gap-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5F564D]"></span>
+              <span><strong>Preparation:</strong> 5 minutes</span>
+            </li>
+
+            <li class="ml-2 flex items-start gap-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5F564D]"></span>
+              <span><strong>Cooking:</strong> 5 minutes</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-6">
+          <h2 class="title-h2 text-[#854632]">Ingredients</h2>
+
+          <ul class="space-y-2 text-[#5F564D]">
+            <li class="ml-2 flex items-start gap-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#854632]"></span>
+              <span>2-3 large eggs</span>
+            </li>
+
+            <li class="ml-2 flex items-start gap-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#854632]"></span>
+              <span>Salt, to taste</span>
+            </li>
+
+            <li class="ml-2 flex items-start gap-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#854632]"></span>
+              <span>Pepper, to taste</span>
+            </li>
+
+            <li class="ml-2 flex items-start gap-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#854632]"></span>
+              <span>1 tablespoon of butter or oil</span>
+            </li>
+
+            <li class="ml-2 flex items-start gap-4">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#854632]"></span>
+              <span>Optional fillings: cheese, diced vegetables, cooked meats, herbs</span>
+            </li>
+          </ul>
+        </div>
+
+        <hr class="text-[#E3DDD7]" />
+
+        <div class="flex flex-col gap-6">
+          <h2 class="title-h2 text-[#854632]">Instructions</h2>
+
+          <ol class="counter-reset list space-y-2 text-[#5F564D]">
+            <li class="ml-1 flex items-start gap-1">
+              <span class="step-counter"></span>
+              <span>
+                <strong>Beat the eggs:</strong>
+                In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a
+                tablespoon of water or milk for a fluffier texture.
+              </span>
+            </li>
+
+            <li class="ml-1 flex items-start gap-1">
+              <span class="step-counter"></span>
+              <span>
+                <strong>Heat the pan:</strong>
+                Place a non-stick frying pan over medium heat and add butter or oil.
+              </span>
+            </li>
+
+            <li class="ml-1 flex items-start gap-1">
+              <span class="step-counter"></span>
+              <span>
+                <strong>Cook the omelette:</strong>
+                Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat
+                the surface.
+              </span>
+            </li>
+
+            <li class="ml-1 flex items-start gap-1">
+              <span class="step-counter"></span>
+              <span>
+                <strong>Add fillings (optional):</strong>
+                When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen
+                fillings over one half of the omelette.
+              </span>
+            </li>
+
+            <li class="ml-1 flex items-start gap-1">
+              <span class="step-counter"></span>
+              <span>
+                <strong>Fold and serve:</strong>
+                As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook
+                for another minute, then slide it onto a plate.
+              </span>
+            </li>
+
+            <li class="ml-1 flex items-start gap-1">
+              <span class="step-counter"></span>
+              <span>
+                <strong>Enjoy:</strong>
+                Serve hot, with additional salt and pepper if needed.
+              </span>
+            </li>
+          </ol>
+        </div>
+
+        <hr class="text-[#E3DDD7]" />
+
+        <div class="flex flex-col gap-6">
+          <h2 class="title-h2 text-[#854632]">Nutrition</h2>
+
+          <p class="text-[#5F564D]">
+            The table below shows nutritional values per serving without the additional fillings.
+          </p>
+
+          <table class="text-left">
+            <caption class="sr-only">
+              Nutritional Information
+            </caption>
+
+            <tbody>
+              <tr class="border-b border-[#E3DDD7]">
+                <th scope="row" class="px-6 py-[8.75px] font-normal">Calories</th>
+                <td class="w-[50%] font-bold text-[#854632]">277kcal</td>
+              </tr>
+              <tr class="border-b border-[#E3DDD7]">
+                <th scope="row" class="px-6 py-[8.5px] font-normal">Carbs</th>
+                <td class="font-bold text-[#854632]">0g</td>
+              </tr>
+              <tr class="border-b border-[#E3DDD7]">
+                <th scope="row" class="px-6 py-[8.5px] font-normal">Protein</th>
+                <td class="font-bold text-[#854632]">20g</td>
+              </tr>
+              <tr class="border-b border-[#E3DDD7]">
+                <th scope="row" class="px-6 py-[8.5px] font-normal">Fat</th>
+                <td class="font-bold text-[#854632]">22g</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-
-      <div class="p-6 bg-[#FFF7FB] rounded-md">
-
-        <h2 class="preparation-time text-[#7A284E] mb-4">Preparation time</h2>
-
-        <ul class="space-y-2 text-[#5F564D]">
-          <li class="flex items-start gap-4 ml-2">
-            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#5F564D] shrink-0"></span>
-            <span><strong>Total:</strong> Approximately 10 minutes</span>
-          </li>
-
-          <li class="flex items-start gap-4 ml-2">
-            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#5F564D] shrink-0"></span>
-            <span><strong>Preparation:</strong> 5 minutes</span>
-          </li>
-
-          <li class="flex items-start gap-4 ml-2">
-            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#5F564D] shrink-0"></span>
-            <span><strong>Cooking:</strong> 5 minutes</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="flex flex-col gap-6">
-        <h2 class="title-h2 text-[#854632]">Ingredients</h2>
-
-        <ul class="space-y-2 text-[#5F564D]">
-          <li class="flex items-start gap-4 ml-2">
-            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#854632] shrink-0"></span>
-            <span>2-3 large eggs</span>
-          </li>
-
-          <li class="flex items-start gap-4 ml-2">
-            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#854632] shrink-0"></span>
-            <span>Salt, to taste</span>
-          </li>
-
-          <li class="flex items-start gap-4 ml-2">
-            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#854632] shrink-0"></span>
-            <span>Pepper, to taste</span>
-          </li>
-
-          <li class="flex items-start gap-4 ml-2">
-            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#854632] shrink-0"></span>
-            <span>1 tablespoon of butter or oil</span>
-          </li>
-
-          <li class="flex items-start gap-4 ml-2">
-            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#854632] shrink-0"></span>
-            <span>Optional fillings: cheese, diced vegetables, cooked meats, herbs</span>
-          </li>
-        </ul>
-      </div>
-
-      <hr class="text-[#E3DDD7]" />
-
-      <div class="flex flex-col gap-6">
-        <h2 class="title-h2 text-[#854632]">Instructions</h2>
-
-        <ol class="space-y-2 text-[#5F564D] counter-reset list">
-
-          <li class="flex items-start gap-1 ml-1">
-            <span class="step-counter"></span>
-            <span>
-              <strong>Beat the eggs:</strong>
-              In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a
-              tablespoon of water or milk for a fluffier texture.
-            </span>
-          </li>
-
-          <li class="flex items-start gap-1 ml-1">
-            <span class="step-counter"></span>
-            <span>
-              <strong>Heat the pan:</strong>
-              Place a non-stick frying pan over medium heat and add butter or oil.
-            </span>
-          </li>
-
-          <li class="flex items-start gap-1 ml-1">
-            <span class="step-counter"></span>
-            <span>
-              <strong>Cook the omelette:</strong>
-              Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the
-              surface.
-            </span>
-          </li>
-
-          <li class="flex items-start gap-1 ml-1">
-            <span class="step-counter"></span>
-            <span>
-              <strong>Add fillings (optional):</strong>
-              When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen
-              fillings over one half of the omelette.
-            </span>
-          </li>
-
-          <li class="flex items-start gap-1 ml-1">
-            <span class="step-counter"></span>
-            <span>
-              <strong>Fold and serve:</strong>
-              As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for
-              another minute, then slide it onto a plate.
-            </span>
-          </li>
-
-          <li class="flex items-start gap-1 ml-1">
-            <span class="step-counter"></span>
-            <span>
-              <strong>Enjoy:</strong>
-              Serve hot, with additional salt and pepper if needed.
-            </span>
-          </li>
-
-        </ol>
-      </div>
-
-      <hr class="text-[#E3DDD7]" />
-
-      <div class="flex flex-col gap-6">
-        <h2 class="title-h2 text-[#854632]">Nutrition</h2>
-
-        <p class="text-[#5F564D]">The table below shows nutritional values per serving without the
-          additional fillings.
-        </p>
-
-
-        <table class="text-left">
-          <caption class="sr-only">
-            Nutritional Information
-          </caption>
-
-          <tbody>
-            <tr class="border-b border-[#E3DDD7]">
-              <th scope="row" class="font-normal py-[8.75px] px-6">Calories</th>
-              <td class="font-bold text-[#854632] w-[50%]">277kcal</td>
-            </tr>
-            <tr class="border-b border-[#E3DDD7]">
-              <th scope="row" class="font-normal py-[8.5px] px-6">Carbs</th>
-              <td class="font-bold text-[#854632]">0g</td>
-            </tr>
-            <tr class="border-b border-[#E3DDD7]">
-              <th scope="row" class="font-normal py-[8.5px] px-6">Protein</th>
-              <td class="font-bold text-[#854632]">20g</td>
-            </tr>
-            <tr class="border-b border-[#E3DDD7]">
-              <th scope="row" class="font-normal py-[8.5px] px-6">Fat</th>
-              <td class="font-bold text-[#854632]">22g</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>

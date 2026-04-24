@@ -1,5 +1,5 @@
 .tag {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.2;
@@ -7,7 +7,7 @@
 }
 
 .title {
-  font-family: "Fraunces", sans-serif;
+  font-family: 'Fraunces', sans-serif;
   font-size: 2rem;
   font-weight: 800;
   line-height: 1;
@@ -15,7 +15,7 @@
 }
 
 .description {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.6;
@@ -23,7 +23,7 @@
 }
 
 .price {
-  font-family: "Fraunces", sans-serif;
+  font-family: 'Fraunces', sans-serif;
   font-size: 2rem;
   font-weight: 800;
   line-height: 1;
@@ -31,7 +31,7 @@
 }
 
 .price span {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
   line-height: 1.2;
@@ -39,7 +39,7 @@
 }
 
 .button {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.875rem;
   font-weight: 800;
   line-height: 1.1;

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="./styles/tw-extras.css" />
+    <script defer src="./scripts/script.js"></script>
+  </head>
+
+  <body class="flex min-h-screen flex-col items-center justify-center font-['Roboto',sans-serif] md:bg-[#242742]">
+    <main
+      class="box-border flex w-full max-w-full min-w-0 flex-col md:max-w-[608px] md:rounded-[36px] md:bg-white md:p-10 lg:min-h-0 lg:max-w-[904px] lg:flex-row-reverse lg:items-center lg:gap-16 lg:p-8"
+    >
+      <picture class="w-full min-w-0 shrink-0 self-stretch md:max-w-full lg:flex-1 lg:basis-0">
+        <source media="(min-width: 1024px)" srcset="./assets/images/illustration-sign-up-desktop.svg" />
+        <source media="(min-width: 768px)" srcset="./assets/images/illustration-sign-up-tablet.svg" />
+        <img
+          class="h-auto w-full max-w-full object-contain"
+          src="./assets/images/illustration-sign-up-mobile.svg"
+          alt=""
+        />
+      </picture>
+      <div class="mx-6 my-10 w-full min-w-0 self-stretch md:mx-0 md:mt-10 md:mb-0 lg:m-0 lg:flex-1 lg:basis-0">
+        <div class="mb-10 space-y-6 lg:mb-8">
+          <h1 class="text-[40px] leading-none font-bold tracking-normal md:text-[56px]">Stay updated!</h1>
+          <p class="text-base leading-[150%] font-normal tracking-normal">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul class="list-none space-y-2 text-base leading-[150%] font-normal tracking-normal">
+            <li class="flex items-start gap-4">
+              <img src="./assets/images/icon-list.svg" alt="" width="21" height="21" class="mt-0.5 shrink-0" />
+              <span>Product discovery and building what matters</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <img src="./assets/images/icon-list.svg" alt="" width="21" height="21" class="mt-0.5 shrink-0" />
+              <span>Measuring to ensure updates are a success</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <img src="./assets/images/icon-list.svg" alt="" width="21" height="21" class="mt-0.5 shrink-0" />
+              <span>And much more!</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="flex flex-col">
+          <label class="mb-2 flex flex-col text-xs leading-[150%] font-bold tracking-normal">
+            <span class="inline-flex w-full max-w-full items-baseline justify-between gap-2">
+              Email address
+              <span class="error-msg text-right text-xs leading-[150%] font-bold tracking-normal text-[#ff6155]"></span>
+            </span>
+            <input
+              id="email"
+              class="email-address mt-2 mb-6 box-border w-full rounded-[10px] border border-solid border-[#949494] px-6 py-4 text-base leading-[150%] font-normal tracking-normal invalid:border-[#ff6155] invalid:bg-[rgba(255,97,85,0.1)] invalid:text-[#ff6155] focus:border-[#242742] focus:outline-none"
+              type="email"
+              name="email"
+              placeholder="email@company.com"
+            />
+          </label>
+          <button
+            class="submit-btn mb-6 box-border w-full cursor-pointer rounded-[10px] border-none bg-[#242742] px-6 py-4 text-base leading-[150%] font-bold tracking-normal text-white hover:bg-gradient-to-r hover:from-[#ff6a3a] hover:to-[#ff527b] focus:outline-none md:mb-0"
+            type="submit"
+          >
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <div class="success-view w-full max-w-full min-w-0 px-4 sm:px-0">
+      <div
+        class="success-message mx-auto flex h-[623px] w-full max-w-[327px] flex-col items-center justify-between bg-white md:h-auto md:max-w-[504px] md:rounded-[36px] md:p-16"
+      >
+        <div class="text-container-message w-full space-y-8">
+          <img src="./assets/images/icon-success.svg" alt="" />
+          <h1 class="text-[40px] leading-none font-bold tracking-normal md:text-[56px]">Thanks for subscribing!</h1>
+          <p class="text-base leading-[150%] font-normal tracking-normal">
+            A confirmation email has been sent to
+            <span class="text-base leading-[150%] font-bold tracking-normal">ash@loremcompany.com.</span>
+            Please open it and click the button inside to confirm your subscription.
+          </p>
+        </div>
+        <button
+          class="dismiss-btn box-border w-full cursor-pointer rounded-[10px] border-none bg-[#242742] px-6 py-4 text-base leading-[150%] font-bold tracking-normal text-white hover:bg-gradient-to-r hover:from-[#ff6a3a] hover:to-[#ff527b] focus:outline-none md:mt-8"
+          type="button"
+        >
+          Dismiss message
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 # Retos de Frontend Mentor
 
-*[English version](./README.en.md)*
+_[English version](./README.en.md)_
 
 Este repositorio es una **colección de soluciones** a retos de [Frontend Mentor](https://www.frontendmentor.io): ejercicios con diseños reales para practicar maquetación y front-end, de un diseño a un sitio web.
 
@@ -28,7 +28,7 @@ El proyecto está desplegado en **GitHub Pages**, la página principal (/) conti
 - [Landing page Meet](./meet-landing-page/) — implementación en la carpeta `meet-landing-page/`.
 - [Componente de vista previa de artículo](./article-preview-component/) — implementación en la carpeta `article-preview-component/`.
 
-*(La lista se irá ampliando conforme se añaden/completen más retos.)*
+_(La lista se irá ampliando conforme se añaden/completen más retos.)_
 
 ---
 

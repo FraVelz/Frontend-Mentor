@@ -16,5 +16,5 @@ ol.list {
 }
 
 .step-counter::before {
-  content: counter(step) ".";
+  content: counter(step) '.';
 }

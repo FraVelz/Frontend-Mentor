@@ -1,0 +1,9 @@
+/* script.js: alterna con la clase .active (el runtime de TW no añade .active) */
+.success-view {
+  display: none;
+  box-sizing: border-box;
+}
+
+.success-view.active {
+  display: block;
+}
