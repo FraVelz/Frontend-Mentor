@@ -27,6 +27,7 @@ El proyecto está desplegado en **GitHub Pages**, la página principal (/) conti
 - [Cuadrícula de testimonios](./testimonials-grid-section/) — implementación en la carpeta `testimonials-grid-section/`.
 - [Landing page Meet](./meet-landing-page/) — implementación en la carpeta `meet-landing-page/`.
 - [Componente de vista previa de artículo](./article-preview-component/) — implementación en la carpeta `article-preview-component/`.
+- [Formulario de suscripción al boletín con mensaje de éxito](./newsletter-sign-up-with-success-message/) — implementación en la carpeta `newsletter-sign-up-with-success-message/`.
 
 _(La lista se irá ampliando conforme se añaden/completen más retos.)_
 

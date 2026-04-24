@@ -27,6 +27,7 @@ The project is deployed on **GitHub Pages**; the home page (`/`) lists each chal
 - [Testimonials grid section](./testimonials-grid-section/) — implementation in `testimonials-grid-section/`.
 - [Meet landing page](./meet-landing-page/) — implementation in `meet-landing-page/`.
 - [Article preview component](./article-preview-component/) — implementation in `article-preview-component/`.
+- [Newsletter sign-up form with success message](./newsletter-sign-up-with-success-message/) — implementation in `newsletter-sign-up-with-success-message/`.
 
 _(This list will grow as more challenges are added or completed.)_
 
