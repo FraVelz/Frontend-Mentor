@@ -25,9 +25,9 @@
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Frontend Mentor | Meet landing page" />
-    <meta name="twitter:description" content="Meet landing page — Frontend Mentor solution." />
-    <meta
-      name="twitter:image"
+      <meta name="twitter:description" content="Meet landing page — Frontend Mentor solution." />
+      <meta
+        name="twitter:image"
       content="https://github.com/FraVelz/Frontend-Mentor/blob/main/meet-landing-page/screenshot.png?raw=true"
     />
 
@@ -52,10 +52,26 @@
         overflow: hidden;
         clip: rect(0, 0, 0, 0);
       }
+
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #000;
+        color: #fff;
+        padding: 8px;
+        z-index: 100;
+      }
+
+      .skip-link:focus {
+        top: 0;
+      }
     </style>
   </head>
 
   <body class="flex flex-col">
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
     <header class="flex h-[63px] w-full items-end justify-center lg:h-[108px]">
       <img draggable="false" class="select-none" src="./assets/logo.svg" alt="" />
     </header>
@@ -112,7 +128,7 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-8">
           <img
             draggable="false"
             class="rounded-[0.5rem] select-none"
@@ -141,7 +157,7 @@
 
         <div class="mx-auto space-y-8 lg:max-w-[544px]">
           <div>
-            <p class="anti-title-h2 text-[#4D96A9] uppercase">Built for modern use</p>
+            <p class="anti-title-h2 text-[#4D96A9] uppercase lg:mb-4">Built for modern use</p>
 
             <div class="mx-auto lg:max-w-[445px]">
               <h2 class="title-h2 text-[#28283D]">Smarter meetings, all in one place</h2>
@@ -157,7 +173,7 @@
     </main>
 
     <footer class="flex flex-col">
-      <div class="flex h-[136px] w-14 flex-col items-center self-center">
+      <div class="flex h-[136px] w-14 flex-col items-center self-center z-10">
         <div class="w-0.5 flex-1 bg-[#D1D1DF]"></div>
         <div
           class="flex size-14 items-center justify-center rounded-full border-2 border-[#D1D1DF] bg-white text-[#87879D]"
@@ -166,26 +182,29 @@
         </div>
       </div>
 
-      <div class="relative text-center text-white">
-        <div class="footer-image absolute -top-7 -z-10 w-full px-8 py-16 lg:py-28">
-          <div class="mx-auto flex flex-col gap-6 lg:max-w-[1120px] lg:flex-row lg:justify-between lg:text-left">
-            <div class="title-h2">
-              <h2 class="lg:max-w-[355px]">Experience more together</h2>
-            </div>
+      <div class="relative -mt-7 w-full text-center text-white">
+        <div class="footer-image pointer-events-none absolute inset-0 z-0" aria-hidden="true"></div>
 
-            <div class="description">
-              <p class="lg:max-w-[355px]">
-                Stay connected with reliable HD meetings and unlimited one-on-one and group video sessions.
-              </p>
-            </div>
-
-            <button
-              class="button lg:self-left h-fit w-fit rounded-[2rem] bg-[#855FB1] px-10 py-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#855FB1] max-lg:mx-auto"
-            >
-              Download <span class="text-[#D9B8FF]">v1.3</span>
-              <span class="sr-only"> for all platforms, from footer section</span>
-            </button>
+        <div
+          class="relative z-10 mx-auto flex flex-col gap-6 px-8 py-16 lg:max-w-[1120px] lg:flex-row lg:justify-between lg:py-28 lg:text-left"
+        >
+          <div class="title-h2">
+            <h2 class="lg:max-w-[355px]">Experience more together</h2>
           </div>
+
+          <div class="description">
+            <p class="lg:max-w-[355px]">
+              Stay connected with reliable HD meetings and unlimited one-on-one and group video sessions.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            class="button h-fit w-fit max-lg:mx-auto cursor-pointer rounded-[2rem] bg-[#855FB1] px-10 py-4 hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#855FB1] lg:self-start"
+          >
+            Download <span class="text-[#D9B8FF]">v1.3</span>
+            <span class="sr-only"> for all platforms, from footer section</span>
+          </button>
         </div>
       </div>
     </footer>
