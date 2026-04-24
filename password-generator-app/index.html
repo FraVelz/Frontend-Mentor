@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              grey: {
+                200: "#E6E5EA",
+                600: "#817D92",
+                700: "#54535B",
+                800: "#24232C",
+                850: "#18171F",
+                900: "#14131B",
+                950: "#08070B",
+              },
+              green: { 200: "#A4FFAF" },
+              yellow: { 300: "#F8CD65" },
+              orange: { 400: "#FB7C58" },
+              red: { 500: "#F64A4A" },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      #length {
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+        width: 100%;
+      }
+      #length::-webkit-slider-runnable-track {
+        background: #18171f;
+        height: 8px;
+      }
+      #length::-moz-range-track {
+        background: #18171f;
+        height: 8px;
+      }
+      #length::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        margin-top: -11px;
+        background-color: #e6e5ea;
+        height: 28px;
+        width: 28px;
+        border-radius: 100%;
+        transition: background-color 0.3s ease;
+      }
+      #length::-webkit-slider-thumb:hover {
+        background-color: #18171f;
+        border: 2px solid #a4ffaf;
+      }
+      #length::-moz-range-thumb {
+        border: none;
+        background-color: #e6e5ea;
+        height: 28px;
+        width: 28px;
+        border-radius: 100%;
+        transition: background-color 0.3s ease;
+      }
+      #length::-moz-range-thumb:hover {
+        background-color: #18171f;
+        border: 2px solid #a4ffaf;
+      }
+      #length:focus::-webkit-slider-thumb {
+        background-color: #18171f;
+        border: 2px solid #a4ffaf;
+      }
+      #length:focus::-moz-range-thumb {
+        background-color: #18171f;
+        border: 2px solid #a4ffaf;
+      }
+      #length::-moz-range-progress {
+        background: #a4ffaf;
+        height: 8px;
+      }
+      #choices-div input[type="checkbox"] {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #e6e5ea;
+        cursor: pointer;
+        position: relative;
+        margin: 0;
+        flex-shrink: 0;
+        transition: border 0.1s ease;
+      }
+      #choices-div input[type="checkbox"]:hover {
+        border-color: #a4ffaf;
+      }
+      #choices-div input[type="checkbox"]:checked {
+        background: #a4ffaf;
+        border: none;
+      }
+      #choices-div input[type="checkbox"]:checked::after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 12px;
+        background: url("images/icon-check.svg") center / contain no-repeat;
+        left: 3px;
+        top: 4.5px;
+      }
+    </style>
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | Password generator app</title>
+    <meta
+      name="description"
+      content="Generate strong passwords with adjustable length, character options, and strength feedback, then copy the result. Built for the Frontend Mentor password generator app challenge."
+    />
+    <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/password-generator-app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/password-generator-app/" />
+    <meta property="og:title" content="Frontend Mentor | Password generator app" />
+    <meta
+      property="og:description"
+      content="A dark-themed password generator with slider length, character toggles, strength meter, and one-click copy to clipboard."
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/password-generator-app/screenshot.png?raw=true"
+    />
+    <meta property="og:image:alt" content="Password generator app challenge preview" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frontend Mentor | Password generator app" />
+    <meta
+      name="twitter:description"
+      content="Create secure passwords with length control, options, and copy—built for Frontend Mentor."
+    />
+    <meta
+      name="twitter:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/password-generator-app/screenshot.png?raw=true"
+    />
+  </head>
+  <body class="box-border flex min-h-screen flex-col items-center justify-center gap-4 bg-gradient-to-r from-grey-900 to-grey-950 px-4 py-10 font-mono text-base leading-5 md:gap-8">
+    <h1 class="m-0 text-base leading-5 text-grey-600 md:text-2xl md:leading-8">Password Generator</h1>
+
+    <main class="flex w-full max-w-[540px] flex-col gap-4 md:gap-6">
+      <div id="result-div" class="flex items-center justify-between gap-4 bg-grey-800 p-4 md:px-8 md:py-4">
+        <input
+          type="text"
+          id="password"
+          class="min-w-0 flex-1 border-none bg-transparent text-2xl font-bold leading-8 text-grey-200 placeholder:text-grey-700 focus:outline-none md:text-[32px] md:leading-[42px]"
+          placeholder="P4$5W0rD!"
+          readonly
+        >
+        <div class="flex items-center gap-4">
+          <p
+            id="copied-text"
+            class="m-0 scale-90 font-bold text-green-200 opacity-0 invisible transition-[opacity,transform] duration-200 ease-out md:text-lg md:leading-6"
+          >
+            COPIED
+          </p>
+          <svg class="h-6 w-[21px] shrink-0 cursor-pointer fill-green-200 transition-transform duration-300 ease-out hover:scale-110 hover:fill-white md:h-6" width="21" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z"/></svg>
+        </div>
+      </div>
+
+      <form class="flex flex-col gap-8 bg-grey-800 p-4 md:gap-8 md:px-8 md:pb-10 md:pt-6">
+        <div id="length-div" class="flex flex-col gap-4 md:gap-6">
+          <div class="label-div mr-4 flex items-center justify-between md:mr-0">
+            <label for="length" class="m-0 font-bold text-grey-200 md:text-lg md:leading-6">Character Length</label>
+            <p id="length-text" class="m-0 text-2xl font-bold leading-8 text-green-200 md:text-[32px] md:leading-[42px]">0</p>
+          </div>
+
+          <input type="range" id="length" name="length" min="0" max="20" value="0">
+        </div>
+
+        <div id="choices-div" class="flex flex-col gap-4 md:gap-6">
+          <div class="flex items-center gap-4 md:gap-6">
+            <input type="checkbox" id="uppercase" name="uppercase">
+            <label for="uppercase" class="m-0 font-bold text-grey-200 md:text-lg md:leading-6">Include Uppercase Letters</label>
+          </div>
+
+          <div class="flex items-center gap-4 md:gap-6">
+            <input type="checkbox" id="lowercase" name="lowercase">
+            <label for="lowercase" class="m-0 font-bold text-grey-200 md:text-lg md:leading-6">Include Lowercase Letters</label>
+          </div>
+
+          <div class="flex items-center gap-4 md:gap-6">
+            <input type="checkbox" id="numbers" name="numbers">
+            <label for="numbers" class="m-0 font-bold text-grey-200 md:text-lg md:leading-6">Include Numbers</label>
+          </div>
+
+          <div class="flex items-center gap-4 md:gap-6">
+            <input type="checkbox" id="symbols" name="symbols">
+            <label for="symbols" class="m-0 font-bold text-grey-200 md:text-lg md:leading-6">Include Symbols</label>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4 md:gap-8">
+          <div id="strength-div" class="flex items-center justify-between bg-grey-850 px-4 py-3.5 md:px-8 md:py-6">
+            <p class="m-0 font-bold text-grey-600 md:text-lg md:leading-6">STRENGTH</p>
+            <div class="flex items-center gap-4">
+              <p id="strength-text" class="m-0 text-lg font-bold leading-6 text-grey-200 md:text-2xl md:leading-8"></p>
+              <div id="strength-grid" class="grid h-7 grid-cols-4 gap-2">
+                <div class="strength-bar h-full w-2.5 border-2 border-grey-200"></div>
+                <div class="strength-bar h-full w-2.5 border-2 border-grey-200"></div>
+                <div class="strength-bar h-full w-2.5 border-2 border-grey-200"></div>
+                <div class="strength-bar h-full w-2.5 border-2 border-grey-200"></div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            id="generate-btn"
+            class="flex h-14 items-center justify-center border-2 border-transparent bg-green-200 font-mono text-base font-bold leading-5 text-grey-850 transition-[background-color,color,border-color] duration-300 ease-out hover:cursor-pointer hover:border-green-200 hover:bg-transparent hover:text-green-200 md:h-[65px] md:text-lg md:leading-6"
+          >
+            GENERATE
+            <svg class="ml-2 fill-current transition-[fill] duration-300 ease-out" width="12" height="12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg>
+          </button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
