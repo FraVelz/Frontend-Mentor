@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | Tip calculator app</title>
+    <meta
+      name="description"
+      content="A responsive tip calculator to split a bill, choose tip presets or a custom percentage, and show tip and total per person, built with HTML, Tailwind CSS, and JavaScript."
+    />
+    <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/tip-calculator-app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/tip-calculator-app/" />
+    <meta property="og:title" content="Frontend Mentor | Tip calculator app" />
+    <meta
+      property="og:description"
+      content="Split the bill, select tip % or a custom value, and see tip and total per person in a two-column layout on desktop."
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/tip-calculator-app/screenshot.png?raw=true"
+    />
+    <meta property="og:image:alt" content="Tip calculator app challenge preview" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frontend Mentor | Tip calculator app" />
+    <meta
+      name="twitter:description"
+      content="Tip and total per person with validation and reset, as in the Frontend Mentor challenge."
+    />
+    <meta
+      name="twitter:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/tip-calculator-app/screenshot.png?raw=true"
+    />
+  </head>
+  <body
+    class="m-0 box-border flex min-h-screen flex-col items-center bg-[#C5E4E7] font-['Space_Mono',ui-monospace,monospace] text-2xl font-bold min-[768px]:px-20 min-[768px]:pb-8 min-[1440px]:gap-16 min-[1440px]:justify-center min-[1440px]:px-20 min-[1440px]:pt-12 min-[1440px]:pb-32"
+  >
+    <img id="logo" class="mb-0 mt-12 w-[86px] min-[1440px]:m-0" src="images/logo.svg" alt="" />
+
+    <main
+      class="box-border flex w-full max-w-full flex-1 flex-col gap-8 rounded-t-[25px] bg-white p-8 px-6 min-[768px]:max-w-[820px] min-[768px]:flex-grow-0 min-[768px]:gap-10 min-[768px]:rounded-[25px] min-[768px]:px-10 min-[768px]:py-12 min-[1440px]:m-0 min-[1440px]:max-w-[920px] min-[1440px]:grid min-[1440px]:grid-cols-2 min-[1440px]:gap-12 min-[1440px]:p-8"
+    >
+      <form id="tip-form" class="flex flex-col gap-8 px-1 min-[768px]:gap-6 min-[1440px]:px-0 min-[1440px]:py-2 min-[1440px]:gap-10">
+        <div class="form-input">
+          <div class="label-row mb-2 flex items-start justify-between text-base font-bold leading-6 text-[#5E7A7D]">
+            <label for="bill" class="m-0">Bill</label>
+            <p class="error-msg m-0 text-base font-bold text-[#E17052]" hidden>Can't be zero</p>
+          </div>
+          <div class="input-wrapper relative">
+            <img class="input-icon pointer-events-none absolute top-[15px] left-4 z-10 h-[18px] w-4" src="images/icon-dollar.svg" alt="" />
+            <input
+              type="number"
+              id="bill"
+              name="bill"
+              placeholder="0"
+              min="0"
+              class="box-border h-12 w-full rounded-md border-0 bg-[#F3F9FA] py-2 pr-4 pl-4 text-right text-2xl font-bold text-[#00474B] placeholder:opacity-35 placeholder:text-[#00474B] focus:outline-none focus:ring-2 focus:ring-[#26C2AE] data-[invalid=true]:ring-2 data-[invalid=true]:ring-[#E17052] focus:data-[invalid=true]:ring-[#E17052]"
+            />
+          </div>
+        </div>
+
+        <fieldset id="tip-fieldset" class="m-0 border-0 p-0">
+          <legend class="mb-2 block w-full p-0 text-left text-base font-bold leading-6 text-[#5E7A7D]">Select Tip %</legend>
+          <div id="tip-options" class="grid auto-rows-[3rem] grid-cols-2 gap-4 min-[768px]:grid-cols-3">
+            <button
+              type="button"
+              class="h-12 w-full cursor-pointer rounded-md border-0 bg-[#00474B] py-0 pr-2 pl-2 text-2xl font-bold text-white transition-colors hover:bg-[#9FE8DF] hover:text-[#00474B] data-[selected=true]:bg-[#26C2AE] data-[selected=true]:text-[#00474B]"
+              value="5"
+            >
+              5%
+            </button>
+            <button
+              type="button"
+              class="h-12 w-full cursor-pointer rounded-md border-0 bg-[#00474B] py-0 pr-2 pl-2 text-2xl font-bold text-white transition-colors hover:bg-[#9FE8DF] hover:text-[#00474B] data-[selected=true]:bg-[#26C2AE] data-[selected=true]:text-[#00474B]"
+              value="10"
+            >
+              10%
+            </button>
+            <button
+              type="button"
+              class="h-12 w-full cursor-pointer rounded-md border-0 bg-[#00474B] py-0 pr-2 pl-2 text-2xl font-bold text-white transition-colors hover:bg-[#9FE8DF] hover:text-[#00474B] data-[selected=true]:bg-[#26C2AE] data-[selected=true]:text-[#00474B]"
+              value="15"
+            >
+              15%
+            </button>
+            <button
+              type="button"
+              class="h-12 w-full cursor-pointer rounded-md border-0 bg-[#00474B] py-0 pr-2 pl-2 text-2xl font-bold text-white transition-colors hover:bg-[#9FE8DF] hover:text-[#00474B] data-[selected=true]:bg-[#26C2AE] data-[selected=true]:text-[#00474B]"
+              value="25"
+            >
+              25%
+            </button>
+            <button
+              type="button"
+              class="h-12 w-full cursor-pointer rounded-md border-0 bg-[#00474B] py-0 pr-2 pl-2 text-2xl font-bold text-white transition-colors hover:bg-[#9FE8DF] hover:text-[#00474B] data-[selected=true]:bg-[#26C2AE] data-[selected=true]:text-[#00474B]"
+              value="50"
+            >
+              50%
+            </button>
+            <input
+              type="number"
+              class="h-12 w-full rounded-md border-0 bg-[#F3F9FA] py-0 pr-2 pl-2 text-center text-2xl font-bold text-[#00474B] placeholder:font-bold placeholder:text-[#547878]"
+              placeholder="Custom"
+              min="0"
+            />
+          </div>
+        </fieldset>
+
+        <div class="form-input">
+          <div class="label-row mb-2 flex items-start justify-between text-base font-bold leading-6 text-[#5E7A7D]">
+            <label for="people" class="m-0">Number of People</label>
+            <p class="error-msg m-0 text-base font-bold text-[#E17052]" hidden>Can't be zero</p>
+          </div>
+          <div class="input-wrapper relative">
+            <img class="input-icon pointer-events-none absolute top-[15px] left-4 z-10 h-[18px] w-4" src="images/icon-person.svg" alt="" />
+            <input
+              type="number"
+              id="people"
+              name="people"
+              placeholder="0"
+              min="0"
+              class="box-border h-12 w-full rounded-md border-0 bg-[#F3F9FA] py-2 pr-4 pl-4 text-right text-2xl font-bold text-[#00474B] placeholder:opacity-35 placeholder:text-[#00474B] focus:outline-none focus:ring-2 focus:ring-[#26C2AE] data-[invalid=true]:ring-2 data-[invalid=true]:ring-[#E17052] focus:data-[invalid=true]:ring-[#E17052]"
+            />
+          </div>
+        </div>
+      </form>
+
+      <section
+        id="results-card"
+        class="flex min-h-0 flex-col gap-8 rounded-[15px] bg-[#00474B] p-6 min-[768px]:gap-4 min-[768px]:p-12 min-[1440px]:min-h-0 min-[1440px]:justify-between min-[1440px]:p-10"
+      >
+        <div id="results-div" class="flex flex-col gap-6 min-[768px]:gap-6">
+          <div class="result-row flex justify-between">
+            <div class="flex flex-col items-start justify-center">
+              <p class="label-text m-0 text-base font-bold leading-6 text-white">Tip Amount</p>
+              <p class="person-text m-0 text-[13px] leading-5 text-[#7F9D9F]">/ person</p>
+            </div>
+            <p id="tip-amount" class="m-0 text-[2rem] leading-[47px] tracking-[-0.67px] text-[#26C2AE] min-[768px]:text-5xl min-[768px]:leading-[4.44rem] min-[768px]:tracking-[-0.06rem]">
+              $0.00
+            </p>
+          </div>
+
+          <div class="result-row flex justify-between">
+            <div class="flex flex-col items-start justify-center">
+              <p class="label-text m-0 text-base font-bold leading-6 text-white">Total</p>
+              <p class="person-text m-0 text-[13px] leading-5 text-[#7F9D9F]">/ person</p>
+            </div>
+            <p id="total" class="m-0 text-[2rem] leading-[47px] tracking-[-0.67px] text-[#26C2AE] min-[768px]:text-5xl min-[768px]:leading-[4.44rem] min-[768px]:tracking-[-0.06rem]">
+              $0.00
+            </p>
+          </div>
+        </div>
+
+        <button
+          id="reset-btn"
+          type="button"
+          disabled
+          class="h-12 w-full cursor-pointer rounded-md border-0 bg-[#0D686D] py-2 px-8 font-['Space_Mono',ui-monospace,monospace] text-xl leading-[1.875rem] font-bold text-[#085C61] transition-colors enabled:cursor-pointer enabled:bg-[#26C2AE] enabled:text-[#00474B] enabled:hover:bg-[#9FE8DF] disabled:cursor-not-allowed"
+        >
+          RESET
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
