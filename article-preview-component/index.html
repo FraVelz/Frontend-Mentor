@@ -1,252 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Article preview component</title>
 
-  <title>Frontend Mentor | Article preview component</title>
+    <meta
+      name="description"
+      content="Solution to the Frontend Mentor article preview component challenge: article drawer with image swap and share interaction."
+    />
+    <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/article-preview-component/" />
 
-  <meta name="description"
-    content="Solution to the Frontend Mentor article preview component challenge: article drawer with image swap and share interaction." />
-  <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/article-preview-component/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/article-preview-component/" />
+    <meta property="og:title" content="Frontend Mentor | Article preview component" />
+    <meta
+      property="og:description"
+      content="Article preview component — JavaScript for share popover and responsive article card."
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/article-preview-component/screenshot.png?raw=true"
+    />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/article-preview-component/" />
-  <meta property="og:title" content="Frontend Mentor | Article preview component" />
-  <meta property="og:description"
-    content="Article preview component — JavaScript for share popover and responsive article card." />
-  <meta property="og:image"
-    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/article-preview-component/screenshot.png?raw=true" />
+    <meta property="og:image:alt" content="Article preview component challenge preview" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frontend Mentor | Article preview component" />
+    <meta name="twitter:description" content="Article preview component — Frontend Mentor solution." />
+    <meta
+      name="twitter:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/article-preview-component/screenshot.png?raw=true"
+    />
 
-  <meta property="og:image:alt" content="Article preview component challenge preview" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Frontend Mentor | Article preview component" />
-  <meta name="twitter:description" content="Article preview component — Frontend Mentor solution." />
-  <meta name="twitter:image"
-    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/article-preview-component/screenshot.png?raw=true" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap"
-    rel="stylesheet">
+    <style>
+      :root {
+        --clr-gray-900: hsl(217, 19%, 35%);
+        --clr-gray-500: hsl(214, 17%, 51%);
+        --clr-gray-400: hsl(212, 23%, 69%);
+        --clr-gray-200: hsl(210, 46%, 95%);
+      }
 
-  <style>
-    :root {
-      --clr-gray-900: hsl(217, 19%, 35%);
-      --clr-gray-500: hsl(214, 17%, 51%);
-      --clr-gray-400: hsl(212, 23%, 69%);
-      --clr-gray-200: hsl(210, 46%, 95%);
-    }
+      body {
+        font-family: 'Manrope', sans-serif;
+        background: var(--clr-gray-200);
+      }
 
-    body {
-      font-family: 'Manrope', sans-serif;
-      background: var(--clr-gray-200);
-    }
+      .title {
+        color: var(--clr-gray-900);
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.3;
+        letter-spacing: 0.25px;
+      }
 
-    .title {
-      color: var(--clr-gray-900);
-      font-size: 1.25rem;
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: 0.25px;
-    }
-
-    /* @media (min-width: 1012px) {
+      /* @media (min-width: 1012px) {
       .title {
         font-size: 1.5rem;
       }
     } */
 
-    .description {
-      font-size: 0.8125rem;
-      font-weight: 500;
-      line-height: 1.4;
-      letter-spacing: 0.12%;
-      color: var(--clr-gray-500);
-    }
+      .description {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        line-height: 1.4;
+        letter-spacing: 0.12%;
+        color: var(--clr-gray-500);
+      }
 
-    .name {
-      color: var(--clr-gray-900);
-      font-size: 0.8125rem;
-      font-weight: 700;
-      line-height: 1.4;
-      letter-spacing: 0.12%;
-    }
+      .name {
+        color: var(--clr-gray-900);
+        font-size: 0.8125rem;
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: 0.12%;
+      }
 
-    .date {
-      color: var(--clr-gray-400);
-      font-size: 0.8125rem;
-      font-weight: 700;
-      line-height: 1.4;
-      letter-spacing: 0.12%;
-    }
+      .date {
+        color: var(--clr-gray-400);
+        font-size: 0.8125rem;
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: 0.12%;
+      }
 
-    @media screen and (min-width: 1012px) {}
+      @media screen and (min-width: 1012px) {
+      }
 
-    .btn-2 {
-      background: var(--clr-gray-500);
-    }
+      .btn-2 {
+        background: var(--clr-gray-500);
+      }
 
-    #links {
-      background: var(--clr-gray-900);
-    }
+      #links {
+        background: var(--clr-gray-900);
+      }
 
-    .triangulo {
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-top: 15px solid var(--clr-gray-900);
-    }
+      .triangulo {
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid var(--clr-gray-900);
+      }
 
-    .txt-share {
-      font-size: 0.8125rem;
-      font-weight: 500;
-      line-height: 1.4;
-      letter-spacing: 25%;
-    }
-  </style>
-</head>
+      .txt-share {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        line-height: 1.4;
+        letter-spacing: 25%;
+      }
+    </style>
+  </head>
 
-<body class="h-screen flex justify-center items-center p-4">
-  <main id="main" class="
-    bg-white
-    h-[538px] min-w-[327px] md:min-w-[608px] md:max-h-[346px] lg:min-w-[730px] lg:h-[280px]
-    rounded-[1rem] flex flex-col gap-8 lg:gap-10 md:flex-row shadow-2xl
-    ">
-    <img draggable="false"
-      class="select-none h-[200px] md:w-[229px] md:h-[346px] lg:w-[285px] lg:h-[280px] max-md:rounded-t-[1rem] md:rounded-l-[1rem] object-cover"
-      src="./images/drawers.jpg" alt="">
+  <body class="flex h-screen items-center justify-center p-4">
+    <main
+      id="main"
+      class="flex h-[538px] min-w-[327px] flex-col gap-8 rounded-[1rem] bg-white shadow-2xl md:max-h-[346px] md:min-w-[608px] md:flex-row lg:h-[280px] lg:min-w-[730px] lg:gap-10"
+    >
+      <img
+        draggable="false"
+        class="h-[200px] object-cover select-none max-md:rounded-t-[1rem] md:h-[346px] md:w-[229px] md:rounded-l-[1rem] lg:h-[280px] lg:w-[285px]"
+        src="./images/drawers.jpg"
+        alt=""
+      />
 
-    <div
-      class="max-w-[267px] md:max-w-[311px] lg:max-w-[365px] flex flex-col gap-12 md:gap-6 mx-auto md:mx-0 self-center">
-      <div class="space-y-6">
-        <h1 class="title">
-          Shift the overall look and feel by adding these wonderful
-          touches to furniture in your home
-        </h1>
+      <div
+        class="mx-auto flex max-w-[267px] flex-col gap-12 self-center md:mx-0 md:max-w-[311px] md:gap-6 lg:max-w-[365px]"
+      >
+        <div class="space-y-6">
+          <h1 class="title">
+            Shift the overall look and feel by adding these wonderful touches to furniture in your home
+          </h1>
 
-        <p class="description">
-          Ever been in a room and felt like something was missing? Perhaps
-          it felt slightly bare and uninviting. I’ve got some simple tips
-          to help you make any room feel complete.
-        </p>
-      </div>
-
-      <div class="flex gap-4 items-center justify-normal w-full relative">
-        <div class="flex gap-4 items-center justify-normal w-full">
-          <img class=" size-10 rounded-full" src="./images/avatar-michelle.jpg" alt="Michelle">
-
-          <div>
-            <p class="name">Michelle Appleton</p>
-            <p class="date">28 Jun 2020</p>
-          </div>
+          <p class="description">
+            Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve
+            got some simple tips to help you make any room feel complete.
+          </p>
         </div>
 
-        <button aria-expanded="false" aria-controls="links" aria-label="Shared"
-          class="btn-shared bg-[var(--clr-gray-200)] p-2 z-10 rounded-full btn cursor-pointer">
-          <img src="./images/icon-share.svg" alt="">
-        </button>
+        <div class="relative flex w-full items-center justify-normal gap-4">
+          <div class="flex w-full items-center justify-normal gap-4">
+            <img class="size-10 rounded-full" src="./images/avatar-michelle.jpg" alt="Michelle" />
 
-        <div id="links" class="
-          md:max-w-[248px] md:h-[55px] h-[76px] max-md:max-w-[calc(100%+60px)]
-          hidden absolute -bottom-5 md:bottom-[50px] md:-right-[110px] -right-[30px] z-10
-          flex justify-center  rounded-br-[1rem] rounded-bl-[1rem] md:rounded-lg 
-          text-white
-          ">
-          <div class="flex justify-between w-full items-center max-w-[267px] md:max-w-[248px]">
-            <div class="w-[171px] mx-auto">
-              <div class="flex items-center justify-between">
-                <p class="md:text-lg text-xl txt-share">SHARE</p>
+            <div>
+              <p class="name">Michelle Appleton</p>
+              <p class="date">28 Jun 2020</p>
+            </div>
+          </div>
 
-                <button id="btn-facebook" class="cursor-pointer"><img class="md:size-4 size-5"
-                    src="./images/icon-facebook.svg" alt="Facebook" /></button>
+          <button
+            aria-expanded="false"
+            aria-controls="links"
+            aria-label="Shared"
+            class="btn-shared btn z-10 cursor-pointer rounded-full bg-[var(--clr-gray-200)] p-2"
+          >
+            <img src="./images/icon-share.svg" alt="" />
+          </button>
 
-                <button class="cursor-pointer"><img class="md:size-4 size-5" src="./images/icon-twitter.svg"
-                    alt="Twitter" /></button>
+          <div
+            id="links"
+            class="absolute -right-[30px] -bottom-5 z-10 flex hidden h-[76px] justify-center rounded-br-[1rem] rounded-bl-[1rem] text-white max-md:max-w-[calc(100%+60px)] md:-right-[110px] md:bottom-[50px] md:h-[55px] md:max-w-[248px] md:rounded-lg"
+          >
+            <div class="flex w-full max-w-[267px] items-center justify-between md:max-w-[248px]">
+              <div class="mx-auto w-[171px]">
+                <div class="flex items-center justify-between">
+                  <p class="txt-share text-xl md:text-lg">SHARE</p>
 
-                <button class="cursor-pointer"><img class="md:size-4 size-5" src="./images/icon-pinterest.svg"
-                    alt="Pinterest" /></button>
+                  <button id="btn-facebook" class="cursor-pointer">
+                    <img class="size-5 md:size-4" src="./images/icon-facebook.svg" alt="Facebook" />
+                  </button>
+
+                  <button class="cursor-pointer">
+                    <img class="size-5 md:size-4" src="./images/icon-twitter.svg" alt="Twitter" />
+                  </button>
+
+                  <button class="cursor-pointer">
+                    <img class="size-5 md:size-4" src="./images/icon-pinterest.svg" alt="Pinterest" />
+                  </button>
+                </div>
               </div>
+
+              <button
+                aria-label="Closed shared"
+                aria-expanded="true"
+                aria-controls="links"
+                class="btn-shared btn-2 z-10 h-fit cursor-pointer self-center rounded-full bg-white p-2 md:hidden"
+              >
+                <img class="size-[15px]" src="./images/icon-share-white.svg" alt="" />
+              </button>
             </div>
 
-            <button aria-label="Closed shared" aria-expanded="true" aria-controls="links"
-              class="bg-white md:hidden btn-shared self-center h-fit z-10 rounded-full btn-2 cursor-pointer p-2">
-              <img class="size-[15px]" src="./images/icon-share-white.svg" alt="">
-            </button>
+            <div class="triangulo absolute -bottom-[15px] left-[calc(50%-15px)] max-md:hidden"></div>
           </div>
-
-          <div class="triangulo max-md:hidden absolute left-[calc(50%-15px)] -bottom-[15px]"></div>
         </div>
       </div>
-    </div>
+    </main>
 
-    </div>
-  </main>
+    <script>
+      const btnShared = document.querySelectorAll('.btn-shared')
+      const links = document.getElementById('links')
 
-  <script>
-    const btnShared = document.querySelectorAll('.btn-shared');
-    const links = document.getElementById('links');
+      let isOpen = false
+      let activeBtn = null // referencia al botón activo
 
-    let isOpen = false;
-    let activeBtn = null; // referencia al botón activo
+      // ESC para cerrar
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isOpen) {
+          isOpen = false
+          links.classList.add('hidden')
 
-    // ESC para cerrar
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isOpen) {
-        isOpen = false;
-        links.classList.add('hidden');
-
-        if (activeBtn) {
-          activeBtn.setAttribute('aria-expanded', false);
-          activeBtn.focus();
+          if (activeBtn) {
+            activeBtn.setAttribute('aria-expanded', false)
+            activeBtn.focus()
+          }
         }
-      }
-    });
+      })
 
-    // click fuera
-    document.addEventListener('click', (e) => {
-      if (
-        isOpen &&
-        activeBtn &&
-        !links.contains(e.target) &&
-        !activeBtn.contains(e.target)
-      ) {
-        isOpen = false;
-        links.classList.add('hidden');
-        activeBtn.setAttribute('aria-expanded', false);
-      }
-    });
-
-    // botones
-    btnShared.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-
-        activeBtn = btn; // guardar cuál se usó
-        isOpen = !isOpen;
-
-        links.style.width =
-          document.getElementById('main').offsetWidth + 'px';
-
-        links.classList.toggle('hidden', !isOpen);
-        btn.setAttribute('aria-expanded', isOpen);
-
-        if (isOpen) {
-          document.getElementById('btn-facebook')?.focus();
-        } else {
-          btn.focus();
+      // click fuera
+      document.addEventListener('click', (e) => {
+        if (isOpen && activeBtn && !links.contains(e.target) && !activeBtn.contains(e.target)) {
+          isOpen = false
+          links.classList.add('hidden')
+          activeBtn.setAttribute('aria-expanded', false)
         }
-      });
-    });
-  </script>
-</body>
+      })
 
+      // botones
+      btnShared.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation()
+
+          activeBtn = btn // guardar cuál se usó
+          isOpen = !isOpen
+
+          links.style.width = document.getElementById('main').offsetWidth + 'px'
+
+          links.classList.toggle('hidden', !isOpen)
+          btn.setAttribute('aria-expanded', isOpen)
+
+          if (isOpen) {
+            document.getElementById('btn-facebook')?.focus()
+          } else {
+            btn.focus()
+          }
+        })
+      })
+    </script>
+  </body>
 </html>

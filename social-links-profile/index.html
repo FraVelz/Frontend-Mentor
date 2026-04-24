@@ -1,145 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Frontend Mentor | Social links profile</title>
 
-  <title>Frontend Mentor | Social links profile</title>
+    <meta
+      name="description"
+      content="Solution to the Frontend Mentor social links profile challenge: profile card with avatar and social links."
+    />
+    <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/social-links-profile/" />
 
-  <meta name="description"
-    content="Solution to the Frontend Mentor social links profile challenge: profile card with avatar and social links." />
-  <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/social-links-profile/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/social-links-profile/" />
+    <meta property="og:title" content="Frontend Mentor | Social links profile" />
+    <meta property="og:description" content="Social links profile — Tailwind CSS profile card layout." />
+    <meta
+      property="og:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/social-links-profile/screenshot.png?raw=true"
+    />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/social-links-profile/" />
-  <meta property="og:title" content="Frontend Mentor | Social links profile" />
-  <meta property="og:description" content="Social links profile — Tailwind CSS profile card layout." />
-  <meta property="og:image"
-    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/social-links-profile/screenshot.png?raw=true" />
+    <meta property="og:image:alt" content="Social links profile challenge preview" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frontend Mentor | Social links profile" />
+    <meta name="twitter:description" content="Social links profile — Frontend Mentor solution." />
+    <meta
+      name="twitter:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/social-links-profile/screenshot.png?raw=true"
+    />
 
-  <meta property="og:image:alt" content="Social links profile challenge preview" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Frontend Mentor | Social links profile" />
-  <meta name="twitter:description" content="Social links profile — Frontend Mentor solution." />
-  <meta name="twitter:image"
-    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/social-links-profile/screenshot.png?raw=true" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        src: url('./assets/fonts/static/Inter-Bold.ttf') format('truetype');
+        font-weight: 800;
+        font-style: normal;
+      }
 
-  <style>
-    @font-face {
-      font-family: 'Inter';
-      src: url('./assets/fonts/static/Inter-Bold.ttf') format('truetype');
-      font-weight: 800;
-      font-style: normal;
-    }
+      @font-face {
+        font-family: 'Inter';
+        src: url('./assets/fonts/static/Inter-SemiBold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+      }
 
-    @font-face {
-      font-family: 'Inter';
-      src: url('./assets/fonts/static/Inter-SemiBold.ttf') format('truetype');
-      font-weight: 700;
-      font-style: normal;
-    }
+      @font-face {
+        font-family: 'Inter';
+        src: url('./assets/fonts/static/Inter-Regular.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+      }
 
-    @font-face {
-      font-family: 'Inter';
-      src: url('./assets/fonts/static/Inter-Regular.ttf') format('truetype');
-      font-weight: 500;
-      font-style: normal;
-    }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
 
-    body {
-      font-family: 'Inter', sans-serif;
-    }
+      .title {
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        letter-spacing: 0px;
+      }
 
-    .title {
-      font-weight: 700;
-      font-size: 1.5rem;
-      line-height: 1.5;
-      letter-spacing: 0px;
-    }
+      .location {
+        font-weight: 800;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        letter-spacing: 0px;
+      }
 
-    .location {
-      font-weight: 800;
-      font-size: 0.875rem;
-      line-height: 1.5;
-      letter-spacing: 0px;
-    }
+      .description {
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        letter-spacing: 0px;
+      }
 
-    .description {
-      font-weight: 500;
-      font-size: 0.875rem;
-      line-height: 1.5;
-      letter-spacing: 0px;
-    }
+      .social-links {
+        font-weight: 800;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        letter-spacing: 0px;
+      }
 
-    .social-links {
-      font-weight: 800;
-      font-size: 0.875rem;
-      line-height: 1.5;
-      letter-spacing: 0px;
-    }
+      .social-links:focus {
+        outline: none;
+      }
 
-    .social-links:focus {
-      outline: none;
-    }
+      .social-links:focus-visible {
+        outline: 1px solid #c4f82a;
+        outline-offset: 1px;
+      }
+    </style>
+  </head>
 
-    .social-links:focus-visible {
-      outline: 1px solid #c4f82a;
-      outline-offset: 1px;
-    }
-  </style>
-</head>
+  <body class="flex h-screen items-center justify-center bg-[#141414] md:p-10">
+    <main
+      class="m-6 flex h-fit w-full min-w-[313px] flex-col gap-6 rounded-lg bg-[#1F1F1F] p-6 text-center md:m-0 md:max-w-96 md:p-10"
+    >
+      <img
+        draggable="false"
+        class="m-auto size-[5.5rem] rounded-full select-none"
+        src="./assets/images/avatar-jessica.jpeg"
+        alt="Jessica Randall"
+      />
 
-<body class="
-  md:p-10 bg-[#141414]
-  h-screen flex items-center justify-center
-">
+      <div class="flex flex-col gap-1">
+        <h1 class="title text-white">Jessica Randall</h1>
+        <h2 class="location text-[#c4f82a]">London, United Kingdom</h2>
+      </div>
 
-  <main class="
-    md:max-w-96 md:m-0 md:p-10 
-    w-full m-6 p-6 min-w-[313px] h-fit bg-[#1F1F1F] 
-    flex flex-col gap-6 text-center rounded-lg
-  ">
+      <p class="description text-white">"Front-end developer and avid reader."</p>
 
-    <img draggable="false" class="select-none size-[5.5rem] rounded-full m-auto"
-      src="./assets/images/avatar-jessica.jpeg" alt="Jessica Randall">
-
-    <div class="flex flex-col gap-1">
-      <h1 class="title text-white">Jessica Randall</h1>
-      <h2 class="location text-[#c4f82a]">London, United Kingdom</h2>
-    </div>
-
-    <p class="description text-white">"Front-end developer and avid reader."</p>
-
-    <ol class="flex list-none flex-col gap-4 p-0">
-      <li class="w-full">
-        <a class="social-links block w-full rounded-xl bg-[#333333] p-3 text-center text-white transition-all duration-500 hover:bg-[#c4f82a] hover:text-[#333]"
-          href="#">GitHub</a>
-      </li>
-      <li class="w-full">
-        <a class="social-links block w-full rounded-xl bg-[#333333] p-3 text-center text-white transition-all duration-500 hover:bg-[#c4f82a] hover:text-[#333]"
-          href="#">Frontend Mentor</a>
-      </li>
-      <li class="w-full">
-        <a class="social-links block w-full rounded-xl bg-[#333333] p-3 text-center text-white transition-all duration-500 hover:bg-[#c4f82a] hover:text-[#333]"
-          href="#">LinkedIn</a>
-      </li>
-      <li class="w-full">
-        <a class="social-links block w-full rounded-xl bg-[#333333] p-3 text-center text-white transition-all duration-500 hover:bg-[#c4f82a] hover:text-[#333]"
-          href="#">Twitter</a>
-      </li>
-      <li class="w-full">
-        <a class="social-links block w-full rounded-xl bg-[#333333] p-3 text-center text-white transition-all duration-500 hover:bg-[#c4f82a] hover:text-[#333]"
-          href="#">Instagram</a>
-      </li>
-    </ol>
-  </main>
-</body>
-
+      <ol class="flex list-none flex-col gap-4 p-0">
+        <li class="w-full">
+          <a
+            class="social-links block w-full rounded-xl bg-[#333333] p-3 text-center text-white transition-all duration-500 hover:bg-[#c4f82a] hover:text-[#333]"
+            href="#"
+            >GitHub</a
+          >
+        </li>
+        <li class="w-full">
+          <a
+            class="social-links block w-full rounded-xl bg-[#333333] p-3 text-center text-white transition-all duration-500 hover:bg-[#c4f82a] hover:text-[#333]"
+            href="#"
+            >Frontend Mentor</a
+          >
+        </li>
+        <li class="w-full">
+          <a
+            class="social-links block w-full rounded-xl bg-[#333333] p-3 text-center text-white transition-all duration-500 hover:bg-[#c4f82a] hover:text-[#333]"
+            href="#"
+            >LinkedIn</a
+          >
+        </li>
+        <li class="w-full">
+          <a
+            class="social-links block w-full rounded-xl bg-[#333333] p-3 text-center text-white transition-all duration-500 hover:bg-[#c4f82a] hover:text-[#333]"
+            href="#"
+            >Twitter</a
+          >
+        </li>
+        <li class="w-full">
+          <a
+            class="social-links block w-full rounded-xl bg-[#333333] p-3 text-center text-white transition-all duration-500 hover:bg-[#c4f82a] hover:text-[#333]"
+            href="#"
+            >Instagram</a
+          >
+        </li>
+      </ol>
+    </main>
+  </body>
 </html>

@@ -1,226 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Frontend Mentor | Blog preview card</title>
 
-  <title>Frontend Mentor | Blog preview card</title>
+    <meta
+      name="description"
+      content="Solution to the Frontend Mentor blog preview card challenge: card layout with tag, title, lead text and author."
+    />
+    <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/blog-preview-card/" />
 
-  <meta name="description"
-    content="Solution to the Frontend Mentor blog preview card challenge: card layout with tag, title, lead text and author." />
-  <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/blog-preview-card/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/blog-preview-card/" />
+    <meta property="og:title" content="Frontend Mentor | Blog preview card" />
+    <meta property="og:description" content="Blog preview card — semantic HTML and CSS for a blog post teaser." />
+    <meta
+      property="og:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/blog-preview-card/screenshot.png?raw=true"
+    />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/blog-preview-card/" />
-  <meta property="og:title" content="Frontend Mentor | Blog preview card" />
-  <meta property="og:description" content="Blog preview card — semantic HTML and CSS for a blog post teaser." />
-  <meta property="og:image"
-    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/blog-preview-card/screenshot.png?raw=true" />
+    <meta property="og:image:alt" content="Blog preview card challenge preview" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frontend Mentor | Blog preview card" />
+    <meta name="twitter:description" content="Blog preview card — Frontend Mentor solution." />
+    <meta
+      name="twitter:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/blog-preview-card/screenshot.png?raw=true"
+    />
 
-  <meta property="og:image:alt" content="Blog preview card challenge preview" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Frontend Mentor | Blog preview card" />
-  <meta name="twitter:description" content="Blog preview card — Frontend Mentor solution." />
-  <meta name="twitter:image"
-    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/blog-preview-card/screenshot.png?raw=true" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @font-face {
+        font-family: 'Figtree';
+        /* Nombre personalizado */
+        src: url('./assets/fonts/static/Figtree-ExtraBold.ttf') format('truetype');
+        /* Rutas locales */
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+      }
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    @font-face {
-      font-family: 'Figtree';
-      /* Nombre personalizado */
-      src: url('./assets/fonts/static/Figtree-ExtraBold.ttf') format('truetype');
-      /* Rutas locales */
-      font-weight: 800;
-      font-style: normal;
-      font-display: swap;
-    }
+      @font-face {
+        font-family: 'Figtree';
+        src: url('./assets/fonts/static/Figtree-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
 
-    @font-face {
-      font-family: 'Figtree';
-      src: url('./assets/fonts/static/Figtree-Medium.ttf') format('truetype');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
+      :root {
+        --color-brand-primary: hsl(47, 88%, 63%);
 
+        --color-bg-card: hsl(0, 0%, 100%);
+        --color-text-main: hsl(0, 0%, 7%);
+        --color-text-muted: hsl(0, 0%, 42%);
 
-    :root {
-      --color-brand-primary: hsl(47, 88%, 63%);
+        --color-border-soft: hsl(0, 0%, 7%);
 
-      --color-bg-card: hsl(0, 0%, 100%);
-      --color-text-main: hsl(0, 0%, 7%);
-      --color-text-muted: hsl(0, 0%, 42%);
+        --spacing-md: 24px;
+        --spacing-sm: 12px;
+        --spacing-xs: 8px;
+        --spacing-xxs: 4px;
 
-      --color-border-soft: hsl(0, 0%, 7%);
+        --font-sm: 0.75rem;
+        /* 12px; */
+        --font-md: 0.875rem;
+        /* 14px; */
+        --font-lg: 1rem;
+        /* 16px; */
+        --font-xl: 1.5rem;
+        /* 20px; */
+      }
 
-      --spacing-md: 24px;
-      --spacing-sm: 12px;
-      --spacing-xs: 8px;
-      --spacing-xxs: 4px;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-      --font-sm: 0.75rem;
-      /* 12px; */
-      --font-md: 0.875rem;
-      /* 14px; */
-      --font-lg: 1rem;
-      /* 16px; */
-      --font-xl: 1.5rem;
-      /* 20px; */
-    }
+      body {
+        height: 100vh;
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        font-family:
+          'Figtree',
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          'Helvetica Neue',
+          Arial,
+          'Noto Sans',
+          sans-serif;
 
-    body {
-      height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-      font-family: 'Figtree', -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        background-color: var(--color-brand-primary);
+      }
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      .container {
+        max-width: 24rem;
 
-      background-color: var(--color-brand-primary);
-    }
+        background-color: var(--color-bg-card);
+        margin: var(--spacing-md);
+        padding: var(--spacing-md);
 
-    .container {
-      max-width: 24rem;
+        border: 1px solid var(--color-border-soft);
+        border-radius: var(--spacing-md);
+        box-shadow: 10px 10px 0px var(--color-border-soft);
 
-      background-color: var(--color-bg-card);
-      margin: var(--spacing-md);
-      padding: var(--spacing-md);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
 
-      border: 1px solid var(--color-border-soft);
-      border-radius: var(--spacing-md);
-      box-shadow: 10px 10px 0px var(--color-border-soft);
+      .img {
+        user-select: none;
+        height: 200px;
+        width: 100%;
+        border-radius: var(--spacing-sm);
+      }
 
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-md);
-    }
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+      }
 
-    .img {
-      user-select: none;
-      height: 200px;
-      width: 100%;
-      border-radius: var(--spacing-sm);
-    }
+      .tag {
+        width: fit-content;
 
-    .content {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-sm);
-    }
+        font-weight: 800;
+        font-size: var(--font-md);
+        letter-spacing: 0px;
+        line-height: 1.5;
 
-    .tag {
-      width: fit-content;
+        padding: var(--spacing-xxs) var(--spacing-sm);
+        border-radius: var(--spacing-xxs);
+        background-color: var(--color-brand-primary);
+      }
 
-      font-weight: 800;
-      font-size: var(--font-md);
-      letter-spacing: 0px;
-      line-height: 1.5;
+      .date {
+        font-weight: 500;
+        font-size: var(--font-md);
+        letter-spacing: 0px;
+        line-height: 1.5;
+      }
 
-      padding: var(--spacing-xxs) var(--spacing-sm);
-      border-radius: var(--spacing-xxs);
-      background-color: var(--color-brand-primary);
-    }
+      .a {
+        text-decoration: none;
+        color: inherit;
+      }
 
-    .date {
-      font-weight: 500;
-      font-size: var(--font-md);
-      letter-spacing: 0px;
-      line-height: 1.5;
-    }
+      .a:focus-visible {
+        outline: 2px solid var(--color-brand-primary);
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
 
-    .a {
-      text-decoration: none;
-      color: inherit;
-    }
+      .a:hover .title,
+      .a:focus-visible .title {
+        color: var(--color-brand-primary);
+      }
 
-    .a:focus-visible {
-      outline: 2px solid var(--color-brand-primary);
-      outline-offset: 3px;
-      border-radius: 2px;
-    }
+      .title {
+        color: var(--color-text-main);
+        font-weight: 800;
+        font-size: var(--font-xl);
+        letter-spacing: 0px;
+        line-height: 1.5;
+      }
 
-    .a:hover .title,
-    .a:focus-visible .title {
-      color: var(--color-brand-primary);
-    }
+      .description {
+        font-weight: 500;
+        font-size: var(--font-lg);
+        letter-spacing: 0px;
+        line-height: 1.5;
 
-    .title {
-      color: var(--color-text-main);
-      font-weight: 800;
-      font-size: var(--font-xl);
-      letter-spacing: 0px;
-      line-height: 1.5;
-    }
+        color: var(--color-text-muted);
+      }
 
-    .description {
-      font-weight: 500;
-      font-size: var(--font-lg);
-      letter-spacing: 0px;
-      line-height: 1.5;
+      .user {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
 
-      color: var(--color-text-muted);
-    }
+        font-weight: 800;
+        font-size: var(--font-md);
+        letter-spacing: 0px;
+        line-height: 1.5;
+      }
 
-    .user {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-sm);
+      .user img {
+        user-select: none;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
 
-      font-weight: 800;
-      font-size: var(--font-md);
-      letter-spacing: 0px;
-      line-height: 1.5;
-    }
+  <body>
+    <main class="container">
+      <img draggable="false" class="img" src="./assets/images/illustration-article.svg" alt="" />
 
-    .user img {
-      user-select: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-    }
-  </style>
-</head>
+      <div class="content">
+        <p class="tag">Learning</p>
 
-<body>
-  <main class="container">
-    <img draggable="false" class="img" src="./assets/images/illustration-article.svg" alt="">
+        <time datetime="2023-12-21" class="date"> Published 21 Dec 2023 </time>
 
-    <div class="content">
-      <p class="tag">
-        Learning</p>
+        <a class="a" href="#">
+          <h1 class="title">HTML &amp; CSS foundations</h1>
+        </a>
 
-      <time datetime="2023-12-21" class="date">
-        Published 21 Dec 2023
-      </time>
+        <p class="description">
+          These languages are the backbone of every website, defining structure, content, and presentation.
+        </p>
+      </div>
 
-      <a class="a" href="#">
-        <h1 class="title">HTML &amp; CSS foundations</h1>
-      </a>
-
-      <p class="description">These languages are the backbone of every website, defining structure, content, and
-        presentation.</p>
-    </div>
-
-    <div class="user">
-      <img draggable="false" src="./assets/images/image-avatar.webp" alt="Greg Hooper">
-      Greg Hooper
-    </div>
-  </main>
-</body>
-
+      <div class="user">
+        <img draggable="false" src="./assets/images/image-avatar.webp" alt="Greg Hooper" />
+        Greg Hooper
+      </div>
+    </main>
+  </body>
 </html>

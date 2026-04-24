@@ -6,12 +6,12 @@ Este documento define **cómo añadir metadatos** (SEO, Open Graph, Twitter) en 
 
 ## Constantes del repositorio
 
-| Concepto | Valor |
-|----------|--------|
-| **Usuario / org en GitHub** | `FraVelz` |
-| **Repositorio** | `Frontend-Mentor` |
-| **Base pública (GitHub Pages)** | `https://fravelz.github.io/Frontend-Mentor` |
-| **Rama por defecto en URLs raw** | `main` |
+| Concepto                         | Valor                                       |
+| -------------------------------- | ------------------------------------------- |
+| **Usuario / org en GitHub**      | `FraVelz`                                   |
+| **Repositorio**                  | `Frontend-Mentor`                           |
+| **Base pública (GitHub Pages)**  | `https://fravelz.github.io/Frontend-Mentor` |
+| **Rama por defecto en URLs raw** | `main`                                      |
 
 ### URLs de imagen para redes (previews)
 
@@ -72,19 +72,25 @@ Siempre con **trailing slash** y bajo el dominio de Pages:
 Sustituye los marcadores `{{NOMBRE_CARPETA}}`, `{{TITULO_CORTO}}` y `{{DESCRIPCION_EN}}`.
 
 ```html
-  <meta name="description" content="{{DESCRIPCION_EN}}" />
-  <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/{{NOMBRE_CARPETA}}/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/{{NOMBRE_CARPETA}}/" />
-  <meta property="og:title" content="Frontend Mentor | {{TITULO_CORTO}}" />
-  <meta property="og:description" content="{{DESCRIPCION_OG_CORTA_EN}}" />
-  <meta property="og:image" content="https://github.com/FraVelz/Frontend-Mentor/blob/main/{{NOMBRE_CARPETA}}/screenshot.png?raw=true" />
-  <meta property="og:image:alt" content="{{TITULO_CORTO}} challenge preview" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Frontend Mentor | {{TITULO_CORTO}}" />
-  <meta name="twitter:description" content="{{DESCRIPCION_TWITTER_CORTA_EN}}" />
-  <meta name="twitter:image" content="https://github.com/FraVelz/Frontend-Mentor/blob/main/{{NOMBRE_CARPETA}}/screenshot.png?raw=true" />
+<meta name="description" content="{{DESCRIPCION_EN}}" />
+<link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/{{NOMBRE_CARPETA}}/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/{{NOMBRE_CARPETA}}/" />
+<meta property="og:title" content="Frontend Mentor | {{TITULO_CORTO}}" />
+<meta property="og:description" content="{{DESCRIPCION_OG_CORTA_EN}}" />
+<meta
+  property="og:image"
+  content="https://github.com/FraVelz/Frontend-Mentor/blob/main/{{NOMBRE_CARPETA}}/screenshot.png?raw=true"
+/>
+<meta property="og:image:alt" content="{{TITULO_CORTO}} challenge preview" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Frontend Mentor | {{TITULO_CORTO}}" />
+<meta name="twitter:description" content="{{DESCRIPCION_TWITTER_CORTA_EN}}" />
+<meta
+  name="twitter:image"
+  content="https://github.com/FraVelz/Frontend-Mentor/blob/main/{{NOMBRE_CARPETA}}/screenshot.png?raw=true"
+/>
 ```
 
 - `{{TITULO_CORTO}}` debe coincidir con el nombre del reto en Frontend Mentor (como en el resto de proyectos: después del `|` en `<title>`).
@@ -109,15 +115,15 @@ Puedes pegar o referenciar:
 
 > Aplica las convenciones de `docs/CONVENCIONES-METADATOS.md` al proyecto en la carpeta `{nombre}`. Título del reto: «…». Descripción breve en inglés: «…».
 
-Con eso se puede generar el bloque de `<head>`, y si indicas además *“actualiza el index raíz”*, mantener alineado el listado y las capturas.
+Con eso se puede generar el bloque de `<head>`, y si indicas además _“actualiza el index raíz”_, mantener alineado el listado y las capturas.
 
 ---
 
 ## 6. Campos mínimos (resumen)
 
-| Dónde | Campos mínimos |
-|-------|----------------|
-| **Raíz** | `description`, `canonical`, `og:*` básicos + `twitter:card` + imágenes |
+| Dónde    | Campos mínimos                                                                                 |
+| -------- | ---------------------------------------------------------------------------------------------- |
+| **Raíz** | `description`, `canonical`, `og:*` básicos + `twitter:card` + imágenes                         |
 | **Reto** | `description`, `canonical`, `og:url/title/description/image`, `twitter:*` e imagen por carpeta |
 
 No es obligatorio añadir `keywords`, `article:*` o `og:image:width/height` salvo que se quiera optimizar un caso concreto.

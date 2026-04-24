@@ -1,105 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Four card feature section</title>
+    <meta
+      name="description"
+      content="Solution to the Frontend Mentor four card feature section challenge: feature grid with icons and balanced layout."
+    />
+    <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/four-card-feature-section/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/four-card-feature-section/" />
+    <meta property="og:title" content="Frontend Mentor | Four card feature section" />
+    <meta property="og:description" content="Four card feature section — CSS layout for a services or features grid." />
+    <meta
+      property="og:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/four-card-feature-section/screenshot.png?raw=true"
+    />
+    <meta property="og:image:alt" content="Four card feature section challenge preview" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frontend Mentor | Four card feature section" />
+    <meta name="twitter:description" content="Four card feature section — Frontend Mentor solution." />
+    <meta
+      name="twitter:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/four-card-feature-section/screenshot.png?raw=true"
+    />
 
-  <title>Frontend Mentor | Four card feature section</title>
-  <meta name="description"
-    content="Solution to the Frontend Mentor four card feature section challenge: feature grid with icons and balanced layout." />
-  <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/four-card-feature-section/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/four-card-feature-section/" />
-  <meta property="og:title" content="Frontend Mentor | Four card feature section" />
-  <meta property="og:description" content="Four card feature section — CSS layout for a services or features grid." />
-  <meta property="og:image"
-    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/four-card-feature-section/screenshot.png?raw=true" />
-  <meta property="og:image:alt" content="Four card feature section challenge preview" />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Frontend Mentor | Four card feature section" />
-  <meta name="twitter:description" content="Four card feature section — Frontend Mentor solution." />
-  <meta name="twitter:image"
-    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/four-card-feature-section/screenshot.png?raw=true" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <link rel="stylesheet" href="./styles/fonts.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-</head>
+  <body class="flex justify-center bg-white px-[31px] py-[56px] md:py-[80px] lg:py-[94px]">
+    <main class="min-w-[314px] space-y-[60px] md:space-y-[74px]">
+      <div class="mx-auto max-w-[540px] space-y-4 text-center text-[#4D4F62]">
+        <h1 class="">
+          <span class="title-h1-span1">Reliable, efficient delivery</span><br />
+          <span class="title-h1-span2">Powered by Technology</span>
+        </h1>
 
-<body class="flex justify-center px-[31px] py-[56px] md:py-[80px] lg:py-[94px] bg-white">
-
-  <main class="min-w-[314px] space-y-[60px] md:space-y-[74px]">
-    <div class="mx-auto space-y-4 text-[#4D4F62] text-center max-w-[540px]">
-      <h1 class="">
-        <span class="title-h1-span1">Reliable, efficient delivery</span><br />
-        <span class="title-h1-span2">Powered by Technology</span>
-      </h1>
-
-      <p class="general-description">
-        Our Artificial Intelligence powered tools use millions of project data points
-        to ensure that your project is successful
-      </p>
-    </div>
-
-    <div class="flex flex-col lg:flex-row items-center gap-8">
-      <div class="md:h-[250px] p-8 space-y-8 border-t-4 border-[#44D3D2] rounded-[0.5rem] shadow-lg max-w-[314px]">
-        <div>
-          <h2 class="title-h2 text-[#4D4F62]">Supervisor</h2>
-          <p class="description text-[#6A7178]">Monitors activity to identify project roadblocks</p>
-        </div>
-
-        <div class="w-full flex justify-end">
-          <img class="size-16" src="./images/icon-supervisor.svg" alt="Supervisor">
-        </div>
+        <p class="general-description">
+          Our Artificial Intelligence powered tools use millions of project data points to ensure that your project is
+          successful
+        </p>
       </div>
 
-      <div class="flex flex-col md:flex-row lg:flex-col gap-8">
-        <div class="md:h-[250px] p-8 space-y-8 border-t-4 border-[#EA5454] rounded-[0.5rem] shadow-lg max-w-[314px]">
+      <div class="flex flex-col items-center gap-8 lg:flex-row">
+        <div class="max-w-[314px] space-y-8 rounded-[0.5rem] border-t-4 border-[#44D3D2] p-8 shadow-lg md:h-[250px]">
           <div>
-            <h2 class="title-h2 text-[#4D4F62]">Team Builder</h2>
-            <p class="description text-[#6A7178]">Scans our talent network to create the optimal team for your project
-            </p>
+            <h2 class="title-h2 text-[#4D4F62]">Supervisor</h2>
+            <p class="description text-[#6A7178]">Monitors activity to identify project roadblocks</p>
           </div>
 
-          <div class="w-full flex justify-end">
-            <img class="size-16" src="./images/icon-team-builder.svg" alt="Team Builder">
+          <div class="flex w-full justify-end">
+            <img class="size-16" src="./images/icon-supervisor.svg" alt="Supervisor" />
           </div>
         </div>
 
-        <div class="md:h-[250px] p-8 space-y-8 border-t-4 border-[#FCAE4A] rounded-[0.5rem] shadow-lg max-w-[314px]">
+        <div class="flex flex-col gap-8 md:flex-row lg:flex-col">
+          <div class="max-w-[314px] space-y-8 rounded-[0.5rem] border-t-4 border-[#EA5454] p-8 shadow-lg md:h-[250px]">
+            <div>
+              <h2 class="title-h2 text-[#4D4F62]">Team Builder</h2>
+              <p class="description text-[#6A7178]">
+                Scans our talent network to create the optimal team for your project
+              </p>
+            </div>
+
+            <div class="flex w-full justify-end">
+              <img class="size-16" src="./images/icon-team-builder.svg" alt="Team Builder" />
+            </div>
+          </div>
+
+          <div class="max-w-[314px] space-y-8 rounded-[0.5rem] border-t-4 border-[#FCAE4A] p-8 shadow-lg md:h-[250px]">
+            <div>
+              <h2 class="title-h2 text-[#4D4F62]">Karma</h2>
+              <p class="description text-[#6A7178]">Regularly evaluates our talent to ensure quality</p>
+            </div>
+
+            <div class="flex w-full justify-end">
+              <img draggable="false" class="size-16 select-none" src="./images/icon-karma.svg" alt="Karma" />
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-[314px] space-y-8 rounded-[0.5rem] border-t-4 border-[#549EF2] p-8 shadow-lg md:h-[250px]">
           <div>
-            <h2 class="title-h2 text-[#4D4F62]">Karma</h2>
-            <p class="description text-[#6A7178]">Regularly evaluates our talent to ensure quality</p>
+            <h2 class="title-h2 text-[#4D4F62]">Calculator</h2>
+            <p class="description text-[#6A7178]">Uses data from past projects to provide better delivery estimates</p>
           </div>
 
-          <div class="w-full flex justify-end">
-            <img draggable="false" class="select-none size-16" src="./images/icon-karma.svg" alt="Karma">
+          <div class="flex w-full justify-end">
+            <img draggable="false" class="size-16 select-none" src="./images/icon-calculator.svg" alt="Calculator" />
           </div>
         </div>
       </div>
-
-      <div class="md:h-[250px] p-8 space-y-8 border-t-4 border-[#549EF2] rounded-[0.5rem] shadow-lg max-w-[314px]">
-        <div>
-          <h2 class="title-h2 text-[#4D4F62]">Calculator</h2>
-          <p class="description text-[#6A7178]">Uses data from past projects to provide better delivery estimates</p>
-        </div>
-
-        <div class="w-full flex justify-end">
-          <img draggable="false" class="select-none size-16" src="./images/icon-calculator.svg" alt="Calculator">
-        </div>
-      </div>
-    </div>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>

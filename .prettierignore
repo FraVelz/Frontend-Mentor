@@ -1,0 +1,14 @@
+node_modules
+.pnpm-store
+dist
+build
+out
+coverage
+.cache
+.parcel-cache
+
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+eslint.config.js

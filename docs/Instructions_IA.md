@@ -6,13 +6,13 @@ Documento de referencia para **ti** y para el **asistente de IA** cuando se inco
 
 ## Alcance
 
-| Archivo / ubicación                         | Rol                                                                 |
-| ------------------------------------------- | ------------------------------------------------------------------- |
-| `README.md` (raíz)                          | Lista de retos en Markdown, enlaces relativos a cada carpeta. |
-| `index.html` (raíz)                         | Página índice (GitHub Pages): **Tailwind CSS** (CDN), cuadrícula de **tarjetas** con captura por reto. |
-| `docs/readme-template.md`                   | Plantilla para el README de cada reto; base para generar `nombre-reto/README.md` (personalizar en la carpeta, no dejar la plantilla dentro del reto). |
-| `docs/CONVENCIONES-METADATOS.md`             | Convenciones de metadatos (`<head>`) para el índice y cada reto. |
-| `nombre-reto/README.md`                     | Documentación de la solución (estructura alineada con retos ya hechos en este repo). |
+| Archivo / ubicación              | Rol                                                                                                                                                   |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `README.md` (raíz)               | Lista de retos en Markdown, enlaces relativos a cada carpeta.                                                                                         |
+| `index.html` (raíz)              | Página índice (GitHub Pages): **Tailwind CSS** (CDN), cuadrícula de **tarjetas** con captura por reto.                                                |
+| `docs/readme-template.md`        | Plantilla para el README de cada reto; base para generar `nombre-reto/README.md` (personalizar en la carpeta, no dejar la plantilla dentro del reto). |
+| `docs/CONVENCIONES-METADATOS.md` | Convenciones de metadatos (`<head>`) para el índice y cada reto.                                                                                      |
+| `nombre-reto/README.md`          | Documentación de la solución (estructura alineada con retos ya hechos en este repo).                                                                  |
 
 No forman parte de esta rutina obligatoria: código de implementación detallado dentro de `nombre-reto/` más allá de lo necesario para el README, y `docs/NOTAS-TECNICAS.md` (salvo que enlaces un reto nuevo allí por separado).
 
@@ -46,10 +46,10 @@ Reglas:
 
 - Título del enlace: **español**, corto y descriptivo (puedes basarte en el nombre del reto en FM).
 - Destino: ruta relativa `./nombre-carpeta/`.
-- Tras el guión largo (`—`): frase fija del estilo *implementación en la carpeta* + nombre de carpeta entre backticks.
+- Tras el guión largo (`—`): frase fija del estilo _implementación en la carpeta_ + nombre de carpeta entre backticks.
 - Nuevos retos: **al final** de la lista, salvo que ya exista un criterio de orden distinto acordado.
 
-La nota *(La lista se irá ampliando…)* debe mantenerse debajo de la lista si ya está.
+La nota _(La lista se irá ampliando…)_ debe mantenerse debajo de la lista si ya está.
 
 ---
 
@@ -81,7 +81,12 @@ El atributo `class` del `<a>` y las clases del contenedor de la tarjeta deben se
 
 ```html
 <li>
-  <a class="… mismas clases Tailwind que el resto de tarjetas …" href="./NOMBRE-CARPETA/" target="_blank" rel="noopener noreferrer">
+  <a
+    class="mismas clases Tailwind que el resto de tarjetas … …"
+    href="./NOMBRE-CARPETA/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <div class="relative aspect-[16/10] overflow-hidden bg-slate-900/80">
       <img
         src="./NOMBRE-CARPETA/screenshot.png"
@@ -90,15 +95,27 @@ El atributo `class` del `<a>` y las clases del contenedor de la tarjeta deben se
         height="400"
         loading="lazy"
         decoding="async"
-        class="h-full w-full object-cover object-top transition duration-300 motion-safe:group-hover:scale-[1.03] motion-reduce:group-hover:scale-100" />
+        class="h-full w-full object-cover object-top transition duration-300 motion-safe:group-hover:scale-[1.03] motion-reduce:group-hover:scale-100"
+      />
     </div>
     <div class="flex flex-1 items-start justify-between gap-3 p-4 sm:p-5">
       <div class="min-w-0">
         <span class="block text-base font-semibold tracking-tight text-slate-100">Título del reto FM</span>
-        <span class="mt-1 block truncate font-['JetBrains_Mono',ui-monospace,monospace] text-xs font-medium text-sky-400/95">/NOMBRE-CARPETA/</span>
+        <span
+          class="mt-1 block truncate font-['JetBrains_Mono',ui-monospace,monospace] text-xs font-medium text-sky-400/95"
+          >/NOMBRE-CARPETA/</span
+        >
       </div>
-      <span class="… mismas clases que el ícono de flecha …" aria-hidden="true">
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <span class="mismas clases que el ícono de flecha … …" aria-hidden="true">
+        <svg
+          class="h-4 w-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
           <path d="M5 12h14M13 6l6 6-6 6" />
         </svg>
       </span>
@@ -118,7 +135,7 @@ Al preparar una carpeta nueva (o alinear una que aún tenga solo el README de Fr
 1. **Eliminar** el `README.md` original del paquete de Frontend Mentor (el que describe el reto para descargarlo, no tu solución documentada).
 2. **Eliminar**, si aparecen en esa carpeta, **`AGENTS.md`** y **`CLAUDE.md`** (son redundantes o ajenos al contenido que debe vivir en el monorepo; la guía para agentes, si aplica, está en la raíz del repo).
 3. **Crear el nuevo `README.md`** a partir de **`docs/readme-template.md`**: copiar la plantilla a `nombre-reto/README.md` (o equivalente: el contenido final debe ser un único `README.md` en la carpeta del reto, no dejar `readme-template.md` dentro del reto).
-4. **Configurar** ese `README.md` siguiendo el **mismo criterio** que los README de los retos ya completados en este repo (por ejemplo `qr-code-component/README.md`, `blog-preview-card/README.md`, `social-links-profile/README.md`): título con el patrón *Frontend Mentor - \<nombre del reto\> solution*, enlace al challenge en Frontend Mentor, tabla de contenidos coherente, secciones **Overview** (Screenshot, Links), **My process** (Built with, What I learned, Continued development, Useful resources) y **Author**, enlaces a repositorio y GitHub Pages con la ruta correcta (`https://github.com/FraVelz/Frontend-Mentor/tree/main/<carpeta-del-reto>`, `https://fravelz.github.io/Frontend-Mentor/<carpeta-del-reto>/`), imagen `./screenshot.png` cuando exista captura, y listas de tecnologías alineadas con lo realmente usado en el proyecto.
+4. **Configurar** ese `README.md` siguiendo el **mismo criterio** que los README de los retos ya completados en este repo (por ejemplo `qr-code-component/README.md`, `blog-preview-card/README.md`, `social-links-profile/README.md`): título con el patrón _Frontend Mentor - \<nombre del reto\> solution_, enlace al challenge en Frontend Mentor, tabla de contenidos coherente, secciones **Overview** (Screenshot, Links), **My process** (Built with, What I learned, Continued development, Useful resources) y **Author**, enlaces a repositorio y GitHub Pages con la ruta correcta (`https://github.com/FraVelz/Frontend-Mentor/tree/main/<carpeta-del-reto>`, `https://fravelz.github.io/Frontend-Mentor/<carpeta-del-reto>/`), imagen `./screenshot.png` cuando exista captura, y listas de tecnologías alineadas con lo realmente usado en el proyecto.
 
 Si `docs/readme-template.md` aún no existe, créalo primero en `docs/` duplicando la estructura de uno de esos README de referencia y sustituyendo los fragmentos variables por marcadores claros (nombre del reto, URLs, carpeta).
 
@@ -141,7 +158,7 @@ Hasta que eso exista en el README, no inventar columnas nuevas.
 
 ### Regla de cierre
 
-**No dar por terminada** la incorporación o actualización de un reto hasta que **todo** lo tocado en esa sesión esté **versionado y subido**: `git add` de los archivos relevantes, **al menos un *commit*** con mensaje **Conventional Commits**, y **`git push`** al remoto habitual (`origin`, rama en la que trabajes, p. ej. `main`). Eso incluye:
+**No dar por terminada** la incorporación o actualización de un reto hasta que **todo** lo tocado en esa sesión esté **versionado y subido**: `git add` de los archivos relevantes, **al menos un _commit_** con mensaje **Conventional Commits**, y **`git push`** al remoto habitual (`origin`, rama en la que trabajes, p. ej. `main`). Eso incluye:
 
 - Cambios en la raíz (`README.md`, `index.html`, etc.) y en `docs/` cuando toque plantillas o instrucciones (`docs/readme-template.md`, `docs/Instructions_IA.md`, etc.).
 - Carpeta completa del reto (HTML, CSS, assets, `nombre-reto/README.md`, etc.) cuando forme parte del mismo trabajo.
@@ -157,12 +174,12 @@ Seguir **[Conventional Commits](https://www.conventionalcommits.org/)**: `<tipo>
 
 Tipos frecuentes en este proyecto:
 
-| Tipo     | Uso típico aquí |
-| -------- | ---------------- |
-| `docs`   | README de la raíz, índice, README de un reto, instrucciones. Ámbito `challenges` o `(/)` cuando encaje con commits previos. |
-| `chore`  | Mantenimiento, migraciones de carpetas, cambios que no son solo “docs” ni una `feat`. |
-| `feat`   | Nuevo reto o funcionalidad sustancial (p. ej. *add challenge … complete*). |
-| `fix`    | Correcciones puntuales en una página o reto. |
+| Tipo    | Uso típico aquí                                                                                                             |
+| ------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `docs`  | README de la raíz, índice, README de un reto, instrucciones. Ámbito `challenges` o `(/)` cuando encaje con commits previos. |
+| `chore` | Mantenimiento, migraciones de carpetas, cambios que no son solo “docs” ni una `feat`.                                       |
+| `feat`  | Nuevo reto o funcionalidad sustancial (p. ej. _add challenge … complete_).                                                  |
+| `fix`   | Correcciones puntuales en una página o reto.                                                                                |
 
 **Ejemplos reales del historial** (referencia de tono y forma):
 
@@ -194,7 +211,7 @@ Tras el o los commits: `git push origin <rama>`. Sin push, la rutina queda incom
 4. Editar **index.html**: duplicar un `<li>` de tarjeta existente (mismas clases Tailwind en el enlace y en el contenedor del icono), ajustar `href`, **`target="_blank"`** y **`rel="noopener noreferrer"`**, imagen (`src` / `alt`), título visible y ruta; colocar el nuevo ítem **al final** del `<ul>` salvo criterio distinto acordado.
 5. Revisar en local que el enlace relativo `./nombre-carpeta/` abre el `index` del reto y que la **captura** se ve (ruta del `src` correcta).
 6. Al solo añadir un reto: **no** cambiar el `<head>` (CDN de Tailwind, fuentes), el hero, la caja informativa con `#base`, el script final ni la configuración del **grid**; limitarse a un `<li>` más en la lista.
-7. **Cierre en Git**: incluir en el *stage* **todos** los archivos de ese trabajo (raíz + carpeta del reto, etc.). *Commit* con **Conventional Commits** alineado con `git log` del repo (inglés, tipo `docs` / `docs(challenges)` / `chore` / `feat` / `fix` según el caso). **`git push`** a `origin` en la rama activa. No omitir el push al terminar.
+7. **Cierre en Git**: incluir en el _stage_ **todos** los archivos de ese trabajo (raíz + carpeta del reto, etc.). _Commit_ con **Conventional Commits** alineado con `git log` del repo (inglés, tipo `docs` / `docs(challenges)` / `chore` / `feat` / `fix` según el caso). **`git push`** a `origin` en la rama activa. No omitir el push al terminar.
 
 ---
 
@@ -206,10 +223,10 @@ Tras los cambios, el resultado debe ser **aplicable de inmediato**: difs claros 
 
 ## Resumen rápido
 
-| Pregunta                                  | Acción                      |
-| ----------------------------------------- | --------------------------- |
-| ¿Mismo formato que los retos ya listados? | Sí, siempre.                |
-| ¿README dentro de `nombre-reto/`?         | Sustituir el de FM; usar `docs/readme-template.md` y alinear con retos hechos; quitar `AGENTS.md`/`CLAUDE.md` en la carpeta. |
-| ¿Tocar Tailwind global, hero o grid de `index.html`? | No, al solo añadir un reto; solo un `<li>` nuevo con la misma plantilla de tarjeta. |
-| ¿Falta el nombre de la carpeta?           | Preguntar; no adivinar.     |
-| ¿Commit y push al terminar (índice, reto, subir proyecto)? | Sí: *stage* completo, Conventional Commits al estilo del `git log`, y `git push` a `origin`. |
+| Pregunta                                                   | Acción                                                                                                                       |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| ¿Mismo formato que los retos ya listados?                  | Sí, siempre.                                                                                                                 |
+| ¿README dentro de `nombre-reto/`?                          | Sustituir el de FM; usar `docs/readme-template.md` y alinear con retos hechos; quitar `AGENTS.md`/`CLAUDE.md` en la carpeta. |
+| ¿Tocar Tailwind global, hero o grid de `index.html`?       | No, al solo añadir un reto; solo un `<li>` nuevo con la misma plantilla de tarjeta.                                          |
+| ¿Falta el nombre de la carpeta?                            | Preguntar; no adivinar.                                                                                                      |
+| ¿Commit y push al terminar (índice, reto, subir proyecto)? | Sí: _stage_ completo, Conventional Commits al estilo del `git log`, y `git push` a `origin`.                                 |

@@ -1,5 +1,5 @@
 .name {
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
   line-height: 1.1;
@@ -7,7 +7,7 @@
 }
 
 .tag {
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.6875rem;
   font-weight: 500;
   line-height: 1.1;
@@ -15,7 +15,7 @@
 }
 
 .description1 {
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.2;
@@ -23,7 +23,7 @@
 }
 
 .description2 {
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
   font-size: 0.8125rem;
   font-weight: 500;
   line-height: 1.4;

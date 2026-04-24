@@ -1,6 +1,6 @@
 # Frontend Mentor challenges
 
-*[Versión en español](./README.md)*
+_[Versión en español](./README.md)_
 
 This repository is a **collection of solutions** to [Frontend Mentor](https://www.frontendmentor.io) challenges: exercises with real designs to practice layout and front-end work, from a design to a working page.
 
@@ -28,11 +28,11 @@ The project is deployed on **GitHub Pages**; the home page (`/`) lists each chal
 - [Meet landing page](./meet-landing-page/) — implementation in `meet-landing-page/`.
 - [Article preview component](./article-preview-component/) — implementation in `article-preview-component/`.
 
-*(This list will grow as more challenges are added or completed.)*
+_(This list will grow as more challenges are added or completed.)_
 
 ---
 
-See [Notas técnicas](./docs/NOTAS-TECNICAS.md) *(Spanish)* for maintainer- and audit-oriented detail. Additional guides, README template, and AI workflow notes: [`docs/`](./docs/) directory.
+See [Notas técnicas](./docs/NOTAS-TECNICAS.md) _(Spanish)_ for maintainer- and audit-oriented detail. Additional guides, README template, and AI workflow notes: [`docs/`](./docs/) directory.
 
 ## Information
 
