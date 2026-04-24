@@ -30,6 +30,7 @@ El proyecto está desplegado en **GitHub Pages**, la página principal (/) conti
 - [Formulario de suscripción al boletín con mensaje de éxito](./newsletter-sign-up-with-success-message/) — implementación en la carpeta `newsletter-sign-up-with-success-message/`.
 - [Dashboard de seguimiento de tiempo](./time-dashboard-main/) — implementación en la carpeta `time-dashboard-main/`.
 - [Calculadora de propinas](./tip-calculator-app/) — implementación en la carpeta `tip-calculator-app/`.
+- [Generador de contraseñas](./password-generator-app/) — implementación en la carpeta `password-generator-app/`.
 
 _(La lista se irá ampliando conforme se añaden/completen más retos.)_
 
