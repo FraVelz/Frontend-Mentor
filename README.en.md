@@ -29,6 +29,7 @@ The project is deployed on **GitHub Pages**; the home page (`/`) lists each chal
 - [Article preview component](./article-preview-component/) — implementation in `article-preview-component/`.
 - [Newsletter sign-up form with success message](./newsletter-sign-up-with-success-message/) — implementation in `newsletter-sign-up-with-success-message/`.
 - [Time tracking dashboard](./time-dashboard-main/) — implementation in `time-dashboard-main/`.
+- [Tip calculator app](./tip-calculator-app/) — implementation in `tip-calculator-app/`.
 
 _(This list will grow as more challenges are added or completed.)_
 
