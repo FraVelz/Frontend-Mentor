@@ -1,8 +1,7 @@
 <!doctype html>
 
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentor | Time tracking dashboard</title>
@@ -39,160 +38,209 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
+  </head>
 
-<body class="flex min-h-screen items-center justify-center bg-[hsl(226,43%,10%)] font-['Outfit',system-ui,sans-serif]">
+  <body
+    class="flex min-h-screen items-center justify-center bg-[hsl(226,43%,10%)] font-['Outfit',system-ui,sans-serif]"
+  >
     <div class="mx-auto grid w-full max-w-[1440px] grid-cols-4 grid-rows-2 gap-5 px-4 py-8">
-        <article
-            class="relative row-span-2 flex w-full flex-col items-start rounded-[15px] border border-black bg-[hsl(235,45%,61%)]">
-            <div class="user-profile relative z-[3] mr-[70px] p-10">
-                <img src="images/image-jeremy.png" alt="" width="90" height="90"
-                    class="mt-2.5 h-[90px] w-[90px] rounded-full border-2 border-[#eee]" />
+      <article
+        class="relative row-span-2 flex w-full flex-col items-start rounded-[15px] border border-black bg-[hsl(235,45%,61%)]"
+      >
+        <div class="user-profile relative z-[3] mr-[70px] p-10">
+          <img
+            src="images/image-jeremy.png"
+            alt=""
+            width="90"
+            height="90"
+            class="mt-2.5 h-[90px] w-[90px] rounded-full border-2 border-[#eee]"
+          />
 
-                <div class="user-details">
-                    <p class="mt-10 mb-0 text-base text-[rgb(214,210,210)]">Report for</p>
-                    <h1 class="mt-0 mb-[70px] text-[50px] font-thin text-white">
-                        Jeremy<br />
-                        Robson
-                    </h1>
-                </div>
-            </div>
+          <div class="user-details">
+            <p class="mt-10 mb-0 text-base text-[rgb(214,210,210)]">Report for</p>
+            <h1 class="mt-0 mb-[70px] text-[50px] font-thin text-white">
+              Jeremy<br />
+              Robson
+            </h1>
+          </div>
+        </div>
 
-            <nav class="time-filters relative z-[1] m-0 h-full w-full rounded-[15px] bg-[hsl(235,46%,20%)] p-0">
-                <ul class="m-0 list-none p-0">
-                    <li class="my-[25px] text-[rgb(181,181,235)]">Daily</li>
-                    <li class="active my-[25px] text-white">Weekly</li>
-                    <li class="mt-[25px] mb-10 text-[rgb(181,181,235)]">Monthly</li>
-                </ul>
-            </nav>
-        </article>
+        <nav class="time-filters relative z-[1] m-0 h-full w-full rounded-[15px] bg-[hsl(235,46%,20%)] p-0">
+          <ul class="m-0 list-none p-0">
+            <li class="my-[25px] text-[rgb(181,181,235)]">Daily</li>
+            <li class="active my-[25px] text-white">Weekly</li>
+            <li class="mt-[25px] mb-10 text-[rgb(181,181,235)]">Monthly</li>
+          </ul>
+        </nav>
+      </article>
 
-        <article class="card flex flex-col">
-            <div
-                class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(15,100%,70%)] pr-4">
-                <img src="images/icon-work.svg" alt="" class="max-h-full object-contain" />
-            </div>
+      <article class="card flex flex-col">
+        <div
+          class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(15,100%,70%)] pr-4"
+        >
+          <img src="images/icon-work.svg" alt="" class="max-h-full object-contain" />
+        </div>
 
-            <div
-                class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0">
-                <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
-                    <p class="title mb-0 text-lg font-bold text-white">Work</p>
-                    <img src="images/icon-ellipsis.svg" alt="Menu" width="13" height="10"
-                        class="dots h-2.5 w-[13px] shrink-0" />
-                </div>
+        <div
+          class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0"
+        >
+          <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
+            <p class="title mb-0 text-lg font-bold text-white">Work</p>
+            <img
+              src="images/icon-ellipsis.svg"
+              alt="Menu"
+              width="13"
+              height="10"
+              class="dots h-2.5 w-[13px] shrink-0"
+            />
+          </div>
 
-                <div class="card-body">
-                    <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">32hrs</h2>
-                    <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 36hrs</p>
-                </div>
-            </div>
-        </article>
+          <div class="card-body">
+            <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">32hrs</h2>
+            <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 36hrs</p>
+          </div>
+        </div>
+      </article>
 
-        <article class="card flex flex-col">
-            <div
-                class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(195,74%,62%)] pr-4">
-                <img src="images/icon-play.svg" alt="" class="max-h-full object-contain" />
-            </div>
+      <article class="card flex flex-col">
+        <div
+          class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(195,74%,62%)] pr-4"
+        >
+          <img src="images/icon-play.svg" alt="" class="max-h-full object-contain" />
+        </div>
 
-            <div
-                class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0">
-                <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
-                    <p class="title mb-0 text-lg font-bold text-white">Play</p>
-                    <img src="images/icon-ellipsis.svg" alt="Menu" width="13" height="10"
-                        class="dots h-2.5 w-[13px] shrink-0" />
-                </div>
+        <div
+          class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0"
+        >
+          <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
+            <p class="title mb-0 text-lg font-bold text-white">Play</p>
+            <img
+              src="images/icon-ellipsis.svg"
+              alt="Menu"
+              width="13"
+              height="10"
+              class="dots h-2.5 w-[13px] shrink-0"
+            />
+          </div>
 
-                <div class="card-body">
-                    <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">10hrs</h2>
-                    <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 8hrs</p>
-                </div>
-            </div>
-        </article>
+          <div class="card-body">
+            <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">10hrs</h2>
+            <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 8hrs</p>
+          </div>
+        </div>
+      </article>
 
-        <article class="card flex flex-col">
-            <div
-                class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(348,100%,68%)] pr-4">
-                <img src="images/icon-study.svg" alt="" class="max-h-full object-contain" />
-            </div>
+      <article class="card flex flex-col">
+        <div
+          class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(348,100%,68%)] pr-4"
+        >
+          <img src="images/icon-study.svg" alt="" class="max-h-full object-contain" />
+        </div>
 
-            <div
-                class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0">
-                <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
-                    <p class="title mb-0 text-lg font-bold text-white">Study</p>
-                    <img src="images/icon-ellipsis.svg" alt="Menu" width="13" height="10"
-                        class="dots h-2.5 w-[13px] shrink-0" />
-                </div>
+        <div
+          class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0"
+        >
+          <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
+            <p class="title mb-0 text-lg font-bold text-white">Study</p>
+            <img
+              src="images/icon-ellipsis.svg"
+              alt="Menu"
+              width="13"
+              height="10"
+              class="dots h-2.5 w-[13px] shrink-0"
+            />
+          </div>
 
-                <div class="card-body">
-                    <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">4hrs</h2>
-                    <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 7hrs</p>
-                </div>
-            </div>
-        </article>
+          <div class="card-body">
+            <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">4hrs</h2>
+            <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 7hrs</p>
+          </div>
+        </div>
+      </article>
 
-        <article class="card flex flex-col">
-            <div
-                class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(145,58%,55%)] pr-4">
-                <img src="images/icon-exercise.svg" alt="" class="max-h-full object-contain" />
-            </div>
+      <article class="card flex flex-col">
+        <div
+          class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(145,58%,55%)] pr-4"
+        >
+          <img src="images/icon-exercise.svg" alt="" class="max-h-full object-contain" />
+        </div>
 
-            <div
-                class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0">
-                <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
-                    <p class="title mb-0 text-lg font-bold text-white">Exercise</p>
-                    <img src="images/icon-ellipsis.svg" alt="Menu" width="13" height="10"
-                        class="dots h-2.5 w-[13px] shrink-0" />
-                </div>
+        <div
+          class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0"
+        >
+          <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
+            <p class="title mb-0 text-lg font-bold text-white">Exercise</p>
+            <img
+              src="images/icon-ellipsis.svg"
+              alt="Menu"
+              width="13"
+              height="10"
+              class="dots h-2.5 w-[13px] shrink-0"
+            />
+          </div>
 
-                <div class="card-body">
-                    <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">4hrs</h2>
-                    <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 5hrs</p>
-                </div>
-            </div>
-        </article>
+          <div class="card-body">
+            <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">4hrs</h2>
+            <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 5hrs</p>
+          </div>
+        </div>
+      </article>
 
-        <article class="card flex flex-col">
-            <div
-                class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(264,64%,52%)] pr-4">
-                <img src="images/icon-social.svg" alt="" class="max-h-full object-contain" />
-            </div>
+      <article class="card flex flex-col">
+        <div
+          class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(264,64%,52%)] pr-4"
+        >
+          <img src="images/icon-social.svg" alt="" class="max-h-full object-contain" />
+        </div>
 
-            <div
-                class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0">
-                <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
-                    <p class="title mb-0 text-lg font-bold text-white">Social</p>
-                    <img src="images/icon-ellipsis.svg" alt="Menu" width="13" height="10"
-                        class="dots h-2.5 w-[13px] shrink-0" />
-                </div>
+        <div
+          class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0"
+        >
+          <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
+            <p class="title mb-0 text-lg font-bold text-white">Social</p>
+            <img
+              src="images/icon-ellipsis.svg"
+              alt="Menu"
+              width="13"
+              height="10"
+              class="dots h-2.5 w-[13px] shrink-0"
+            />
+          </div>
 
-                <div class="card-body">
-                    <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">5hrs</h2>
-                    <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 10hrs</p>
-                </div>
-            </div>
-        </article>
+          <div class="card-body">
+            <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">5hrs</h2>
+            <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 10hrs</p>
+          </div>
+        </div>
+      </article>
 
-        <article class="card flex flex-col">
-            <div
-                class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(43,84%,65%)] pr-4">
-                <img src="images/icon-self-care.svg" alt="" class="max-h-full object-contain" />
-            </div>
+      <article class="card flex flex-col">
+        <div
+          class="relative z-[1] -mb-5 flex h-[90px] w-full items-center justify-end rounded-t-[15px] bg-[hsl(43,84%,65%)] pr-4"
+        >
+          <img src="images/icon-self-care.svg" alt="" class="max-h-full object-contain" />
+        </div>
 
-            <div
-                class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0">
-                <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
-                    <p class="title mb-0 text-lg font-bold text-white">Self-Care</p>
-                    <img src="images/icon-ellipsis.svg" alt="Menu" width="13" height="10"
-                        class="dots h-2.5 w-[13px] shrink-0" />
-                </div>
+        <div
+          class="card-main-content relative z-[2] mb-[5px] flex flex-col items-start rounded-[15px] border border-black bg-[hsl(235,46%,20%)] p-[30px] pb-0"
+        >
+          <div class="card-header mb-5 flex w-full flex-row items-center justify-between">
+            <p class="title mb-0 text-lg font-bold text-white">Self-Care</p>
+            <img
+              src="images/icon-ellipsis.svg"
+              alt="Menu"
+              width="13"
+              height="10"
+              class="dots h-2.5 w-[13px] shrink-0"
+            />
+          </div>
 
-                <div class="card-body">
-                    <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">2hrs</h2>
-                    <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 2hrs</p>
-                </div>
-            </div>
-        </article>
+          <div class="card-body">
+            <h2 class="current-time mt-0 mb-[5px] text-[70px] font-thin text-white">2hrs</h2>
+            <p class="previous-time mt-0 mb-5 pb-0 text-lg text-[hsl(236,100%,87%)]">Last Week - 2hrs</p>
+          </div>
+        </div>
+      </article>
     </div>
-</body>
-
+  </body>
 </html>

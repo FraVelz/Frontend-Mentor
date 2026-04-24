@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="./styles.css" />
     <!-- En Tailwind v4, dark: depende de prefers-color-scheme; redefinimos para usar clase .dark en <html> -->
     <style type="text/tailwindcss">
-      @import "tailwindcss";
+      @import 'tailwindcss';
       @custom-variant dark (&:where(.dark, .dark *));
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -50,23 +50,24 @@
   </head>
   <body class="m-0 font-['Rubik',system-ui,sans-serif] antialiased">
     <!-- Asegura que Tailwind genere clases de fondo de iconos (también referenciadas en script.js) -->
-    <div class="pointer-events-none fixed left-0 top-0 h-px w-px overflow-hidden opacity-0" aria-hidden="true">
-      <span class="bg-orange-50 bg-green-100 bg-blue-50 bg-purple-100"></span>
+    <div class="pointer-events-none fixed top-0 left-0 h-px w-px overflow-hidden opacity-0" aria-hidden="true">
+      <span class="bg-blue-50 bg-green-100 bg-orange-50 bg-purple-100"></span>
     </div>
 
     <div
       id="app"
-      class="min-h-dvh min-h-screen overflow-x-hidden bg-[#F4F6FA] bg-[url('images/pattern-background-mobile-light.svg')] bg-no-repeat text-sm leading-[1.5] text-[#313E51] dark:bg-[#313E51] dark:bg-[url('images/pattern-background-mobile-dark.svg')] min-[768px]:bg-[url('images/pattern-background-tablet-light.svg')] min-[768px]:text-[20px] min-[768px]:dark:bg-[url('images/pattern-background-tablet-dark.svg')] min-[1440px]:bg-[length:100%] min-[1440px]:bg-[url('images/pattern-background-desktop-light.svg')] min-[1440px]:dark:bg-[url('images/pattern-background-desktop-dark.svg')]"
+      class="min-h-dvh min-h-screen overflow-x-hidden bg-[#F4F6FA] bg-[url('images/pattern-background-mobile-light.svg')] bg-no-repeat text-sm leading-[1.5] text-[#313E51] min-[768px]:bg-[url('images/pattern-background-tablet-light.svg')] min-[768px]:text-[20px] min-[1440px]:bg-[url('images/pattern-background-desktop-light.svg')] min-[1440px]:bg-[length:100%] dark:bg-[#313E51] dark:bg-[url('images/pattern-background-mobile-dark.svg')] min-[768px]:dark:bg-[url('images/pattern-background-tablet-dark.svg')] min-[1440px]:dark:bg-[url('images/pattern-background-desktop-dark.svg')]"
     >
       <p id="load-failed" class="hidden p-8 text-center dark:text-white" role="alert">
-        Could not load <code>data/data.json</code>. Serve this folder over HTTP (e.g. <code>python -m http.server</code>), not <code>file://</code>.
+        Could not load <code>data/data.json</code>. Serve this folder over HTTP (e.g.
+        <code>python -m http.server</code>), not <code>file://</code>.
       </p>
 
       <div id="app-inner" class="min-h-dvh min-h-screen">
         <header
           class="flex h-[4.5rem] justify-between px-6 py-4 min-[768px]:h-[8.5rem] min-[768px]:px-16 min-[768px]:py-10 min-[1440px]:h-[13.875rem] min-[1440px]:px-[8.75rem]"
         >
-          <div id="header-subject" class="hidden flex min-w-0 items-center" aria-hidden="true">
+          <div id="header-subject" class="flex hidden min-w-0 items-center" aria-hidden="true">
             <div class="flex items-center gap-4 min-[768px]:gap-6">
               <div
                 id="header-subject-icon-wrap"
@@ -81,14 +82,11 @@
                   alt=""
                 />
               </div>
-              <p id="header-subject-title" class="text-lg font-medium leading-none min-[768px]:text-[28px]">HTML</p>
+              <p id="header-subject-title" class="text-lg leading-none font-medium min-[768px]:text-[28px]">HTML</p>
             </div>
           </div>
 
-          <div
-            id="header-theme-group"
-            class="ml-auto flex items-center gap-2 min-[768px]:gap-4"
-          >
+          <div id="header-theme-group" class="ml-auto flex items-center gap-2 min-[768px]:gap-4">
             <img
               id="icon-sun"
               class="h-4 w-4 min-[768px]:h-6 min-[768px]:w-6"
@@ -120,23 +118,23 @@
         </header>
 
         <main
-          class="flex justify-center px-6 py-8 min-[768px]:px-16 min-[768px]:pb-10 min-[768px]:pt-2 min-[1440px]:px-[8.75rem] min-[1440px]:pb-20 min-[1440px]:pt-0.5"
+          class="flex justify-center px-6 py-8 min-[768px]:px-16 min-[768px]:pt-2 min-[768px]:pb-10 min-[1440px]:px-[8.75rem] min-[1440px]:pt-0.5 min-[1440px]:pb-20"
         >
-          <div class="w-full min-w-0 max-w-7xl text-[#313E51] dark:text-white">
+          <div class="w-full max-w-7xl min-w-0 text-[#313E51] dark:text-white">
             <!-- Pantalla: inicio -->
             <section
               id="screen-start"
               class="flex w-full max-w-7xl grow flex-col gap-10 min-[768px]:gap-16 min-[1440px]:w-full min-[1440px]:min-w-0 min-[1440px]:flex-row min-[1440px]:gap-32"
             >
               <div class="flex flex-col gap-4 min-[1440px]:gap-12">
-                <h1 class="text-[40px] font-light leading-none min-[768px]:text-[64px]">
+                <h1 class="text-[40px] leading-none font-light min-[768px]:text-[64px]">
                   <span class="block">Welcome to the</span>
                   <span class="mt-2 block font-medium">Frontend Quiz!</span>
                 </h1>
                 <p class="text-[#626C7F] italic dark:text-[#ABC1E1]">Pick a subject to get started.</p>
               </div>
               <div
-                class="grid grow grid-cols-1 auto-rows-[72px] gap-4 min-[768px]:auto-rows-[88px] min-[768px]:gap-6 min-[1440px]:auto-rows-[104px] min-[1440px]:gap-4"
+                class="grid grow auto-rows-[72px] grid-cols-1 gap-4 min-[768px]:auto-rows-[88px] min-[768px]:gap-6 min-[1440px]:auto-rows-[104px] min-[1440px]:gap-4"
               >
                 <button
                   type="button"
@@ -146,7 +144,7 @@
                 >
                   <span class="flex items-center gap-4 min-[768px]:gap-6">
                     <span
-                      class="bg-orange-50 flex h-10 w-10 shrink-0 items-center justify-center rounded-md min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-lg"
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-orange-50 min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-lg"
                     >
                       <img
                         class="h-7 w-7 min-[768px]:h-10 min-[768px]:w-10"
@@ -156,7 +154,7 @@
                         alt=""
                       />
                     </span>
-                    <span class="text-lg font-medium leading-none min-[768px]:text-[28px]">HTML</span>
+                    <span class="text-lg leading-none font-medium min-[768px]:text-[28px]">HTML</span>
                   </span>
                 </button>
                 <button
@@ -167,7 +165,7 @@
                 >
                   <span class="flex items-center gap-4 min-[768px]:gap-6">
                     <span
-                      class="bg-green-100 flex h-10 w-10 shrink-0 items-center justify-center rounded-md min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-lg"
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-green-100 min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-lg"
                     >
                       <img
                         class="h-7 w-7 min-[768px]:h-10 min-[768px]:w-10"
@@ -177,7 +175,7 @@
                         alt=""
                       />
                     </span>
-                    <span class="text-lg font-medium leading-none min-[768px]:text-[28px]">CSS</span>
+                    <span class="text-lg leading-none font-medium min-[768px]:text-[28px]">CSS</span>
                   </span>
                 </button>
                 <button
@@ -188,7 +186,7 @@
                 >
                   <span class="flex items-center gap-4 min-[768px]:gap-6">
                     <span
-                      class="bg-blue-50 flex h-10 w-10 shrink-0 items-center justify-center rounded-md min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-lg"
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-blue-50 min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-lg"
                     >
                       <img
                         class="h-7 w-7 min-[768px]:h-10 min-[768px]:w-10"
@@ -198,7 +196,7 @@
                         alt=""
                       />
                     </span>
-                    <span class="text-lg font-medium leading-none min-[768px]:text-[28px]">JavaScript</span>
+                    <span class="text-lg leading-none font-medium min-[768px]:text-[28px]">JavaScript</span>
                   </span>
                 </button>
                 <button
@@ -209,7 +207,7 @@
                 >
                   <span class="flex items-center gap-4 min-[768px]:gap-6">
                     <span
-                      class="bg-purple-100 flex h-10 w-10 shrink-0 items-center justify-center rounded-md min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-lg"
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-purple-100 min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-lg"
                     >
                       <img
                         class="h-7 w-7 min-[768px]:h-10 min-[768px]:w-10"
@@ -219,7 +217,7 @@
                         alt=""
                       />
                     </span>
-                    <span class="text-lg font-medium leading-none min-[768px]:text-[28px]">Accessibility</span>
+                    <span class="text-lg leading-none font-medium min-[768px]:text-[28px]">Accessibility</span>
                   </span>
                 </button>
               </div>
@@ -228,18 +226,15 @@
             <!-- Pantalla: quiz (oculta al inicio) -->
             <section
               id="screen-quiz"
-              class="hidden flex w-full max-w-7xl grow flex-col gap-10 min-[1440px]:min-w-0 min-[1440px]:flex-row min-[1440px]:gap-32"
+              class="flex hidden w-full max-w-7xl grow flex-col gap-10 min-[1440px]:min-w-0 min-[1440px]:flex-row min-[1440px]:gap-32"
             >
               <div class="w-full shrink-0 min-[1440px]:w-[30rem]">
-                <h2
-                  id="quiz-heading"
-                  class="mb-4 text-[#626C7F] italic min-[768px]:mb-6 dark:text-[#ABC1E1]"
-                >
+                <h2 id="quiz-heading" class="mb-4 text-[#626C7F] italic min-[768px]:mb-6 dark:text-[#ABC1E1]">
                   Question 1 of 10
                 </h2>
                 <p
                   id="quiz-question-text"
-                  class="mb-6 text-[20px] font-medium leading-[1.2] min-[768px]:mb-10 min-[768px]:text-[36px] min-[1440px]:mb-[11.5rem]"
+                  class="mb-6 text-[20px] leading-[1.2] font-medium min-[768px]:mb-10 min-[768px]:text-[36px] min-[1440px]:mb-[11.5rem]"
                 >
                   &nbsp;
                 </p>
@@ -254,7 +249,7 @@
               <div class="flex w-full min-w-0 grow flex-col gap-4 min-[768px]:gap-8">
                 <div
                   id="quiz-options"
-                  class="grid grid-cols-1 auto-rows-[72px] gap-4 min-[768px]:auto-rows-[88px] min-[768px]:gap-6 min-[1440px]:auto-rows-[104px] min-[1440px]:gap-4"
+                  class="grid auto-rows-[72px] grid-cols-1 gap-4 min-[768px]:auto-rows-[88px] min-[768px]:gap-6 min-[1440px]:auto-rows-[104px] min-[1440px]:gap-4"
                 >
                   <button
                     type="button"
@@ -264,10 +259,12 @@
                   >
                     <span class="flex min-w-0 items-center gap-4 min-[768px]:gap-8">
                       <span
-                        class="option-letter flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-lg font-medium leading-none min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-xl min-[768px]:text-[28px]"
+                        class="option-letter flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-lg leading-none font-medium min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-xl min-[768px]:text-[28px]"
                         >A</span
                       >
-                      <span class="option-label min-w-0 text-lg font-medium leading-none min-[768px]:text-[28px]"></span>
+                      <span
+                        class="option-label min-w-0 text-lg leading-none font-medium min-[768px]:text-[28px]"
+                      ></span>
                     </span>
                     <span class="option-icons flex shrink-0 items-center gap-1" aria-hidden="true">
                       <img
@@ -294,10 +291,12 @@
                   >
                     <span class="flex min-w-0 items-center gap-4 min-[768px]:gap-8">
                       <span
-                        class="option-letter flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-lg font-medium leading-none min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-xl min-[768px]:text-[28px]"
+                        class="option-letter flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-lg leading-none font-medium min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-xl min-[768px]:text-[28px]"
                         >B</span
                       >
-                      <span class="option-label min-w-0 text-lg font-medium leading-none min-[768px]:text-[28px]"></span>
+                      <span
+                        class="option-label min-w-0 text-lg leading-none font-medium min-[768px]:text-[28px]"
+                      ></span>
                     </span>
                     <span class="option-icons flex shrink-0 items-center gap-1" aria-hidden="true">
                       <img
@@ -324,10 +323,12 @@
                   >
                     <span class="flex min-w-0 items-center gap-4 min-[768px]:gap-8">
                       <span
-                        class="option-letter flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-lg font-medium leading-none min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-xl min-[768px]:text-[28px]"
+                        class="option-letter flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-lg leading-none font-medium min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-xl min-[768px]:text-[28px]"
                         >C</span
                       >
-                      <span class="option-label min-w-0 text-lg font-medium leading-none min-[768px]:text-[28px]"></span>
+                      <span
+                        class="option-label min-w-0 text-lg leading-none font-medium min-[768px]:text-[28px]"
+                      ></span>
                     </span>
                     <span class="option-icons flex shrink-0 items-center gap-1" aria-hidden="true">
                       <img
@@ -354,10 +355,12 @@
                   >
                     <span class="flex min-w-0 items-center gap-4 min-[768px]:gap-8">
                       <span
-                        class="option-letter flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-lg font-medium leading-none min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-xl min-[768px]:text-[28px]"
+                        class="option-letter flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-lg leading-none font-medium min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-xl min-[768px]:text-[28px]"
                         >D</span
                       >
-                      <span class="option-label min-w-0 text-lg font-medium leading-none min-[768px]:text-[28px]"></span>
+                      <span
+                        class="option-label min-w-0 text-lg leading-none font-medium min-[768px]:text-[28px]"
+                      ></span>
                     </span>
                     <span class="option-icons flex shrink-0 items-center gap-1" aria-hidden="true">
                       <img
@@ -381,17 +384,13 @@
                 <button
                   type="button"
                   id="btn-quiz-submit"
-                  class="h-14 w-full cursor-not-allowed rounded-xl bg-[#C084FC] p-4 text-lg font-medium leading-none text-white shadow-[0_16px_40px_rgba(143,160,193,0.14)] transition-all min-[768px]:h-[5.75rem] min-[768px]:rounded-3xl min-[768px]:p-8 min-[768px]:text-[28px] enabled:cursor-pointer enabled:bg-[#A729F5] enabled:shadow-[0_16px_40px_rgba(143,160,193,0.14)] enabled:hover:brightness-105 dark:shadow-[0_16px_40px_rgba(49,62,81,0.14)] dark:enabled:shadow-[0_16px_40px_rgba(49,62,81,0.14)]"
+                  class="h-14 w-full cursor-not-allowed rounded-xl bg-[#C084FC] p-4 text-lg leading-none font-medium text-white shadow-[0_16px_40px_rgba(143,160,193,0.14)] transition-all enabled:cursor-pointer enabled:bg-[#A729F5] enabled:shadow-[0_16px_40px_rgba(143,160,193,0.14)] enabled:hover:brightness-105 min-[768px]:h-[5.75rem] min-[768px]:rounded-3xl min-[768px]:p-8 min-[768px]:text-[28px] dark:shadow-[0_16px_40px_rgba(49,62,81,0.14)] dark:enabled:shadow-[0_16px_40px_rgba(49,62,81,0.14)]"
                   disabled
                 >
                   Submit Answer
                 </button>
 
-                <div
-                  id="quiz-error"
-                  class="hidden flex items-center justify-center gap-2"
-                  role="alert"
-                >
+                <div id="quiz-error" class="flex hidden items-center justify-center gap-2" role="alert">
                   <img
                     class="h-8 w-8 min-[768px]:h-10 min-[768px]:w-10"
                     src="images/icon-error.svg"
@@ -400,7 +399,7 @@
                     alt=""
                   />
                   <p
-                    class="text-lg font-medium leading-none text-[#EE5454] min-[768px]:text-2xl min-[768px]:font-normal dark:text-white"
+                    class="text-lg leading-none font-medium text-[#EE5454] min-[768px]:text-2xl min-[768px]:font-normal dark:text-white"
                   >
                     Please select an answer
                   </p>
@@ -411,9 +410,9 @@
             <!-- Pantalla: puntuación -->
             <section
               id="screen-score"
-              class="hidden flex w-full max-w-7xl grow flex-col gap-10 min-[768px]:gap-16 min-[1440px]:w-full min-[1440px]:min-w-0 min-[1440px]:flex-row min-[1440px]:gap-36"
+              class="flex hidden w-full max-w-7xl grow flex-col gap-10 min-[768px]:gap-16 min-[1440px]:w-full min-[1440px]:min-w-0 min-[1440px]:flex-row min-[1440px]:gap-36"
             >
-              <h1 class="text-[40px] font-light leading-none min-[768px]:text-[64px]">
+              <h1 class="text-[40px] leading-none font-light min-[768px]:text-[64px]">
                 <span class="block">Quiz completed</span>
                 <span class="mt-2 block font-medium min-[768px]:mt-4 min-[1440px]:mt-2">You scored...</span>
               </h1>
@@ -424,7 +423,7 @@
                   <div class="flex items-center gap-4 min-[768px]:gap-6">
                     <div
                       id="score-subject-icon-wrap"
-                      class="bg-orange-50 flex h-10 w-10 shrink-0 items-center justify-center rounded-md min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-lg"
+                      class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-orange-50 min-[768px]:h-14 min-[768px]:w-14 min-[768px]:rounded-lg"
                     >
                       <img
                         id="score-subject-icon"
@@ -435,23 +434,15 @@
                         alt=""
                       />
                     </div>
-                    <p
-                      id="score-subject-title"
-                      class="text-lg font-medium leading-none min-[768px]:text-[28px]"
-                    >
+                    <p id="score-subject-title" class="text-lg leading-none font-medium min-[768px]:text-[28px]">
                       HTML
                     </p>
                   </div>
                   <div class="flex flex-col items-center gap-4 text-center">
-                    <p
-                      id="score-value"
-                      class="text-[88px] font-medium leading-none min-[768px]:text-[144px]"
-                    >
-                      0
-                    </p>
+                    <p id="score-value" class="text-[88px] leading-none font-medium min-[768px]:text-[144px]">0</p>
                     <p
                       id="score-out-of"
-                      class="text-lg font-medium leading-none text-[#626C7F] min-[768px]:text-2xl dark:text-[#ABC1E1]"
+                      class="text-lg leading-none font-medium text-[#626C7F] min-[768px]:text-2xl dark:text-[#ABC1E1]"
                     >
                       out of 10
                     </p>
@@ -460,7 +451,7 @@
                 <button
                   type="button"
                   id="btn-play-again"
-                  class="h-14 w-full cursor-pointer rounded-xl bg-[#A729F5] p-4 text-lg font-medium leading-none text-white shadow-[0_16px_40px_rgba(143,160,193,0.14)] transition-all hover:brightness-105 min-[768px]:h-[5.75rem] min-[768px]:rounded-3xl min-[768px]:p-8 min-[768px]:text-[28px] dark:shadow-[0_16px_40px_rgba(49,62,81,0.14)]"
+                  class="h-14 w-full cursor-pointer rounded-xl bg-[#A729F5] p-4 text-lg leading-none font-medium text-white shadow-[0_16px_40px_rgba(143,160,193,0.14)] transition-all hover:brightness-105 min-[768px]:h-[5.75rem] min-[768px]:rounded-3xl min-[768px]:p-8 min-[768px]:text-[28px] dark:shadow-[0_16px_40px_rgba(49,62,81,0.14)]"
                 >
                   Play Again
                 </button>
