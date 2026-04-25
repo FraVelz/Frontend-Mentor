@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Frontend Mentor | FAQ accordion</title>
+    <meta
+      name="description"
+      content="Solution to the Frontend Mentor FAQ accordion challenge: expandable panels, one answer open at a time, and a responsive layout with Tailwind CSS."
+    />
+    <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/faq-accordion/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://fravelz.github.io/Frontend-Mentor/faq-accordion/"
+    />
+    <meta property="og:title" content="Frontend Mentor | FAQ accordion" />
+    <meta
+      property="og:description"
+      content="FAQ accordion: toggle answers, icon states, and mobile/desktop backgrounds — a Frontend Mentor solution with HTML, CSS, and JavaScript."
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/faq-accordion/screenshot.png?raw=true"
+    />
+    <meta property="og:image:alt" content="FAQ accordion challenge preview" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frontend Mentor | FAQ accordion" />
+    <meta
+      name="twitter:description"
+      content="Expandable FAQ UI with validation-friendly markup and responsive patterns — Frontend Mentor."
+    />
+    <meta
+      name="twitter:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/faq-accordion/screenshot.png?raw=true"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body
+    class="relative flex min-h-dvh flex-col items-center gap-3 bg-[#efe6f8] px-5 py-40 text-base text-[#200d26] [font-family:WorkSans,system-ui,sans-serif] md:py-[12.5rem]"
+  >
+    <img
+      src="./assets/images/background-pattern-mobile.svg"
+      alt=""
+      class="absolute inset-x-0 top-0 -z-[1] w-full md:hidden"
+    />
+
+    <img
+      src="./assets/images/background-pattern-desktop.svg"
+      alt=""
+      class="absolute inset-x-0 top-0 -z-[1] hidden w-full md:block"
+    />
+    <div
+      class="w-full max-w-[33.75rem] rounded-2xl bg-white px-5 py-10 md:p-10"
+    >
+      <header class="mb-5 flex gap-5">
+        <img
+          src="./assets/images/icon-star.svg"
+          alt=""
+          class="h-7 w-7 shrink-0"
+          width="28"
+          height="28"
+        />
+        <h1 class="text-3xl font-bold md:text-5xl">FAQs</h1>
+      </header>
+      <div class="divide-y divide-gray-200">
+        <div class="items">
+          <button
+            type="button"
+            class="relative flex w-full cursor-pointer items-center justify-between gap-3 py-3 text-left"
+          >
+            <h2
+              class="pr-2 text-base font-semibold text-[#200d26] hover:text-[#9c33e5]"
+            >
+              What is Frontend Mentor and how will it help me?
+            </h2>
+            <img
+              src="./assets/images/icon-plus.svg"
+              alt=""
+              class="plus-btn h-8 w-8 shrink-0 transition-[opacity,transform] opacity-100"
+            />
+
+            <img
+              src="./assets/images/icon-minus.svg"
+              alt=""
+              class="minus-btn absolute top-1/2 right-0 h-8 w-8 -translate-y-1/2 shrink-0 transition-[opacity,transform] opacity-0"
+            />
+          </button>
+          <p class="p-hidden text-sm leading-relaxed text-[#200d2696]">
+            Frontend Mentor offers realistic coding challenges to help
+            developers improve their frontend coding skills with projects in
+            HTML, CSS, and JavaScript. It's suitable for all levels and ideal
+            for portfolio building.
+          </p>
+        </div>
+
+        <div class="items">
+          <button
+            type="button"
+            class="relative flex w-full cursor-pointer items-center justify-between gap-3 py-3 text-left"
+          >
+            <h2
+              class="pr-2 text-base font-semibold text-[#200d26] hover:text-[#9c33e5]"
+            >
+              Is Frontend Mentor free?
+            </h2>
+            <img
+              src="./assets/images/icon-plus.svg"
+              alt=""
+              class="plus-btn h-8 w-8 shrink-0 transition-[opacity,transform] opacity-100"
+            />
+
+            <img
+              src="./assets/images/icon-minus.svg"
+              alt=""
+              class="minus-btn absolute top-1/2 right-0 h-8 w-8 -translate-y-1/2 shrink-0 transition-[opacity,transform] opacity-0"
+            />
+          </button>
+          <p class="p-hidden text-sm leading-relaxed text-[#200d2696]">
+            Yes, Frontend Mentor offers both free and premium coding challenges,
+            with the free option providing access to a range of projects
+            suitable for all skill levels.
+          </p>
+        </div>
+
+        <div class="items">
+          <button
+            type="button"
+            class="relative flex w-full cursor-pointer items-center justify-between gap-3 py-3 text-left"
+          >
+            <h2
+              class="pr-2 text-base font-semibold text-[#200d26] hover:text-[#9c33e5]"
+            >
+              Can I use Frontend Mentor projects in my portfolio?
+            </h2>
+            <img
+              src="./assets/images/icon-plus.svg"
+              alt=""
+              class="plus-btn h-8 w-8 shrink-0 transition-[opacity,transform] opacity-100"
+            />
+
+            <img
+              src="./assets/images/icon-minus.svg"
+              alt=""
+              class="minus-btn absolute top-1/2 right-0 h-8 w-8 -translate-y-1/2 shrink-0 transition-[opacity,transform] opacity-0"
+            />
+          </button>
+          <p class="p-hidden text-sm leading-relaxed text-[#200d2696]">
+            Yes, you can use projects completed on Frontend Mentor in your
+            portfolio. It's an excellent way to showcase your skills to
+            potential employers!
+          </p>
+        </div>
+
+        <div class="items">
+          <button
+            type="button"
+            class="relative flex w-full cursor-pointer items-center justify-between gap-3 py-3 text-left"
+          >
+            <h2
+              class="pr-2 text-base font-semibold text-[#200d26] hover:text-[#9c33e5]"
+            >
+              How can I get help if I'm stuck on a challenge?
+            </h2>
+            <img
+              src="./assets/images/icon-plus.svg"
+              alt=""
+              class="plus-btn h-8 w-8 shrink-0 transition-[opacity,transform] opacity-100"
+            />
+
+            <img
+              src="./assets/images/icon-minus.svg"
+              alt=""
+              class="minus-btn absolute top-1/2 right-0 h-8 w-8 -translate-y-1/2 shrink-0 transition-[opacity,transform] opacity-0"
+            />
+          </button>
+          <p class="p-hidden text-sm leading-relaxed text-[#200d2696]">
+            The best place to get help is inside Frontend Mentor's Discord
+            community. There's a help channel where you can ask questions and
+            seek support from other community members.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
