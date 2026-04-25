@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Frontend Mentor | News homepage</title>
+  <meta
+    name="description"
+    content="News homepage: responsive news layout, mobile slide-out menu, and featured story grid — a Frontend Mentor challenge built with HTML, Tailwind CSS, and JavaScript."
+  />
+  <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/news-homepage/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/news-homepage/" />
+  <meta property="og:title" content="Frontend Mentor | News homepage" />
+  <meta
+    property="og:description"
+    content="A modern news-style landing page with an accessible off-canvas menu, hero feature, and ranked article list (Frontend Mentor challenge)."
+  />
+  <meta
+    property="og:image"
+    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/news-homepage/screenshot.png?raw=true"
+  />
+  <meta property="og:image:alt" content="News homepage challenge preview" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Frontend Mentor | News homepage" />
+  <meta
+    name="twitter:description"
+    content="HTML, Tailwind v4, and JS: responsive news UI with mobile navigation — Frontend Mentor."
+  />
+  <meta
+    name="twitter:image"
+    content="https://github.com/FraVelz/Frontend-Mentor/blob/main/news-homepage/screenshot.png?raw=true"
+  />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+      --color-navy-950: hsl(240 100% 5%);
+      --color-navy-600: hsl(236 13% 42%);
+      --color-grey-300: hsl(233 8% 79%);
+      --color-gold-400: hsl(35 77% 62%);
+      --color-red-500: hsl(5 85% 63%);
+      --spacing-100: 0.25rem;
+      --spacing-300: 0.75rem;
+      --spacing-400: 1rem;
+      --spacing-500: 1.25rem;
+      --spacing-800: 2rem;
+      --spacing-1100: 2.75rem;
+    }
+  </style>
+</head>
+
+<body class="min-h-dvh overflow-x-hidden bg-[hsl(36,100%,99%)] font-inter antialiased">
+  <div
+    id="nav-backdrop"
+    class="pointer-events-none fixed inset-0 z-40 bg-slate-900/0 opacity-0 transition-opacity duration-200 lg:hidden"
+    aria-hidden="true"
+  ></div>
+  <div class="w-full min-h-screen"><nav id="navigation" aria-label="mobile navigation" class="z-50 bg-white fixed flex flex-col top-0 right-0 h-screen w-[16rem] md:w-[19.5rem] translate-x-full"><button class="cursor-pointer self-end max-w-[1.901rem] max-h-[1.901rem] mt-[1.688rem] mr-[1.313rem]" aria-label="Close navigation menu" aria-expanded="false"><img alt="" src="./assets/images/icon-menu-close.svg"></button><ul class="list-none mt-1100 font-inter font-normal ml-[1.313rem]"><li class="text-[1.125rem] leading-[1.5rem] text-navy-950 mb-300"><a href="#Home" class="hover:text-red-500 active:text-red-500 focus:text-red-500">Home</a></li><li class="text-[1.125rem] leading-[1.5rem] text-navy-950 mb-300 "><a href="#New" class="hover:text-red-500 active:text-red-500 focus:text-red-500">New</a></li><li class="text-[1.125rem] leading-[1.5rem] text-navy-950 mb-300"><a href="#Trending" class="hover:text-red-500 active:text-red-500 focus:text-red-500">Trending</a></li><li class="text-[1.125rem] leading-[1.5rem] text-navy-950 mb-300"><a href="#Popular" class="hover:text-red-500 active:text-red-500 focus:text-red-500">Popular</a></li><li class="text-[1.125rem] leading-[1.5rem] text-navy-950"><a href="#Categories" class="hover:text-red-500 active:text-red-500 focus:text-red-500">Categories</a></li></ul></nav><div class="max-w-screen-xl mx-auto p-300 md:p-800"><header class="lg:mb-300"><div class="lg:hidden"><nav class="flex flex-row justify-between items-center w-full max-w-[21.438rem] md:max-w-[38rem] md:mb-400"><img alt="" class="w-full max-w-[2.811rem] h-full max-h-[1.75rem]" src="./assets/images/logo.svg"><button class="w-full max-w-[2.5rem] h-full max-h-[1.063rem] cursor-pointer" aria-label="Navigation menu" aria-expanded="false" aria-controls="navigation"><img alt="" src="./assets/images/icon-menu.svg"></button></nav></div><div class="hidden lg:inline"><nav class="flex flex-row justify-between items-center" aria-label="main navigation"><img alt="" class="w-full max-w-[4.006rem]" src="data:image/svg+xml,%3csvg%20width='65'%20height='40'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M23.016%2039.2c.317%200%20.574-.093.77-.28.196-.187.294-.457.294-.812v-1.82c0-.448.033-.84.098-1.176.065-.336.145-.663.238-.98l5.09-18.122%204.822%2018.57c.112.384.193.682.243.895l.023.099c.047.215.07.453.07.714v1.82c0%20.355.098.625.294.812.196.187.453.28.77.28h10.696c.299%200%20.55-.093.756-.28.205-.187.308-.457.308-.812v-1.82c0-.373.023-.705.07-.994.047-.29.135-.677.266-1.162L54.04%207.224c.299-1.25.765-2.254%201.4-3.01.635-.756%201.363-1.311%202.184-1.666l.672-.308c.336-.168.574-.331.714-.49.14-.159.21-.369.21-.63%200-.336-.117-.607-.35-.812C58.637.103%2058.287%200%2057.82%200h-8.904c-.467%200-.817.103-1.05.308-.233.205-.35.476-.35.812%200%20.261.06.471.182.63.121.159.313.303.574.434l.616.224c1.12.41%201.871.999%202.254%201.764s.453%201.661.21%202.688l-5.535%2023.486-6.477-25.81c-.133-.58-.17-1.018-.11-1.31l.026-.104c.093-.29.317-.49.672-.602l1.232-.336c.299-.112.518-.257.658-.434a.986.986%200%200%200%20.21-.63c0-.355-.112-.63-.336-.826C41.468.098%2041.122%200%2040.656%200H24.78c-.448%200-.789.098-1.022.294-.233.196-.35.471-.35.826%200%20.224.06.415.182.574.121.159.322.294.602.406l1.176.42c.261.093.462.243.602.448.14.205.294.607.462%201.204l1.751%206.742-5.553%2019.475L16.128%204.48c-.147-.49-.194-.898-.14-1.223l.028-.135c.093-.345.327-.574.7-.686l1.456-.336c.504-.168.756-.504.756-1.008%200-.336-.112-.602-.336-.798C18.368.098%2018.022%200%2017.556%200H1.344C.896%200%20.56.098.336.294.112.49%200%20.756%200%201.092c0%20.224.056.434.168.63.112.196.29.35.532.462l1.232.392c.355.13.625.308.812.532.187.224.345.579.476%201.064l7.84%2030.408c.112.43.191.751.238.966.047.215.07.462.07.742v1.82c0%20.355.103.625.308.812.205.187.467.28.784.28h10.556Zm34.804.7c1.195%200%202.263-.29%203.206-.868a6.338%206.338%200%200%200%202.24-2.338c.55-.98.826-2.04.826-3.178%200-1.157-.275-2.212-.826-3.164a6.325%206.325%200%200%200-2.24-2.282c-.943-.57-2.011-.854-3.206-.854-1.157%200-2.207.285-3.15.854a6.325%206.325%200%200%200-2.24%202.282c-.55.952-.826%202.007-.826%203.164%200%201.139.275%202.198.826%203.178.55.98%201.297%201.76%202.24%202.338.943.579%201.993.868%203.15.868Z'%20fill='%2300001A'/%3e%3c/svg%3e"><ul class="flex flex-row list-none gap-4"><li class="text-navy-600 text-[0.938rem] leading-[1.625rem]"><a href="#Home" class="hover:text-red-500 active:text-red-500 focus:text-red-500">Home</a></li><li class="text-navy-600 text-[0.938rem] leading-[1.625rem]"><a href="#New" class="hover:text-red-500 active:text-red-500 focus:text-red-500">New</a></li><li class="text-navy-600 text-[0.938rem] leading-[1.625rem]"><a href="#Trending" class="hover:text-red-500 active:text-red-500 focus:text-red-500">Trending</a></li><li class="text-navy-600 text-[0.938rem] leading-[1.625rem]"><a href="#Categories" class="hover:text-red-500 active:text-red-500 focus:text-red-500">Categories</a></li></ul></nav></div></header><main><div class="lg:flex lg:flex-row lg:items-center lg:gap-x-4"><section class="flex flex-col justify-start items-start lg:w-full lg:h-full lg:mt-0"><picture class="w-full md:max-w-[45.625rem] lg:h-full lg:max-h-[18.75rem] lg:mb-300 mt-400 md:mt-0"><source media="(min-width:48rem)" srcset="./assets/images/image-web-3-desktop.jpg"><img alt="Main story" class="mb-300" src="./assets/images/image-web-3-mobile.jpg"></picture><div class="lg:flex lg:flex-row lg:items-center lg:w-full lg:max-w-[45.625rem] lg:max-h-[11.5rem]"><h1 class="font-inter font-extrabold text-[2.5rem] leading-[2.5rem] lg:w-full lg:max-w-[21.875rem] lg:mr-400 lg:text-[3.5rem] lg:leading-[3.5rem] mb-300 lg:flex lg:flex-row lg:max-h-[11.375rem]">The Bright Future of Web 3.0?</h1><div class="lg:flex lg:flex-row lg:flex-wrap lg:mt-0"><p class="mb-300 text-[0.938rem] leading-[1.625rem] text-navy-600 lg:w-full lg:max-w-[21.875rem]">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p><a href="#" class="font-inter font-bold bg-red-500 px-400 py-100 text-[0.875rem] leading-[1.5rem] tracking-[0.274rem] hover:bg-navy-950 hover:text-white cursor-pointer">Read More</a></div></div></section><section class="bg-navy-950 font-inter mt-800 lg:mt-0 p-8 w-full max-w-[21.875rem] lg:mt-400 lg:h-full md:max-w-[38rem] lg:max-w-[21.875rem]"><h2 class="text-gold-400 font-bold text-[2rem] leading-[2rem] md:text-[2.5rem] md:leading-[2.5rem]">New</h2><article class="mt-400  w-full"><h3><a href="#" class="text-white font-extrabold text-[1.25rem] leading-[1.5rem] mb-100 hover:text-gold-400 active:text-gold-400 focus:text-gold-400">Hydrogen VS Electric Cars</a></h3><p class="text-grey-300 text-[0.938rem] leading-[1.625rem] font-normal mt-100">Will hydrogen-fueled cars ever catch up to EVs?</p></article><hr class="border-navy-600 mt-400"><article class="mt-400 font-extrabold w-full"><h3><a href="#" class="text-white font-extrabold text-[1.25rem] leading-[1.5rem] mb-100 hover:text-gold-400 active:text-gold-400 focus:text-gold-400">The Downsides of AI Artistry</a></h3><p class="text-grey-300 text-[0.938rem] leading-[1.625rem] font-normal">What are the possible adverse effects of on-demand AI image generation?</p></article><hr class="border-navy-600 mt-400"><article class="mt-400 w-full"><h3><a href="#" class="text-white font-extrabold text-[1.25rem] leading-[1.5rem] mb-100 hover:text-gold-400 active:text-gold-400 focus:text-gold-400">Is VC Funding Drying Up?</a></h3><p class="text-grey-300 text-[0.938rem] leading-[1.625rem] font-normal">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p></article></section></div><section class="font-inter flex flex-col items-start mt-800 lg:flex-row lg:w-full lg:h-[8.125rem]"><article class="flex flex-row  lg:w-[21.313rem] lg:h-[8.125rem]"><img alt="retro PCs" class="w-full max-w-[6.25rem] h-full max-h-[8.063rem]" src="./assets/images/image-retro-pcs.jpg"><div class="ml-300"><span class="text-red-500 font-bold text-[2rem] leading-[2rem] mb-100">01</span><h4 class="text-[1.125rem] text-navy-950 font-extrabold mb-100"><a href="#" class="hover:text-red-500 active:text-red-500 focus:text-red-500">Reviving Retro PCs</a></h4><p class="font-normal text-navy-600 text-[0.938rem] leading-[1.625rem]">What happens when old PCs are given modern upgrades?</p></div></article><article class="flex flex-row mt-400 lg:mt-0 lg:ml-500 lg:w-[21.313rem]"><img alt="laptops" class="w-full max-w-[6.25rem] h-full max-h-[8.063rem]" src="./assets/images/image-top-laptops.jpg"><div class="ml-300"><span class="text-red-500 font-bold text-[2rem] leading-[2rem] mb-100">02</span><h4 class="text-[1.125rem] text-navy-950 font-extrabold mb-100"><a href="#" class="hover:text-red-500 active:text-red-500 focus:text-red-500">Top 10 Laptops of 2022</a></h4><p class="font-normal text-navy-600 text-[0.938rem] leading-[1.625rem]">Our best picks for various needs and budgets.</p></div></article><article class="flex flex-row mt-400 lg:mt-0 lg:ml-500 lg:w-[21.313rem]"><img alt="gaming" class="w-full max-w-[6.25rem] h-full max-h-[8.063rem]" src="./assets/images/image-gaming-growth.jpg"><div class="ml-300"><span class="text-red-500 font-bold text-[2rem] leading-[2rem] mb-100">03</span><h4 class="text-[1.125rem] text-navy-950 font-extrabold mb-100 "><a href="#" class="hover:text-red-500 active:text-red-500 focus:text-red-500">The Growth of Gaming</a></h4><p class="font-normal text-navy-600 text-[0.938rem] leading-[1.625rem]">How the pandemic has sparked fresh opportunities.</p></div></article></section></main></div></div>
+
+
+  <script src="./main.js"></script>
+</body>
+</html>
