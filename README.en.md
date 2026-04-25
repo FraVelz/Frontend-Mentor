@@ -34,6 +34,7 @@ The project is deployed on **GitHub Pages**; the home page (`/`) lists each chal
 - [Frontend quiz app](./frontend-quiz-app/) — implementation in `frontend-quiz-app/`.
 - [Interactive rating component](./interactive-rating-component/) — implementation in `interactive-rating-component/`.
 - [FAQ accordion](./faq-accordion/) — implementation in `faq-accordion/`.
+- [Contact form](./contact-form/) — implementation in `contact-form/`.
 
 _(This list will grow as more challenges are added or completed.)_
 

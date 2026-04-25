@@ -1,0 +1,163 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Frontend Mentor | Contact form</title>
+    <meta
+      name="description"
+      content="Contact form: accessible form with validation, success feedback, and responsive layout — a Frontend Mentor challenge solution with HTML, CSS, and JavaScript."
+    />
+    <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/contact-form/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://fravelz.github.io/Frontend-Mentor/contact-form/"
+    />
+    <meta property="og:title" content="Frontend Mentor | Contact form" />
+    <meta
+      property="og:description"
+      content="Accessible contact form with field validation, keyboard support, and screen-reader friendly messages — built for the Frontend Mentor challenge."
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/contact-form/screenshot.png?raw=true"
+    />
+    <meta property="og:image:alt" content="Contact form challenge preview" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frontend Mentor | Contact form" />
+    <meta
+      name="twitter:description"
+      content="Validated, accessible contact form with success state — HTML, CSS, and JavaScript (Frontend Mentor)."
+    />
+    <meta
+      name="twitter:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/contact-form/screenshot.png?raw=true"
+    />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./extras.css" />
+  </head>
+
+  <body
+    class="flex min-h-dvh flex-col items-center [color:hsl(187,24%,22%)] [background-color:hsl(148,38%,91%)]"
+  >
+    <form
+      action="#"
+      class="contact-form relative mt-24 flex w-[min(100%-2rem,90%)] max-w-2xl flex-col items-stretch justify-start gap-3 rounded-xl bg-white p-6 sm:mt-32 sm:p-8 md:mt-40 md:max-w-[min(90%,40rem)]"
+      novalidate
+    >
+      <h1 class="text-3xl font-semibold tracking-tight [color:hsl(187,24%,22%)]">Contact Us</h1>
+      <div
+        class="double-column-wrapper flex w-full flex-col gap-3 min-[426px]:flex-row min-[426px]:gap-3"
+      >
+        <div class="related-content-wrapper first-name-area flex w-full min-w-0 flex-col">
+          <label class="text-base [color:hsl(187,24%,22%)]" for="first-name"
+            >First Name <span class="text-[hsl(169,82%,27%)]">*</span></label
+          >
+          <input
+            type="text"
+            class="mt-2 w-full rounded border border-solid [border-color:hsl(186,15%,59%)] px-3 py-2.5 text-base outline-none transition [color:hsl(187,24%,22%)] hover:[border-color:hsl(148,38%,91%)] focus:outline focus:outline-1 [focus:outline-color:hsl(169,82%,27%)]"
+            id="first-name"
+            autocomplete="given-name"
+          />
+        </div>
+        <div class="related-content-wrapper last-name-area flex w-full min-w-0 flex-col">
+          <label class="text-base [color:hsl(187,24%,22%)]" for="last-name"
+            >Last Name <span class="text-[hsl(169,82%,27%)]">*</span></label
+          >
+          <input
+            type="text"
+            class="mt-2 w-full rounded border border-solid [border-color:hsl(186,15%,59%)] px-3 py-2.5 text-base outline-none transition [color:hsl(187,24%,22%)] hover:[border-color:hsl(148,38%,91%)] focus:outline focus:outline-1 [focus:outline-color:hsl(169,82%,27%)]"
+            id="last-name"
+            autocomplete="family-name"
+          />
+        </div>
+      </div>
+      <div class="related-content-wrapper email-area flex w-full flex-col">
+        <label class="text-base [color:hsl(187,24%,22%)]" for="email"
+          >Email Address <span class="text-[hsl(169,82%,27%)]">*</span></label
+        >
+        <input
+          type="email"
+          class="mt-2 w-full rounded border border-solid [border-color:hsl(186,15%,59%)] px-3 py-2.5 text-base outline-none transition [color:hsl(187,24%,22%)] hover:[border-color:hsl(148,38%,91%)] focus:outline focus:outline-1 [focus:outline-color:hsl(169,82%,27%)]"
+          id="email"
+          autocomplete="email"
+        />
+      </div>
+      <div class="related-content-wrapper query-area flex w-full flex-col">
+        <span class="text-base [color:hsl(187,24%,22%)]" id="query-type-label"
+          >Query Type <span class="text-[hsl(169,82%,27%)]">*</span></span
+        >
+        <div
+          id="query-type"
+          class="mt-2 flex w-full flex-col gap-3 min-[426px]:flex-row min-[426px]:gap-3"
+          role="group"
+          aria-labelledby="query-type-label"
+        >
+          <div
+            class="radio-btn-wrapper flex w-full min-w-0 items-center gap-2 rounded-md border border-solid [border-color:hsl(186,15%,59%)] px-4 py-2.5"
+          >
+            <input
+              type="radio"
+              class="query h-4 w-4 accent-[hsl(169,82%,27%)]"
+              id="general-enq"
+              name="query"
+            />
+            <label for="general-enq" class="whitespace-nowrap text-base [color:hsl(187,24%,22%)]"
+              >General Enquiry</label
+            >
+          </div>
+          <div
+            class="radio-btn-wrapper flex w-full min-w-0 items-center gap-2 rounded-md border border-solid [border-color:hsl(186,15%,59%)] px-4 py-2.5"
+          >
+            <input
+              type="radio"
+              class="query h-4 w-4 accent-[hsl(169,82%,27%)]"
+              id="support-req"
+              name="query"
+            />
+            <label for="support-req" class="whitespace-nowrap text-base [color:hsl(187,24%,22%)]"
+              >Support Request</label
+            >
+          </div>
+        </div>
+      </div>
+      <div class="related-content-wrapper msg-area flex w-full flex-col">
+        <label class="text-base [color:hsl(187,24%,22%)]" for="user-message"
+          >Message <span class="text-[hsl(169,82%,27%)]">*</span></label
+        >
+        <textarea
+          name="message-box"
+          class="h-[64vw] min-h-32 w-full resize-none overflow-auto rounded border border-solid [border-color:hsl(186,15%,59%)] px-3 py-2.5 text-base outline-none transition [color:hsl(187,24%,22%)] min-[426px]:h-[184px] min-[769px]:h-[12vw] min-[769px]:min-h-[7.5rem] hover:[border-color:hsl(148,38%,91%)] focus:outline focus:outline-1 [focus:outline-color:hsl(169,82%,27%)]"
+          id="user-message"
+        ></textarea>
+      </div>
+      <div class="related-content-wrapper consent-area flex flex-col items-start gap-2">
+        <div class="checkbox-wrapper flex items-center justify-start gap-2">
+          <input
+            type="checkbox"
+            class="h-4 w-4 rounded accent-[hsl(169,82%,27%)]"
+            id="consent-checkbox"
+          />
+          <label for="consent-checkbox" class="text-base [color:hsl(187,24%,22%)]">
+            I consent to being contacted by the team
+            <span class="text-[hsl(169,82%,27%)]">*</span>
+          </label>
+        </div>
+      </div>
+      <button
+        class="mt-4 w-full cursor-pointer rounded-md border-0 py-3.5 text-base font-medium text-white transition [background-color:hsl(169,82%,27%)] hover:[background-color:hsl(169,80%,20%)] active:[background-color:hsl(169,54%,77%)]"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

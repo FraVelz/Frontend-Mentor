@@ -34,6 +34,7 @@ El proyecto está desplegado en **GitHub Pages**, la página principal (/) conti
 - [Cuestionario frontend](./frontend-quiz-app/) — implementación en la carpeta `frontend-quiz-app/`.
 - [Componente de valoración interactiva](./interactive-rating-component/) — implementación en la carpeta `interactive-rating-component/`.
 - [Acordeón de preguntas frecuentes (FAQ)](./faq-accordion/) — implementación en la carpeta `faq-accordion/`.
+- [Formulario de contacto](./contact-form/) — implementación en la carpeta `contact-form/`.
 
 _(La lista se irá ampliando conforme se añaden/completen más retos.)_
 
