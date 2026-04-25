@@ -39,7 +39,7 @@ This is a solution to the [Newsletter sign-up form with success message challeng
 
 ### What I learned
 
-Built the newsletter layout with responsive illustrations, accessible form feedback, and a dedicated success state aligned with the Frontend Mentor design.
+Built the newsletter layout with responsive illustrations, form validation, and a success state that shows the submitted email address, aligned with the Frontend Mentor design.
 
 ### Continued development
 

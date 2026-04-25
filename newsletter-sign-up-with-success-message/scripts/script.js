@@ -4,6 +4,7 @@ const errorMsg = document.querySelector('.error-msg')
 const main = document.querySelector('main')
 const successView = document.querySelector('.success-view')
 const dismissBtn = document.querySelector('.dismiss-btn')
+const confirmedEmail = document.getElementById('confirmed-email')
 
 const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -30,6 +31,10 @@ form.addEventListener('submit', (e) => {
   const isValid = validate(input.value)
 
   if (isValid) {
+    const address = input.value.trim()
+    if (confirmedEmail) {
+      confirmedEmail.textContent = address
+    }
     main.style.display = 'none'
     successView.classList.add('active')
     input.value = ''
