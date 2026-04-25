@@ -32,6 +32,7 @@ The project is deployed on **GitHub Pages**; the home page (`/`) lists each chal
 - [Tip calculator app](./tip-calculator-app/) — implementation in `tip-calculator-app/`.
 - [Password generator app](./password-generator-app/) — implementation in `password-generator-app/`.
 - [Frontend quiz app](./frontend-quiz-app/) — implementation in `frontend-quiz-app/`.
+- [Interactive rating component](./interactive-rating-component/) — implementation in `interactive-rating-component/`.
 
 _(This list will grow as more challenges are added or completed.)_
 

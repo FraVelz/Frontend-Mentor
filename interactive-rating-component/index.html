@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+    <meta
+      name="description"
+      content="Solution to the Frontend Mentor interactive rating component challenge: select a 1–5 rating, submit, and see a thank-you state."
+    />
+    <link rel="canonical" href="https://fravelz.github.io/Frontend-Mentor/interactive-rating-component/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fravelz.github.io/Frontend-Mentor/interactive-rating-component/" />
+    <meta property="og:title" content="Frontend Mentor | Interactive rating component" />
+    <meta
+      property="og:description"
+      content="Interactive rating component: pick a score, submit feedback, and view the thank-you screen — a Frontend Mentor front-end challenge."
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/interactive-rating-component/screenshot.png?raw=true"
+    />
+    <meta property="og:image:alt" content="Interactive rating component challenge preview" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Frontend Mentor | Interactive rating component" />
+    <meta name="twitter:description" content="Interactive rating component — select a score and submit on GitHub Pages." />
+    <meta
+      name="twitter:image"
+      content="https://github.com/FraVelz/Frontend-Mentor/blob/main/interactive-rating-component/screenshot.png?raw=true"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/icons/rate.png"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+      @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+      @import 'tailwindcss';
+
+      @theme {
+        --font-sans: 'Overpass', ui-sans-serif, system-ui, sans-serif;
+
+        --color-orange-500: hsl(25 97% 53%);
+        --color-gray-500: hsl(217 12% 63%);
+        --color-gray-900: hsl(213 19% 18%);
+        --color-gray-950: hsl(216 12% 8%);
+        --color-surface: hsl(213 19% 22%);
+
+        --shadow-rate: 0 0 2px rgb(0 0 0 / 0.7);
+      }
+
+      @layer components {
+        .attribution {
+          @apply text-center text-[0.6875rem];
+        }
+
+        .attribution a {
+          @apply text-[hsl(228,45%,44%)] transition-colors hover:text-gray-500 hover:underline;
+        }
+
+        .rate-card {
+          @apply flex max-w-82.5 flex-col gap-5 rounded-2xl bg-gray-900 p-5;
+        }
+
+        .rate-icon-wrap {
+          @apply self-start rounded-full bg-surface p-3 shadow-rate;
+        }
+
+        .rate-lead {
+          @apply text-sm text-gray-500;
+        }
+
+        .rate-row {
+          @apply flex justify-between gap-2 text-gray-500;
+        }
+
+        .rate {
+          @apply flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-surface p-2 text-gray-500 shadow-rate transition-transform hover:scale-105 hover:bg-orange-500 hover:text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500;
+        }
+
+        .rate.active {
+          @apply bg-white text-gray-900;
+        }
+
+        .submit-btn {
+          @apply w-full cursor-pointer rounded-full bg-orange-500 py-2 font-bold text-gray-900 transition-transform hover:bg-white active:scale-98;
+        }
+
+        .thank-you-card {
+          @apply flex max-w-82.5 scale-95 flex-col items-center gap-5 rounded-2xl bg-gray-900 px-5 py-8 opacity-0 transition-all duration-200;
+        }
+
+        .thank-you-card.is-visible {
+          @apply scale-100 opacity-100;
+        }
+
+        .thank-you-badge {
+          @apply mb-1 rounded-full bg-surface px-5 py-2 text-orange-500 shadow-rate;
+        }
+
+        .thank-you-text {
+          @apply text-center text-xs text-gray-500;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="flex min-h-screen flex-col items-center justify-center gap-3 bg-gray-950 px-3 py-10 font-sans text-white"
+  >
+    <div class="rate-container rate-card">
+      <div class="rate-icon-wrap">
+        <img src="./images/icon-star.svg" alt="" width="17" height="16" />
+      </div>
+
+      <h1 class="text-2xl">How did we do?</h1>
+
+      <p class="rate-lead">
+        Please let us know how we did with your support request. All feedback is
+        appreciated to help us improve our offering!
+      </p>
+      <ul class="rate-row">
+        <li class="rate" data-rate="1">1</li>
+        <li class="rate" data-rate="2">2</li>
+        <li class="rate" data-rate="3">3</li>
+        <li class="rate" data-rate="4">4</li>
+        <li class="rate" data-rate="5">5</li>
+      </ul>
+      <button type="button" class="submit-btn">Submit</button>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
