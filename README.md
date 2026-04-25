@@ -33,6 +33,7 @@ El proyecto está desplegado en **GitHub Pages**, la página principal (/) conti
 - [Generador de contraseñas](./password-generator-app/) — implementación en la carpeta `password-generator-app/`.
 - [Cuestionario frontend](./frontend-quiz-app/) — implementación en la carpeta `frontend-quiz-app/`.
 - [Componente de valoración interactiva](./interactive-rating-component/) — implementación en la carpeta `interactive-rating-component/`.
+- [Acordeón de preguntas frecuentes (FAQ)](./faq-accordion/) — implementación en la carpeta `faq-accordion/`.
 
 _(La lista se irá ampliando conforme se añaden/completen más retos.)_
 
