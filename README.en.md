@@ -35,6 +35,7 @@ The project is deployed on **GitHub Pages**; the home page (`/`) lists each chal
 - [Interactive rating component](./interactive-rating-component/) — implementation in `interactive-rating-component/`.
 - [FAQ accordion](./faq-accordion/) — implementation in `faq-accordion/`.
 - [Contact form](./contact-form/) — implementation in `contact-form/`.
+- [News homepage](./news-homepage/) — implementation in `news-homepage/`.
 
 _(This list will grow as more challenges are added or completed.)_
 
