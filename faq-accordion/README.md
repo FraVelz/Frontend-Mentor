@@ -20,7 +20,7 @@ This is a solution to the [FAQ accordion challenge on Frontend Mentor](https://w
 
 ### Screenshot
 
-![Screenshot](./screenshot.png)
+![Screenshot](./screenshot.jpg)
 
 ### Links
 
