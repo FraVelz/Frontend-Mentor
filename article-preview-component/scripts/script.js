@@ -1,11 +1,31 @@
 const btnShared = document.querySelectorAll('.btn-shared')
 const links = document.getElementById('links')
 const mainEl = document.getElementById('main')
-const firstShareControl = document.getElementById('btn-facebook')
 
 let isOpen = false
 /** Botón con el que se abrió el panel (para devolver el foco al cerrar) */
 let lastOpener = null
+
+/**
+ * Primer control enfocable dentro del popover (enlaces, botones, etc.).
+ * @param {ParentNode | null} container
+ * @returns {HTMLElement | null}
+ */
+function getFirstFocusable(container) {
+  if (!container) return null
+  const el = container.querySelector(
+    'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])',
+  )
+  return el instanceof HTMLElement ? el : null
+}
+
+/** Enfoca tras el siguiente repintado para que el destino esté en el árbol de accesibilidad. */
+function applyFocus(target) {
+  if (!target || typeof target.focus !== 'function') return
+  requestAnimationFrame(() => {
+    target.focus()
+  })
+}
 
 function setShareA11y(open) {
   if (open) {
@@ -20,22 +40,31 @@ function setShareA11y(open) {
 }
 
 /**
+ * Mueve el foco al abrir: primer control interactivo, o al contenedor con tabindex="-1" si no hay.
+ * Al cerrar, devuelve el foco al gatillo y quita tabindex del contenedor.
  * @param {boolean} open
- * @param {{ focusTarget?: Element | null }} [opts]
+ * @param {{ focusOnClose?: Element | null }} [opts]
  */
 function setShareOpen(open, opts = {}) {
-  const { focusTarget = null } = opts
+  const { focusOnClose = null } = opts
   isOpen = open
   if (open && mainEl) {
     links.style.width = mainEl.offsetWidth + 'px'
   }
   links.classList.toggle('hidden', !open)
   setShareA11y(open)
-  if (focusTarget && typeof focusTarget.focus === 'function') {
-    // Diferir el foco hasta después del repintado para que el panel sea visible y esté en el árbol de accesibilidad.
-    requestAnimationFrame(() => {
-      focusTarget.focus()
-    })
+
+  if (open) {
+    const toFocus = getFirstFocusable(links) || links
+    if (toFocus === links) {
+      links.setAttribute('tabindex', '-1')
+    } else {
+      links.removeAttribute('tabindex')
+    }
+    applyFocus(toFocus)
+  } else {
+    links.removeAttribute('tabindex')
+    applyFocus(focusOnClose)
   }
 }
 
@@ -44,7 +73,7 @@ setShareA11y(false)
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && isOpen) {
-    setShareOpen(false, { focusTarget: lastOpener })
+    setShareOpen(false, { focusOnClose: lastOpener })
   }
 })
 
@@ -52,7 +81,7 @@ document.addEventListener('click', (e) => {
   if (!isOpen) return
   const clickedShareBtn = Array.from(btnShared).some((b) => b.contains(e.target))
   if (!links.contains(e.target) && !clickedShareBtn) {
-    setShareOpen(false, { focusTarget: lastOpener })
+    setShareOpen(false, { focusOnClose: lastOpener })
   }
 })
 
@@ -61,9 +90,9 @@ btnShared.forEach((btn) => {
     e.stopPropagation()
     if (!isOpen) {
       lastOpener = btn
-      setShareOpen(true, { focusTarget: firstShareControl })
+      setShareOpen(true)
     } else {
-      setShareOpen(false, { focusTarget: lastOpener || btn })
+      setShareOpen(false, { focusOnClose: lastOpener || btn })
     }
   })
 })
