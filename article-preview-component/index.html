@@ -103,9 +103,14 @@
             role="dialog"
             aria-modal="false"
             aria-labelledby="share-popover-title"
+            aria-describedby="share-popover-instructions"
             aria-hidden="true"
+            data-share-popover-panel=""
             class="absolute -right-[30px] -bottom-5 z-10 flex hidden h-[76px] justify-center rounded-br-[1rem] rounded-bl-[1rem] text-white max-md:max-w-[calc(100%+60px)] md:-right-[110px] md:bottom-[50px] md:h-[55px] md:max-w-[248px] md:rounded-lg"
           >
+            <p id="share-popover-instructions" class="visually-hidden">
+              Use Tab to move through share options. Press Escape to close.
+            </p>
             <div class="flex w-full max-w-[267px] items-center justify-between md:max-w-[248px]">
               <div class="mx-auto w-[171px]">
                 <div class="flex items-center justify-between">
@@ -143,6 +148,6 @@
       </div>
     </main>
 
-    <script src="./scripts/script.js"></script>
+    <script id="script-share-focus" src="./scripts/script.js"></script>
   </body>
 </html>

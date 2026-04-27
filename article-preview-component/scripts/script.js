@@ -1,3 +1,7 @@
+/**
+ * Focus: {@link setShareOpen} al abrir pasa el foco al primer control (getFirstFocusable);
+ * al cerrar, devuelve el foco al gatillo; Escape o clic fuera cierra el panel.
+ */
 const btnShared = document.querySelectorAll('.btn-shared')
 const links = document.getElementById('links')
 const mainEl = document.getElementById('main')
@@ -19,11 +23,13 @@ function getFirstFocusable(container) {
   return el instanceof HTMLElement ? el : null
 }
 
-/** Enfoca tras el siguiente repintado para que el destino esté en el árbol de accesibilidad. */
+/** Enfoca tras repintar (doble rAF) para diálogos: el destino queda en el árbol de accesibilidad y pintado. */
 function applyFocus(target) {
   if (!target || typeof target.focus !== 'function') return
   requestAnimationFrame(() => {
-    target.focus()
+    requestAnimationFrame(() => {
+      target.focus()
+    })
   })
 }
 
