@@ -89,9 +89,10 @@
 
           <button
             type="button"
+            aria-haspopup="dialog"
             aria-expanded="false"
             aria-controls="links"
-            aria-label="Share"
+            aria-label="Share, opens a panel"
             class="btn-shared btn z-10 cursor-pointer rounded-full bg-[var(--clr-gray-200)] p-2"
           >
             <img src="./images/icon-share.svg" alt="" />
@@ -99,15 +100,16 @@
 
           <div
             id="links"
-            role="region"
-            aria-label="Share on social"
+            role="dialog"
+            aria-modal="false"
+            aria-labelledby="share-popover-title"
             aria-hidden="true"
             class="absolute -right-[30px] -bottom-5 z-10 flex hidden h-[76px] justify-center rounded-br-[1rem] rounded-bl-[1rem] text-white max-md:max-w-[calc(100%+60px)] md:-right-[110px] md:bottom-[50px] md:h-[55px] md:max-w-[248px] md:rounded-lg"
           >
             <div class="flex w-full max-w-[267px] items-center justify-between md:max-w-[248px]">
               <div class="mx-auto w-[171px]">
                 <div class="flex items-center justify-between">
-                  <p class="txt-share text-xl md:text-lg">SHARE</p>
+                  <p id="share-popover-title" class="txt-share text-xl md:text-lg">SHARE</p>
 
                   <button type="button" id="btn-facebook" class="cursor-pointer">
                     <img class="size-5 md:size-4" src="./images/icon-facebook.svg" alt="Facebook" />
@@ -125,7 +127,8 @@
 
               <button
                 type="button"
-                aria-label="Share"
+                aria-haspopup="dialog"
+                aria-label="Share, opens a panel"
                 aria-expanded="false"
                 aria-controls="links"
                 class="btn-shared btn-2 z-10 h-fit cursor-pointer self-center rounded-full bg-white p-2 md:hidden"
