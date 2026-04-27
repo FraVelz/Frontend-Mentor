@@ -34,8 +34,9 @@ function setShareA11y(open) {
     links.setAttribute('aria-hidden', 'true')
   }
   btnShared.forEach((b) => {
+    b.setAttribute('aria-haspopup', 'dialog')
     b.setAttribute('aria-expanded', String(open))
-    b.setAttribute('aria-label', open ? 'Close share options' : 'Share')
+    b.setAttribute('aria-label', open ? 'Close share options' : 'Share, opens a panel')
   })
 }
 
