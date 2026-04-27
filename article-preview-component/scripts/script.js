@@ -1,13 +1,18 @@
 const btnShared = document.querySelectorAll('.btn-shared')
 const links = document.getElementById('links')
 const mainEl = document.getElementById('main')
+const firstShareControl = document.getElementById('btn-facebook')
 
 let isOpen = false
 /** Botón con el que se abrió el panel (para devolver el foco al cerrar) */
 let lastOpener = null
 
 function setShareA11y(open) {
-  links.setAttribute('aria-hidden', String(!open))
+  if (open) {
+    links.removeAttribute('aria-hidden')
+  } else {
+    links.setAttribute('aria-hidden', 'true')
+  }
   btnShared.forEach((b) => {
     b.setAttribute('aria-expanded', String(open))
     b.setAttribute('aria-label', open ? 'Close share options' : 'Share')
@@ -27,7 +32,10 @@ function setShareOpen(open, opts = {}) {
   links.classList.toggle('hidden', !open)
   setShareA11y(open)
   if (focusTarget && typeof focusTarget.focus === 'function') {
-    focusTarget.focus()
+    // Diferir el foco hasta después del repintado para que el panel sea visible y esté en el árbol de accesibilidad.
+    requestAnimationFrame(() => {
+      focusTarget.focus()
+    })
   }
 }
 
@@ -53,7 +61,7 @@ btnShared.forEach((btn) => {
     e.stopPropagation()
     if (!isOpen) {
       lastOpener = btn
-      setShareOpen(true, { focusTarget: document.getElementById('btn-facebook') })
+      setShareOpen(true, { focusTarget: firstShareControl })
     } else {
       setShareOpen(false, { focusTarget: lastOpener || btn })
     }
