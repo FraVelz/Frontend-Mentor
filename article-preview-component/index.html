@@ -47,83 +47,7 @@
       rel="stylesheet"
     />
 
-    <style>
-      :root {
-        --clr-gray-900: hsl(217, 19%, 35%);
-        --clr-gray-500: hsl(214, 17%, 51%);
-        --clr-gray-400: hsl(212, 23%, 69%);
-        --clr-gray-200: hsl(210, 46%, 95%);
-      }
-
-      body {
-        font-family: 'Manrope', sans-serif;
-        background: var(--clr-gray-200);
-      }
-
-      .title {
-        color: var(--clr-gray-900);
-        font-size: 1.25rem;
-        font-weight: 700;
-        line-height: 1.3;
-        letter-spacing: 0.25px;
-      }
-
-      /* @media (min-width: 1012px) {
-      .title {
-        font-size: 1.5rem;
-      }
-    } */
-
-      .description {
-        font-size: 0.8125rem;
-        font-weight: 500;
-        line-height: 1.4;
-        letter-spacing: 0.12%;
-        color: var(--clr-gray-500);
-      }
-
-      .name {
-        color: var(--clr-gray-900);
-        font-size: 0.8125rem;
-        font-weight: 700;
-        line-height: 1.4;
-        letter-spacing: 0.12%;
-      }
-
-      .date {
-        color: var(--clr-gray-400);
-        font-size: 0.8125rem;
-        font-weight: 700;
-        line-height: 1.4;
-        letter-spacing: 0.12%;
-      }
-
-      @media screen and (min-width: 1012px) {
-      }
-
-      .btn-2 {
-        background: var(--clr-gray-500);
-      }
-
-      #links {
-        background: var(--clr-gray-900);
-      }
-
-      .triangulo {
-        width: 0;
-        height: 0;
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-        border-top: 15px solid var(--clr-gray-900);
-      }
-
-      .txt-share {
-        font-size: 0.8125rem;
-        font-weight: 500;
-        line-height: 1.4;
-        letter-spacing: 25%;
-      }
-    </style>
+    <link rel="stylesheet" href="./styles/style.css">
   </head>
 
   <body class="flex h-screen items-center justify-center p-4">
@@ -163,9 +87,10 @@
           </div>
 
           <button
+            type="button"
             aria-expanded="false"
             aria-controls="links"
-            aria-label="Shared"
+            aria-label="Share"
             class="btn-shared btn z-10 cursor-pointer rounded-full bg-[var(--clr-gray-200)] p-2"
           >
             <img src="./images/icon-share.svg" alt="" />
@@ -173,6 +98,9 @@
 
           <div
             id="links"
+            role="region"
+            aria-label="Share on social"
+            aria-hidden="true"
             class="absolute -right-[30px] -bottom-5 z-10 flex hidden h-[76px] justify-center rounded-br-[1rem] rounded-bl-[1rem] text-white max-md:max-w-[calc(100%+60px)] md:-right-[110px] md:bottom-[50px] md:h-[55px] md:max-w-[248px] md:rounded-lg"
           >
             <div class="flex w-full max-w-[267px] items-center justify-between md:max-w-[248px]">
@@ -195,7 +123,8 @@
               </div>
 
               <button
-                aria-label="Closed shared"
+                type="button"
+                aria-label="Share"
                 aria-expanded="false"
                 aria-controls="links"
                 class="btn-shared btn-2 z-10 h-fit cursor-pointer self-center rounded-full bg-white p-2 md:hidden"
@@ -210,55 +139,6 @@
       </div>
     </main>
 
-    <script>
-      const btnShared = document.querySelectorAll('.btn-shared')
-      const links = document.getElementById('links')
-
-      let isOpen = false
-      let activeBtn = null // referencia al botón activo
-
-      // ESC para cerrar
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && isOpen) {
-          isOpen = false
-          links.classList.add('hidden')
-
-          if (activeBtn) {
-            activeBtn.setAttribute('aria-expanded', false)
-            activeBtn.focus()
-          }
-        }
-      })
-
-      // click fuera
-      document.addEventListener('click', (e) => {
-        if (isOpen && activeBtn && !links.contains(e.target) && !activeBtn.contains(e.target)) {
-          isOpen = false
-          links.classList.add('hidden')
-          activeBtn.setAttribute('aria-expanded', false)
-        }
-      })
-
-      // botones
-      btnShared.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation()
-
-          activeBtn = btn // guardar cuál se usó
-          isOpen = !isOpen
-
-          links.style.width = document.getElementById('main').offsetWidth + 'px'
-
-          links.classList.toggle('hidden', !isOpen)
-          btn.setAttribute('aria-expanded', isOpen)
-
-          if (isOpen) {
-            document.getElementById('btn-facebook')?.focus()
-          } else {
-            btn.focus()
-          }
-        })
-      })
-    </script>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
