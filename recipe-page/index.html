@@ -43,19 +43,46 @@
     <style>
       .sr-only {
         position: absolute;
-        width: 1px;
-        height: 1px;
+        width: 0.0625rem;
+        height: 0.0625rem;
+        padding: 0;
+        margin: -0.0625rem;
         overflow: hidden;
         clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      .sr-only:focus,
+      .sr-only:focus-visible {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0.25rem 0.5rem;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        outline: 0.125rem solid var(--clr-brown-800);
+        outline-offset: 0.125rem;
       }
     </style>
   </head>
 
   <body class="flex min-h-screen w-screen justify-center bg-[var(--clr-stone-100)] md:py-[var(--spacing-1600)]">
     <main
-      class="max-w-[736px] space-y-[var(--spacing-500)] bg-white p-0 md:max-w-[616px] md:rounded-[2rem] md:p-[var(--spacing-500)] lg:max-w-[736px]"
+      class="max-w-[46rem] space-y-[var(--spacing-500)] bg-white p-0 md:max-w-[38.5rem] md:rounded-[2rem] md:p-[var(--spacing-500)] lg:max-w-[46rem]"
     >
-      <img class="w-full md:rounded-[1rem]" src="./assets/images/image-omelette.jpeg" alt="Omelette" />
+      <figure class="m-0 w-full">
+        <img
+          class="w-full md:rounded-[1rem]"
+          src="./assets/images/image-omelette.jpeg"
+          alt="Omelette"
+        />
+        <figcaption class="sr-only">
+          Finished simple omelette plated and ready to serve for this recipe.
+        </figcaption>
+      </figure>
 
       <div class="flex flex-col gap-[var(--spacing-400)] max-md:px-[var(--spacing-400)]">
         <div class="flex flex-col gap-[var(--spacing-300)]">
@@ -70,26 +97,35 @@
         <div class="rounded-md bg-[var(--clr-rose-50)] p-[var(--spacing-300)]">
           <h2 class="text-preset-3 mb-[var(--spacing-200)] font-bold text-[var(--clr-rose-800)]">Preparation time</h2>
 
-          <ul class="text-preset-4 space-y-[var(--spacing-100)]">
-            <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-stone-600)]"></span>
-              <span><strong>Total:</strong> Approximately 10 minutes</span>
-            </li>
+          <dl class="prep-time text-preset-4 space-y-[var(--spacing-100)]">
+            <div class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-stone-600)]" aria-hidden="true"></span>
+              <div>
+                <dt><strong>Total:</strong></dt>
+                <dd>Approximately 10 minutes</dd>
+              </div>
+            </div>
 
-            <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-stone-600)]"></span>
-              <span><strong>Preparation:</strong> 5 minutes</span>
-            </li>
+            <div class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-stone-600)]" aria-hidden="true"></span>
+              <div>
+                <dt><strong>Preparation:</strong></dt>
+                <dd>5 minutes</dd>
+              </div>
+            </div>
 
-            <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-stone-600)]"></span>
-              <span><strong>Cooking:</strong> 5 minutes</span>
-            </li>
-          </ul>
+            <div class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--clr-stone-600)]" aria-hidden="true"></span>
+              <div>
+                <dt><strong>Cooking:</strong></dt>
+                <dd>5 minutes</dd>
+              </div>
+            </div>
+          </dl>
         </div>
 
-        <div class="flex flex-col gap-[var(--spacing-300)]">
-          <h2 class="text-preset-2 text-[var(--clr-brown-800)]">Ingredients</h2>
+        <section class="flex flex-col gap-[var(--spacing-300)]" aria-labelledby="ingredients-heading">
+          <h2 id="ingredients-heading" class="text-preset-2 text-[var(--clr-brown-800)]">Ingredients</h2>
 
           <ul class="text-preset-4 space-y-[var(--spacing-100)]">
             <li class="ml-[var(--spacing-100)] flex items-start gap-[var(--spacing-200)]">
@@ -117,12 +153,12 @@
               <span>Optional fillings: cheese, diced vegetables, cooked meats, herbs</span>
             </li>
           </ul>
-        </div>
+        </section>
 
         <hr class="text-[var(--clr-stone-150)]" />
 
-        <div class="flex flex-col gap-[var(--spacing-300)]">
-          <h2 class="text-preset-2 text-[var(--clr-brown-800)]">Instructions</h2>
+        <section class="flex flex-col gap-[var(--spacing-300)]" aria-labelledby="instructions-heading">
+          <h2 id="instructions-heading" class="text-preset-2 text-[var(--clr-brown-800)]">Instructions</h2>
 
           <ol class="counter-reset list text-preset-4 space-y-[var(--spacing-100)]">
             <li class="ml-1 flex items-start gap-1">
@@ -177,12 +213,12 @@
               </span>
             </li>
           </ol>
-        </div>
+        </section>
 
         <hr class="text-[var(--clr-stone-150)]" />
 
-        <div class="flex flex-col gap-[var(--spacing-300)]">
-          <h2 class="text-preset-2 text-[var(--clr-brown-800)]">Nutrition</h2>
+        <section class="flex flex-col gap-[var(--spacing-300)]" aria-labelledby="nutrition-heading">
+          <h2 id="nutrition-heading" class="text-preset-2 text-[var(--clr-brown-800)]">Nutrition</h2>
 
           <p class="text-preset-4">
             The table below shows nutritional values per serving without the additional fillings.
@@ -195,24 +231,32 @@
 
             <tbody>
               <tr class="border-b border-[var(--clr-stone-150)]">
-                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[8.75px] font-normal">Calories</th>
+                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[var(--spacing-table-y-a)] font-normal"
+                  >Calories</th
+                >
                 <td class="text-preset-4-bold w-[50%] text-[var(--clr-brown-800)]">277kcal</td>
               </tr>
               <tr class="border-b border-[var(--clr-stone-150)]">
-                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[8.5px] font-normal">Carbs</th>
+                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[var(--spacing-table-y-b)] font-normal"
+                  >Carbs</th
+                >
                 <td class="text-preset-4-bold text-[var(--clr-brown-800)]">0g</td>
               </tr>
               <tr class="border-b border-[var(--clr-stone-150)]">
-                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[8.5px] font-normal">Protein</th>
+                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[var(--spacing-table-y-b)] font-normal"
+                  >Protein</th
+                >
                 <td class="text-preset-4-bold text-[var(--clr-brown-800)]">20g</td>
               </tr>
               <tr class="border-b border-[var(--clr-stone-150)]">
-                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[8.5px] font-normal">Fat</th>
+                <th scope="row" class="text-preset-4 px-[var(--spacing-300)] py-[var(--spacing-table-y-b)] font-normal"
+                  >Fat</th
+                >
                 <td class="text-preset-4-bold text-[var(--clr-brown-800)]">22g</td>
               </tr>
             </tbody>
           </table>
-        </div>
+        </section>
       </div>
     </main>
   </body>
