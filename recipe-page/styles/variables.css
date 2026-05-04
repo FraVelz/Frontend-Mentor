@@ -7,12 +7,17 @@
   --clr-stone-900: #312e2c;
   --clr-brown-800: #854632;
 
-  --spacing-1600: 128px;
-  --spacing-600: 48px;
-  --spacing-500: 40px;
-  --spacing-400: 32px;
-  --spacing-300: 24px;
-  --spacing-200: 16px;
-  --spacing-150: 12px;
-  --spacing-100: 8px;
+  --font-young: 'YoungSerif', serif;
+  --font-outfit: 'Outfit', sans-serif;
+
+  --spacing-1600: 8rem;
+  --spacing-600: 3rem;
+  --spacing-500: 2.5rem;
+  --spacing-400: 2rem;
+  --spacing-300: 1.5rem;
+  --spacing-200: 1rem;
+  --spacing-150: 0.75rem;
+  --spacing-100: 0.5rem;
+  --spacing-table-y-a: 0.546875rem;
+  --spacing-table-y-b: 0.53125rem;
 }

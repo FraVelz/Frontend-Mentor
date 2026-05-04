@@ -9,10 +9,9 @@ ol.list {
   justify-content: center;
 
   width: 1.5rem;
-  min-width: 1.5rem;
 
   font-weight: bold;
-  color: #854632;
+  color: var(--clr-brown-800);
 }
 
 .step-counter::before {
