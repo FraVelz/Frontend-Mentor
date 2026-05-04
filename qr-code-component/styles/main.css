@@ -23,6 +23,8 @@
 
   --letter-preset-1: 0;
   --letter-preset-2: 0.2px;
+
+  --shadow-card: 0 25px 25px rgba(0, 0, 0, 0.0477);
 }
 
 * {
@@ -69,21 +71,23 @@ img {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.0477);
-  width: 320px;
-  min-height: 499px;
+  box-shadow: var(--shadow-card);
+  width: 20rem;
+  min-height: 31.1875rem;
 }
 
-.card-image {
+.card figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card figure > img {
   border-radius: var(--radius-sm);
-  overflow: hidden;
   aspect-ratio: 1 / 1;
-  margin-bottom: var(--space-300);
-}
-
-.card-image img {
+  margin-block-end: var(--space-300);
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -97,5 +101,5 @@ img {
 }
 
 .text h1 {
-  margin-bottom: var(--space-200);
+  margin-block-end: var(--space-200);
 }
