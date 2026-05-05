@@ -1,40 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 
+/* Base in rem scales with the user's root font size (accessibility). */
+html {
+  font-size: 100%;
+}
+
 :root {
   --white: hsl(0, 0%, 100%);
   --slate-300: hsl(212, 45%, 89%);
   --slate-500: hsl(216, 15%, 48%);
   --slate-900: hsl(218, 44%, 22%);
 
-  --space-200: 16px;
-  --space-300: 24px;
-  --space-500: 40px;
+  --space-200: 1rem;
+  --space-300: 1.5rem;
+  --space-500: 2.5rem;
 
-  --radius-lg: 20px;
-  --radius-sm: 10px;
+  --radius-lg: 1.25rem;
+  --radius-sm: 0.625rem;
 
   --family-sans: 'Outfit', sans-serif;
 
-  --text-preset-1: 22px;
-  --text-preset-2: 15px;
+  /* Fluid type: rem bounds + slight vw so text breathes on narrow/wide viewports. */
+  --text-preset-1: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
+  --text-preset-2: clamp(0.875rem, 0.82rem + 0.2vw, 0.9375rem);
 
   --line-preset-1: 1.2;
   --line-preset-2: 1.4;
 
   --letter-preset-1: 0;
-  --letter-preset-2: 0.2px;
+  --letter-preset-2: 0.0125rem;
 
-  --shadow-card: 0 25px 25px rgba(0, 0, 0, 0.0477);
+  --card-max: 20rem;
+  --shadow-card: 0 1.5625rem 1.5625rem rgba(0, 0, 0, 0.0477);
 }
 
-* {
+/* Minimal reset for this standalone page; larger apps often scope this or use a base stylesheet (e.g. normalize). */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100svh;
+  padding: var(--space-200);
   font-family: var(--family-sans);
   font-optical-sizing: auto;
   font-weight: 400;
@@ -72,8 +83,9 @@ img {
   justify-content: center;
   flex-direction: column;
   box-shadow: var(--shadow-card);
-  width: 20rem;
-  min-height: 31.1875rem;
+  /* Mobile-first: fill the main column up to the design cap. */
+  width: 100%;
+  max-width: var(--card-max);
 }
 
 .card figure {
