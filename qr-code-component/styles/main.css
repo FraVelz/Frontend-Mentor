@@ -34,15 +34,6 @@ html {
   --shadow-card: 0 1.5625rem 1.5625rem rgba(0, 0, 0, 0.0477);
 }
 
-/* Minimal reset for this standalone page; larger apps often scope this or use a base stylesheet (e.g. normalize). */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   min-height: 100svh;
   padding: var(--space-200);
