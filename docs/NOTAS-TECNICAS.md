@@ -20,12 +20,13 @@
   qr-code-component/         ← ejemplo: un reto (HTML, CSS, JS, assets…)
   <otro-reto>/               ← nuevos retos: misma idea, carpeta por reto
   .github/workflows/         ← despliegue automático a GitHub Pages
-  docs/                      ← documentación, plantillas e instrucciones (no es subsitio de Pages)
+  docs/                      ← documentación, plantillas y convenciones (no es subsitio de Pages)
     README.md                ← índice de docs/
     NOTAS-TECNICAS.md        ← este archivo
     readme-template.md
-    Instructions_IA.md
     CONVENCIONES-METADATOS.md
+  .cursor/commands/          ← comandos de Cursor para la IA
+    instructions-ia.md       ← flujo al incorporar un reto (índice + README)
 ```
 
 Cada carpeta de reto con su propio `index.html` se trata como un **subsitio** bajo la misma base de Pages.
