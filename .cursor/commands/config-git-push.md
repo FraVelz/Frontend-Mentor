@@ -1,6 +1,8 @@
 # Instrucciones: actualizar retos (README + índice)
 
-Documento de referencia para **ti** y para el **asistente de IA** cuando se incorpore un nuevo reto de [Frontend Mentor](https://www.frontendmentor.io) a este repositorio. **Este archivo vive en** `.cursor/commands/instructions-ia.md` (comando de Cursor). Objetivo: cambios **mínimos**, **consistentes** y **revisables** en el futuro. Al cerrar cada tarea, aplicar **Conventional Commits** y **subir al remoto** (`git push`), en la línea del historial del repo (véase la sección Git más abajo).
+**Ubicación:** `.cursor/commands/config-git-push.md`. En Cursor, el nombre del comando slash coincide con el del archivo: **config-git-push**.
+
+Documento de referencia para **ti** y para el **asistente de IA** cuando se incorpore un nuevo reto de [Frontend Mentor](https://www.frontendmentor.io) a este repositorio. Objetivo: cambios **mínimos**, **consistentes** y **revisables** en el futuro. Al cerrar cada tarea, aplicar **Conventional Commits** y **subir al remoto** (`git push`), en la línea del historial del repo (véase la sección Git más abajo).
 
 ---
 
@@ -18,7 +20,7 @@ No forman parte de esta rutina obligatoria: código de implementación detallado
 
 **Archivos a eliminar dentro de cada carpeta de reto al incorporarla:** el `README.md` que trae el paquete de Frontend Mentor (instrucciones genéricas del reto), y si existen **`AGENTS.md`** y **`CLAUDE.md`** en esa carpeta (no deben quedar duplicados respecto a la documentación del monorepo en la raíz).
 
-En Cursor, la regla `.cursor/rules/actualizar-retos-frontend-mentor.mdc` recuerda este flujo al trabajar con el índice en la raíz; el README **por carpeta** es un paso adicional descrito más abajo.
+Si añades reglas en `.cursor/rules/`, puedes alinearlas con este flujo al trabajar con el índice en la raíz. El README **por carpeta** del reto es un paso adicional descrito más abajo.
 
 ---
 
@@ -160,7 +162,7 @@ Hasta que eso exista en el README, no inventar columnas nuevas.
 
 **No dar por terminada** la incorporación o actualización de un reto hasta que **todo** lo tocado en esa sesión esté **versionado y subido**: `git add` de los archivos relevantes, **al menos un _commit_** con mensaje **Conventional Commits**, y **`git push`** al remoto habitual (`origin`, rama en la que trabajes, p. ej. `main`). Eso incluye:
 
-- Cambios en la raíz (`README.md`, `index.html`, etc.), en `docs/` cuando toque plantillas o convenciones (p. ej. `docs/readme-template.md`), y en comandos de Cursor (p. ej. `.cursor/commands/instructions-ia.md`) si actualizas el flujo del asistente.
+- Cambios en la raíz (`README.md`, `index.html`, etc.), en `docs/` cuando toque plantillas o convenciones (p. ej. `docs/readme-template.md`), y en comandos de Cursor (p. ej. `.cursor/commands/config-git-push.md`) si actualizas el flujo del asistente.
 - Carpeta completa del reto (HTML, CSS, assets, `nombre-reto/README.md`, etc.) cuando forme parte del mismo trabajo.
 - Cualquier otra modificación relacionada (renombrar carpetas, corregir enlaces, plantillas).
 

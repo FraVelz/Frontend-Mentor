@@ -28,7 +28,7 @@ El proyecto está desplegado en **GitHub Pages**, la página principal (/) conti
 - [Landing page Meet](./meet-landing-page/) — implementación en la carpeta `meet-landing-page/`.
 - [Componente de vista previa de artículo](./article-preview-component/) — implementación en la carpeta `article-preview-component/`.
 - [Formulario de suscripción al boletín con mensaje de éxito](./newsletter-sign-up-with-success-message/) — implementación en la carpeta `newsletter-sign-up-with-success-message/`.
-- [Dashboard de seguimiento de tiempo](./time-dashboard-main/) — implementación en la carpeta `time-dashboard-main/`.
+- [Dashboard de seguimiento de tiempo](./time-dashboard/) — implementación en la carpeta `time-dashboard/`.
 - [Calculadora de propinas](./tip-calculator-app/) — implementación en la carpeta `tip-calculator-app/`.
 - [Generador de contraseñas](./password-generator-app/) — implementación en la carpeta `password-generator-app/`.
 - [Cuestionario frontend](./frontend-quiz-app/) — implementación en la carpeta `frontend-quiz-app/`.
@@ -41,7 +41,7 @@ _(La lista se irá ampliando conforme se añaden/completen más retos.)_
 
 ---
 
-En [Notas técnicas](./docs/NOTAS-TECNICAS.md) está el detalle orientado a quien mantiene o audita el proyecto. Más guías, plantilla de README e instrucciones para la IA: carpeta [`docs/`](./docs/).
+En [Notas técnicas](./docs/NOTAS-TECNICAS.md) está el detalle orientado a quien mantiene o audita el proyecto. Guías, plantilla de README y convenciones: carpeta [`docs/`](./docs/). Flujo paso a paso para incorporar un reto (asistente de IA): [`.cursor/commands/config-git-push.md`](./.cursor/commands/config-git-push.md).
 
 ## Information
 
