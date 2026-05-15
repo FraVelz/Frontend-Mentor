@@ -1,6 +1,6 @@
 # Instrucciones: actualizar retos (README + índice)
 
-Documento de referencia para **ti** y para el **asistente de IA** cuando se incorpore un nuevo reto de [Frontend Mentor](https://www.frontendmentor.io) a este repositorio. **Este archivo vive en** `docs/Instructions_IA.md`. Objetivo: cambios **mínimos**, **consistentes** y **revisables** en el futuro. Al cerrar cada tarea, aplicar **Conventional Commits** y **subir al remoto** (`git push`), en la línea del historial del repo (véase la sección Git más abajo).
+Documento de referencia para **ti** y para el **asistente de IA** cuando se incorpore un nuevo reto de [Frontend Mentor](https://www.frontendmentor.io) a este repositorio. **Este archivo vive en** `.cursor/commands/instructions-ia.md` (comando de Cursor). Objetivo: cambios **mínimos**, **consistentes** y **revisables** en el futuro. Al cerrar cada tarea, aplicar **Conventional Commits** y **subir al remoto** (`git push`), en la línea del historial del repo (véase la sección Git más abajo).
 
 ---
 
@@ -160,7 +160,7 @@ Hasta que eso exista en el README, no inventar columnas nuevas.
 
 **No dar por terminada** la incorporación o actualización de un reto hasta que **todo** lo tocado en esa sesión esté **versionado y subido**: `git add` de los archivos relevantes, **al menos un _commit_** con mensaje **Conventional Commits**, y **`git push`** al remoto habitual (`origin`, rama en la que trabajes, p. ej. `main`). Eso incluye:
 
-- Cambios en la raíz (`README.md`, `index.html`, etc.) y en `docs/` cuando toque plantillas o instrucciones (`docs/readme-template.md`, `docs/Instructions_IA.md`, etc.).
+- Cambios en la raíz (`README.md`, `index.html`, etc.), en `docs/` cuando toque plantillas o convenciones (p. ej. `docs/readme-template.md`), y en comandos de Cursor (p. ej. `.cursor/commands/instructions-ia.md`) si actualizas el flujo del asistente.
 - Carpeta completa del reto (HTML, CSS, assets, `nombre-reto/README.md`, etc.) cuando forme parte del mismo trabajo.
 - Cualquier otra modificación relacionada (renombrar carpetas, corregir enlaces, plantillas).
 
