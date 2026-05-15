@@ -28,7 +28,7 @@ The project is deployed on **GitHub Pages**; the home page (`/`) lists each chal
 - [Meet landing page](./meet-landing-page/) — implementation in `meet-landing-page/`.
 - [Article preview component](./article-preview-component/) — implementation in `article-preview-component/`.
 - [Newsletter sign-up form with success message](./newsletter-sign-up-with-success-message/) — implementation in `newsletter-sign-up-with-success-message/`.
-- [Time tracking dashboard](./time-dashboard-main/) — implementation in `time-dashboard-main/`.
+- [Time tracking dashboard](./time-dashboard/) — implementation in `time-dashboard/`.
 - [Tip calculator app](./tip-calculator-app/) — implementation in `tip-calculator-app/`.
 - [Password generator app](./password-generator-app/) — implementation in `password-generator-app/`.
 - [Frontend quiz app](./frontend-quiz-app/) — implementation in `frontend-quiz-app/`.
@@ -41,7 +41,7 @@ _(This list will grow as more challenges are added or completed.)_
 
 ---
 
-See [Notas técnicas](./docs/NOTAS-TECNICAS.md) _(Spanish)_ for maintainer- and audit-oriented detail. Additional guides, README template, and AI workflow notes: [`docs/`](./docs/) directory.
+See [Notas técnicas](./docs/NOTAS-TECNICAS.md) _(Spanish)_ for maintainer- and audit-oriented detail. Guides, README template, and conventions: [`docs/`](./docs/) directory. Step-by-step flow for adding a challenge (AI assistant): [`.cursor/commands/config-git-push.md`](./.cursor/commands/config-git-push.md).
 
 ## Information
 

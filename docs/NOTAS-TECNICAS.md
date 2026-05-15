@@ -26,7 +26,7 @@
     readme-template.md
     CONVENCIONES-METADATOS.md
   .cursor/commands/          ← comandos de Cursor para la IA
-    instructions-ia.md       ← flujo al incorporar un reto (índice + README)
+    config-git-push.md        ← flujo al incorporar un reto (índice + README; slash **config-git-push**)
 ```
 
 Cada carpeta de reto con su propio `index.html` se trata como un **subsitio** bajo la misma base de Pages.

@@ -24,8 +24,8 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 
 ### Links
 
-- Solution URL: [GitHub Repository](https://github.com/FraVelz/Frontend-Mentor/tree/main/time-dashboard-main)
-- Live Site URL: [GitHub Pages](https://fravelz.github.io/Frontend-Mentor/time-dashboard-main/)
+- Solution URL: [GitHub Repository](https://github.com/FraVelz/Frontend-Mentor/tree/main/time-dashboard)
+- Live Site URL: [GitHub Pages](https://fravelz.github.io/Frontend-Mentor/time-dashboard/)
 
 ## My process
 

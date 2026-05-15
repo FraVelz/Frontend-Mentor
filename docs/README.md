@@ -1,6 +1,6 @@
 # Documentación del repositorio
 
-Archivos de apoyo (plantillas, convenciones y notas). **No** se publican en GitHub Pages como rutas del sitio: viven en `docs/` para el trabajo en el repo y para rutas estables. El flujo detallado para el asistente al añadir retos está en el comando de Cursor [`.cursor/commands/instructions-ia.md`](../.cursor/commands/instructions-ia.md).
+Archivos de apoyo (plantillas, convenciones y notas). **No** se publican en GitHub Pages como rutas del sitio: viven en `docs/` para el trabajo en el repo y para rutas estables. El flujo detallado para el asistente al añadir retos está en el comando de Cursor [`.cursor/commands/config-git-push.md`](../.cursor/commands/config-git-push.md).
 
 | Archivo                                                    | Uso                                                                         |
 | ---------------------------------------------------------- | --------------------------------------------------------------------------- |
